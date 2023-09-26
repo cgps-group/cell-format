@@ -4,7 +4,7 @@
 To describe the composition and organisation of bacterial genomes accounting for the distribution of mobile genetic elements.
 
 ## Motivation
-We are becoming capable of describing the genomic composition of bacteria and identifying the location of mobile genetic elements. Long-read sequencing 
+Long-read sequencing has enabled describing the complete genomic composition of bacterial cells and identifying the location of its mobile genetic elements. Through hybrid assemblies, we are capable of characterizing complete plasmids and accurately describe transposons, previously a challenging task due to its repetitive nature. As we are able to better understand the genomic organiation of bacterial cells, we need a common language to describe the location of its mobile genetic elements in the context of all its replicons. For this purpose, we present a computer friendly format based on the newick format for trees
 
 ## Definition
 Each element is 
