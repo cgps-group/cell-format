@@ -1,4 +1,4 @@
-# Cell organisation format
+# Cell organisation format - Wolvercote format
 
 ## Objective
 To describe the composition and organisation of bacterial genomes accounting for the distribution of mobile genetic elements.
