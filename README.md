@@ -25,6 +25,8 @@ Describe the ability to annotate using `:`
 
 ## Examples
 
+### Example 1
+
 * A cell with a single chromosome carrying an integron
 
 <img src="img/sample-1.png" alt="drawing" width="40%"/>
@@ -32,6 +34,8 @@ Describe the ability to annotate using `:`
 ```
 (chromosome[integron])
 ```
+
+### Example 2
 
 * A cell with a single chromosome and single plasmid
 
@@ -41,6 +45,8 @@ Describe the ability to annotate using `:`
 (chromosome){plasmid}
 ```
 
+### Example 3
+
 * A cell with a single chromosome, a single plasmid, and another copy of the plasmid integrated in the chromosome
 
 <img src="img/sample-3.png" alt="drawing" width="40%"/>
@@ -48,6 +54,8 @@ Describe the ability to annotate using `:`
 ```
 (chromosome{plasmid1}){plasmid1}
 ```
+
+### Example 4
 
 * A cell with a single chromosome and two plasmids, where each plasmid carry identical copies of an integron
 
@@ -57,6 +65,8 @@ Describe the ability to annotate using `:`
 (chromosome){plasmid1[integronA]}{plasmid2[integronA]}
 ```
 
+### Example 5
+
 * A cell with a single chromosome carrying a transposon and a plasmid carrying a transposon and an integron
 
 <img src="img/sample-5.png" alt="drawing" width="40%"/>
@@ -64,6 +74,8 @@ Describe the ability to annotate using `:`
 ```
 (chromosome<transposon1>){plasmid<transposon2>[integron]}
 ```
+
+### Example 6
 
 * Two cells from different species but both carrying the same plasmid
 
