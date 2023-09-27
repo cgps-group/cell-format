@@ -1,7 +1,7 @@
 # Cell organisation format - Wolvercote format
 
 ## Objective
-To describe the composition and organisation of bacterial genomes accounting for the distribution of mobile genetic elements.
+To describe the composition and organisation of bacterial genomes focusing on the distribution of mobile genetic elements.
 
 ## Motivation
 Long-read sequencing has enabled the description of the complete genomic composition of bacterial cells and the identification of the location of its mobile genetic elements. Through hybrid assemblies, we are capable of characterizing complete plasmids and accurately describing transposons, previously a challenging task due to its repetitive nature. As we are able to better understand the genomic organization of bacterial cells, we need a common language to describe the location of its mobile genetic elements in the context of all its replicons. For this purpose, we present a computer-friendly format, based on the Newick format for trees, which aims to be readable to the human eye.
