@@ -27,7 +27,7 @@ Describe the ability to annotate using `:`
 
 * A cell with a single chromosome carrying an integron
 
-<img src="img/sample-1.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-1.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome[integron])
