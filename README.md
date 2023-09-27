@@ -35,7 +35,7 @@ Describe the ability to annotate using `:`
 
 * A cell with a single chromosome and single plasmid
 
-<img src="img/sample-2.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-2.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome){plasmid}
@@ -43,7 +43,7 @@ Describe the ability to annotate using `:`
 
 * A cell with a single chromosome, a single plasmid, and another copy of the plasmid integrated in the chromosome
 
-<img src="img/sample-3.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-3.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome{plasmid1}){plasmid1}
@@ -51,7 +51,7 @@ Describe the ability to annotate using `:`
 
 * A cell with a single chromosome and two plasmids, where each plasmid carry identical copies of an integron
 
-<img src="img/sample-4.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-4.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome){plasmid1[integronA]}{plasmid2[integronA]}
@@ -59,7 +59,7 @@ Describe the ability to annotate using `:`
 
 * A cell with a single chromosome carrying a transposon and a plasmid carrying a transposon and an integron
 
-<img src="img/sample-5.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-5.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome<transposon1>){plasmid<transposon2>[integron]}
@@ -67,7 +67,7 @@ Describe the ability to annotate using `:`
 
 * Two cells from different species but both carrying the same plasmid
 
-<img src="img/sample-6.pdf" alt="drawing" width="40%"/>
+<img src="img/sample-6.png" alt="drawing" width="40%"/>
 
 ```
 (chromosome1){plasmidA},(chromosome2){plasmidA}
