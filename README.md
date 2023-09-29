@@ -21,7 +21,7 @@ Describe the ability to annotate using `:`
 * `{}` : plasmid
 * `<>` : transposon
 * `[]` : integron
-* `` : phage
+* `⁅⁆` : phage
 
 ## Examples
 
