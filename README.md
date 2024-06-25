@@ -14,14 +14,18 @@ Describe main format
 
 Describe the ability to annotate using `:`
 
-### Units
+### Grammar
 
-* `` : cell ***(do we need this?)***
-* `()` : chromosome
-* `{}` : plasmid
-* `<>` : transposon
-* `[]` : integron
-* `⁅⁆` : phage
+```
+CellSet → Cell | Cell ";" CellSet
+Cell → CellContent | CellContent "," Cell
+CellContent → ChromosomeSet | ChromosomeSet "," NonChromosomeSet
+ChromosomeSet → Chromosome | Chromosome "," ChromosomeSet
+NonChromosomeSet → NonChromosome | NonChromosome ", NonChromosomeSet
+Chromosome → "(" NonChromosome ")" Label | "(" NonChromosome ")" Label AttributeSet
+NonChromosome →  empty | "{" NonChromosome "}" Label | "{" NonChromosome "}" Label AttributeSet
+Label → empty | string
+```
 
 ## Examples
 
@@ -32,7 +36,7 @@ Describe the ability to annotate using `:`
 <img src="img/sample-1.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome[integron])
+({}integron)my_chr
 ```
 
 ### Example 2
@@ -42,7 +46,7 @@ Describe the ability to annotate using `:`
 <img src="img/sample-2.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome){plasmid}
+()chr1,{}pBAD
 ```
 
 ### Example 3
@@ -52,7 +56,7 @@ Describe the ability to annotate using `:`
 <img src="img/sample-3.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome{plasmid1}){plasmid1}
+({}plasmid1)chromosome,{}plasmid1
 ```
 
 ### Example 4
@@ -62,7 +66,7 @@ Describe the ability to annotate using `:`
 <img src="img/sample-4.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome){plasmid1[integronA]}{plasmid2[integronA]}
+()chromosome, { {}integronA }plasmid1, { {}integronA }plasmid2
 ```
 
 ### Example 5
@@ -72,7 +76,7 @@ Describe the ability to annotate using `:`
 <img src="img/sample-5.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome<transposon1>){plasmid<transposon2>[integron]}
+( {}transposon1 )chromosome , { {}transposon2, {}integron }plasmid
 ```
 
 ### Example 6
@@ -82,11 +86,29 @@ Describe the ability to annotate using `:`
 <img src="img/sample-6.png" alt="drawing" width="40%"/>
 
 ```
-(chromosome1){plasmidA},(chromosome2){plasmidA}
+()chromosome1,{}plasmidA ; ()chromosome2,{}plasmidA
+```
+
+### Example 7
+
+* A cell with a single chromosome with one attribute
+
+```
+()chromosome[attribute="value"]
+```
+
+### Example 8
+
+* A cell with a single chromosome with two attributes
+
+```
+()chromosome[attribute="value", attribute 2="value a,value b,value c"]
 ```
 
 ### Authors
 
 #### Centre for Genomic Pathogen Surveilance, University of Oxford
 * Julio Diaz Caballero
+* Nabil-Fareed Alikhan
+* Khalil AbuDahab
 * David Aanensen
