@@ -1,0 +1,22 @@
+site_name: CellGen documentation
+site_description: Specification and tools for the CellGen cellular genome organisation format
+site_url: https://cgps-group.github.io/cell-format/
+repo_url: https://github.com/cgps-group/cell-format
+repo_name: cgps-group/cell-format
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Overview: index.md
+  - Format specification: specification.md
+  - Validation errors: validation.md
+  - GenBank and GFF3 import: import.md
+  - Examples: examples.md
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+

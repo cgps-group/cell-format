@@ -1,0 +1,26 @@
+#!/bin/bash
+# Auto-increment patch version in webapp/package.json before each commit.
+
+PKG="webapp/package.json"
+
+# Only bump if the webapp has staged changes
+if git diff --cached --name-only | grep -q "^webapp/"; then
+  # Read current version
+  current=$(node -p "require('./${PKG}').version")
+
+  # Increment patch number
+  IFS='.' read -r major minor patch <<< "$current"
+  patch=$((patch + 1))
+  new_version="${major}.${minor}.${patch}"
+
+  # Write new version back (cross-platform sed in-place)
+  node -e "
+    const fs = require('fs');
+    const pkg = JSON.parse(fs.readFileSync('${PKG}', 'utf8'));
+    pkg.version = '${new_version}';
+    fs.writeFileSync('${PKG}', JSON.stringify(pkg, null, 2) + '\n');
+  "
+
+  git add "${PKG}"
+  echo "Auto-bumped version ${current} → ${new_version}"
+fi

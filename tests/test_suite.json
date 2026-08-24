@@ -1,0 +1,273 @@
+{
+  "version": "1.0",
+  "description": "Formal test suite for the CellGen format. Any conforming parser must pass all cases.",
+  "valid": [
+    {
+      "id": "empty_chromosome",
+      "input": "()",
+      "description": "Minimal chromosome with no label and no contained entities",
+      "expected": {
+        "cells": 1,
+        "replicons_in_cell_0": 1,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_0_label": ""
+      }
+    },
+    {
+      "id": "chromosome_with_label",
+      "input": "()chr1",
+      "description": "Chromosome with a label",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_0_label": "chr1"
+      }
+    },
+    {
+      "id": "entity_only",
+      "input": "{}pBAD",
+      "description": "Single non-chromosomal entity (a plasmid) with no chromosome",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "entity",
+        "cell_0_replicon_0_label": "pBAD"
+      }
+    },
+    {
+      "id": "chromosome_and_plasmid",
+      "input": "()chr1,{}pBAD",
+      "description": "Example 2: chromosome and plasmid",
+      "expected": {
+        "cells": 1,
+        "replicons_in_cell_0": 2,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_1_type": "entity"
+      }
+    },
+    {
+      "id": "chromosome_with_integron",
+      "input": "({}integron)my_chr",
+      "description": "Example 1: chromosome carrying an integron",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_0_label": "my_chr",
+        "cell_0_replicon_0_children": 1
+      }
+    },
+    {
+      "id": "nested_plasmid_in_chromosome",
+      "input": "({}plasmid1)chromosome,{}plasmid1",
+      "description": "Example 3: plasmid integrated in chromosome, also exists independently",
+      "expected": {
+        "cells": 1,
+        "replicons_in_cell_0": 2
+      }
+    },
+    {
+      "id": "plasmid_with_multiple_entities",
+      "input": "{ {}integronA }plasmid1, { {}integronA }plasmid2",
+      "description": "Example 4: two plasmids each carrying identical integrons",
+      "expected": {
+        "cells": 1,
+        "replicons_in_cell_0": 2
+      }
+    },
+    {
+      "id": "transposon_and_integron",
+      "input": "( {}transposon1 )chromosome , { {}transposon2, {}integron }plasmid",
+      "description": "Example 5: transposon on chromosome, transposon + integron on plasmid",
+      "expected": {
+        "cells": 1,
+        "replicons_in_cell_0": 2
+      }
+    },
+    {
+      "id": "two_cells",
+      "input": "()chromosome1,{}plasmidA ; ()chromosome2,{}plasmidA",
+      "description": "Example 6: two cells sharing a plasmid",
+      "expected": {
+        "cells": 2
+      }
+    },
+    {
+      "id": "attributes_single",
+      "input": "()chromosome[attribute=\"value\"]",
+      "description": "Example 7: chromosome with one attribute",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_attributes": {"attribute": "value"}
+      }
+    },
+    {
+      "id": "attributes_multiple",
+      "input": "()chromosome[attribute=\"value\", attribute2=\"value a,value b,value c\"]",
+      "description": "Example 8: chromosome with two attributes (second value contains commas)",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_attributes": {
+          "attribute": "value",
+          "attribute2": "value a,value b,value c"
+        }
+      }
+    },
+    {
+      "id": "whitespace_tolerant",
+      "input": "  ( {} integron )  my_chr  ",
+      "description": "Leading/trailing/internal whitespace must be ignored",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "chromosome"
+      }
+    },
+    {
+      "id": "empty_entity",
+      "input": "{}",
+      "description": "Empty entity with no label",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_label": ""
+      }
+    },
+    {
+      "id": "three_cells",
+      "input": "()chrA ; ()chrB ; ()chrC",
+      "description": "Three cells separated by semicolons",
+      "expected": {
+        "cells": 3
+      }
+    },
+    {
+      "id": "deeply_nested",
+      "input": "({ {}is1 }transposon)chromosome",
+      "description": "IS element nested inside a transposon nested inside a chromosome",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_0_children": 1
+      }
+    },
+    {
+      "id": "fungal_starship_with_nested_genes",
+      "input": "({ {}DUF3435_captain[type=\"gene\", role=\"captain\"], {}cargo_gene_cluster[type=\"gene_cluster\", role=\"cargo\"] }Starship[type=\"starship\", representation=\"schematic\"])chromosome[organism=\"Macrophomina phaseolina\"]",
+      "description": "Schematic fungal chromosome containing a Starship with captain and cargo entities",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_type": "chromosome",
+        "cell_0_replicon_0_children": 1
+      }
+    },
+    {
+      "id": "label_with_hyphens_and_dots",
+      "input": "()E.coli-K12, {}pOXA-48",
+      "description": "Labels may contain dots and hyphens",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_label": "E.coli-K12"
+      }
+    },
+    {
+      "id": "quoted_label",
+      "input": "()\"chromosome one\"",
+      "description": "Labels containing spaces may be double-quoted",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_label": "chromosome one"
+      }
+    },
+    {
+      "id": "escaped_attribute_value",
+      "input": "()chr[note=\"line 1\\n\\\"quoted\\\"\"]",
+      "description": "Quoted values support standard escapes",
+      "expected": {
+        "cells": 1,
+        "cell_0_replicon_0_attributes": {"note": "line 1\n\"quoted\""}
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "unclosed_chromosome",
+      "input": "(chr1",
+      "description": "Missing closing ')' for chromosome"
+    },
+    {
+      "id": "unclosed_entity",
+      "input": "{pBAD",
+      "description": "Missing closing '}' for entity"
+    },
+    {
+      "id": "unclosed_attributes",
+      "input": "()chr[key=\"value\"",
+      "description": "Missing closing ']' for attribute list"
+    },
+    {
+      "id": "empty_input",
+      "input": "",
+      "description": "Empty string is not valid"
+    },
+    {
+      "id": "whitespace_only",
+      "input": "   ",
+      "description": "Whitespace-only string is not valid"
+    },
+    {
+      "id": "missing_opener",
+      "input": ")chr1",
+      "description": "Closing ')' without opening '('"
+    },
+    {
+      "id": "label_after_semicolon_no_cell",
+      "input": "()chr1 ; ",
+      "description": "Trailing semicolon with nothing after is tolerated (trailing semicolon rule)",
+      "note": "Parsers MAY accept trailing semicolons; they MUST NOT crash"
+    },
+    {
+      "id": "attribute_missing_quotes",
+      "input": "()chr[key=value]",
+      "description": "Attribute values must be double-quoted"
+    },
+    {
+      "id": "attribute_missing_equals",
+      "input": "()chr[key\"value\"]",
+      "description": "Attribute key and value must be separated by '='",
+      "expected_code": "MISSING_EQUALS"
+    },
+    {
+      "id": "missing_entity_separator",
+      "input": "({}a {}b)chr",
+      "description": "Contained siblings must be separated by a comma",
+      "expected_code": "MISSING_SEPARATOR"
+    },
+    {
+      "id": "nested_chromosome",
+      "input": "{()chr}entity",
+      "description": "Chromosomes cannot occur inside an entity",
+      "expected_code": "NESTED_CHROMOSOME"
+    },
+    {
+      "id": "duplicate_attribute",
+      "input": "()chr[type=\"a\",type=\"b\"]",
+      "description": "Attribute keys cannot be repeated",
+      "expected_code": "DUPLICATE_ATTRIBUTE"
+    },
+    {
+      "id": "empty_attributes",
+      "input": "()chr[]",
+      "description": "Attribute blocks cannot be empty",
+      "expected_code": "EMPTY_ATTRIBUTES"
+    },
+    {
+      "id": "invalid_escape",
+      "input": "()chr[note=\"bad\\q\"]",
+      "description": "Unsupported quoted-value escapes are rejected",
+      "expected_code": "INVALID_ESCAPE"
+    },
+    {
+      "id": "trailing_entity_separator",
+      "input": "({}a,)chr",
+      "description": "A comma cannot appear before a closing delimiter",
+      "expected_code": "TRAILING_SEPARATOR"
+    }
+  ]
+}

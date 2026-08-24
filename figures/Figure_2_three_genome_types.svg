@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">CellGen representations across virus, bacterium and fungus</title>
+  <desc id="desc">Three containment diagrams and their CellGen records show how one grammar represents a virus, a bacterium and a fungal chromosome containing a Starship element.</desc>
+  <defs>
+    <style>
+      .sans { font-family: Inter, Arial, sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .heading { font: 700 28px Inter, Arial, sans-serif; fill: #17212b; }
+      .organism { font: italic 18px Inter, Arial, sans-serif; fill: #687584; }
+      .node-title { font: 700 17px Inter, Arial, sans-serif; }
+      .node-detail { font: 14px Inter, Arial, sans-serif; fill: #6b7480; }
+      .code-label { font: 700 15px Inter, Arial, sans-serif; fill: #596574; letter-spacing: 0.04em; }
+      .code { font: 17px "SFMono-Regular", Consolas, "Liberation Mono", monospace; fill: #27313c; }
+      .foot { font: 16px Inter, Arial, sans-serif; fill: #65707d; }
+    </style>
+  </defs>
+  <rect width="1800" height="1000" fill="#ffffff"/>
+
+  <!-- Column guides -->
+  <line x1="600" y1="40" x2="600" y2="930" stroke="#e0e5eb" stroke-width="2"/>
+  <line x1="1200" y1="40" x2="1200" y2="930" stroke="#e0e5eb" stroke-width="2"/>
+
+  <!-- Virus -->
+  <text x="40" y="60" class="heading">Virus</text>
+  <text x="40" y="91" class="organism">Enterobacteria phage T4</text>
+  <!-- Unmodified containment SVG exported from the live CellGen app -->
+  <svg x="93" y="130" width="414" height="184" viewBox="0 0 230 102" preserveAspectRatio="xMidYMid meet" style="background:white">
+    <rect x="20" y="20" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">T4</text>
+    <text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">phage</text>
+  </svg>
+  <text x="300" y="346" text-anchor="middle" class="node-detail">Bare { } entity; no chromosome asserted</text>
+
+  <text x="40" y="435" class="code-label">CELLGEN RECORD</text>
+  <rect x="40" y="454" width="520" height="206" rx="10" fill="#f7f9fb" stroke="#d7dee7" stroke-width="2"/>
+  <text x="65" y="493" class="code"><tspan fill="#e77914">{}</tspan><tspan fill="#c45e05">T4</tspan>[</text>
+  <text x="93" y="528" class="code">type=<tspan fill="#6b3fa0">"phage"</tspan>,</text>
+  <text x="93" y="563" class="code">genome=<tspan fill="#6b3fa0">"dsDNA"</tspan></text>
+  <text x="65" y="598" class="code">]</text>
+
+  <!-- Bacterium -->
+  <text x="640" y="60" class="heading">Bacterium</text>
+  <text x="640" y="91" class="organism">Klebsiella pneumoniae</text>
+  <!-- Unmodified containment SVG exported from the live CellGen app -->
+  <svg x="754" y="112" width="292" height="386" viewBox="0 0 254 336" preserveAspectRatio="xMidYMid meet" style="background:white">
+    <rect x="20" y="20" width="214" height="142" rx="10" fill="#eef4fd" stroke="#3975dc" stroke-width="2"/>
+    <text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#3975dc">chromosome</text>
+    <text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">circular</text>
+    <rect x="32" y="62" width="190" height="88" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="44" y="81" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">Tn4401</text>
+    <text x="44" y="96" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">transposon</text>
+    <rect x="44" y="104" width="116" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2"/>
+    <text x="102" y="126" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">blaKPC-2</text>
+    <rect x="20" y="174" width="214" height="142" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="32" y="193" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">pKPC</text>
+    <text x="32" y="208" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">plasmid · conjugative</text>
+    <rect x="32" y="216" width="190" height="88" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="44" y="235" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">intI1</text>
+    <text x="44" y="250" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">integron</text>
+    <rect x="44" y="258" width="116" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2"/>
+    <text x="102" y="280" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">blaCTX-M-15</text>
+  </svg>
+
+  <text x="640" y="663" class="code-label">CELLGEN RECORD</text>
+  <rect x="640" y="682" width="520" height="248" rx="10" fill="#f7f9fb" stroke="#d7dee7" stroke-width="2"/>
+  <text x="663" y="717" class="code">(</text>
+  <text x="687" y="748" class="code">{<tspan fill="#e77914">{}</tspan><tspan fill="#b52525">blaKPC-2</tspan>[type=<tspan fill="#6b3fa0">"gene"</tspan>]</text>
+  <text x="687" y="779" class="code">}<tspan fill="#c45e05">Tn4401</tspan>[type=<tspan fill="#6b3fa0">"transposon"</tspan>]</text>
+  <text x="663" y="810" class="code">)<tspan fill="#2f68c5">chromosome</tspan>,</text>
+  <text x="663" y="841" class="code">{{<tspan fill="#e77914">{}</tspan><tspan fill="#b52525">blaCTX-M-15</tspan>[type=<tspan fill="#6b3fa0">"gene"</tspan>]</text>
+  <text x="687" y="872" class="code">}<tspan fill="#c45e05">intI1</tspan>[type=<tspan fill="#6b3fa0">"integron"</tspan>]</text>
+  <text x="663" y="903" class="code">}<tspan fill="#c45e05">pKPC</tspan>[type=<tspan fill="#6b3fa0">"plasmid"</tspan>]</text>
+
+  <!-- Fungus -->
+  <text x="1240" y="60" class="heading">Fungus</text>
+  <text x="1240" y="91" class="organism">Macrophomina phaseolina</text>
+  <!-- Unmodified containment SVG exported from the live CellGen app -->
+  <svg x="1296" y="120" width="408" height="370" viewBox="0 0 278 252" preserveAspectRatio="xMidYMid meet" style="background:white">
+    <rect x="20" y="20" width="238" height="212" rx="10" fill="#eef4fd" stroke="#3975dc" stroke-width="2"/>
+    <text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#3975dc">chromosome</text>
+    <text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">chromosome</text>
+    <rect x="32" y="62" width="214" height="158" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="44" y="81" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">Starship</text>
+    <text x="44" y="96" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">starship</text>
+    <rect x="44" y="104" width="134.8" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2"/>
+    <text x="111.4" y="126" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">DUF3435_captain</text>
+    <rect x="44" y="146" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="56" y="165" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914">cargo_gene_cluster</text>
+    <text x="56" y="180" font-family="Inter, Arial, sans-serif" font-size="10" fill="#687384">non-chromosomal entity</text>
+  </svg>
+
+  <text x="1240" y="663" class="code-label">CELLGEN RECORD</text>
+  <rect x="1240" y="682" width="520" height="248" rx="10" fill="#f7f9fb" stroke="#d7dee7" stroke-width="2"/>
+  <text x="1263" y="717" class="code">(</text>
+  <text x="1287" y="748" class="code">{</text>
+  <text x="1311" y="779" class="code"><tspan fill="#e77914">{}</tspan><tspan fill="#b52525">DUF3435_captain</tspan>[role=<tspan fill="#6b3fa0">"captain"</tspan>],</text>
+  <text x="1311" y="810" class="code"><tspan fill="#e77914">{}</tspan><tspan fill="#c45e05">cargo_gene_cluster</tspan>[role=<tspan fill="#6b3fa0">"cargo"</tspan>]</text>
+  <text x="1287" y="841" class="code">}<tspan fill="#c45e05">Starship</tspan>[type=<tspan fill="#6b3fa0">"starship"</tspan>]</text>
+  <text x="1263" y="872" class="code">)<tspan fill="#2f68c5">chromosome</tspan>[</text>
+  <text x="1287" y="903" class="code">organism=<tspan fill="#6b3fa0">"M. phaseolina"</tspan>]</text>
+
+  <text x="900" y="973" text-anchor="middle" class="foot">Parentheses identify chromosomes; curly braces identify every other biological entity. Nesting records containment in each genome type.</text>
+</svg>

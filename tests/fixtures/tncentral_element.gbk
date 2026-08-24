@@ -1,0 +1,15 @@
+LOCUS       Tn4401                    100 bp    DNA     linear   BCT 24-AUG-2026
+DEFINITION  TnCentral-style annotated transposon record.
+ACCESSION   TN4401TEST
+VERSION     TN4401TEST.1
+FEATURES             Location/Qualifiers
+     mobile_element  1..100
+                     /mobile_element_type="transposon:Tn4401"
+     mobile_element  10..25
+                     /mobile_element_type="insertion sequence:ISKpn7"
+     CDS             40..60
+                     /gene="blaKPC-2"
+ORIGIN
+        1 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+       61 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+//

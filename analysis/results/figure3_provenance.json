@@ -1,0 +1,11 @@
+{
+  "source": "NCBI RefSeq complete genome GenBank records",
+  "retrieved": "2026-08-24",
+  "assemblies": [
+    "GCF_000009885.1",
+    "GCF_000016305.1",
+    "GCF_000240185.1"
+  ],
+  "conversion": "CellGen Python GenBank importer",
+  "note": "Uncontained CDS/gene features are omitted; genes nested in annotated mobile elements are retained."
+}

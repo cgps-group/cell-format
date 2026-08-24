@@ -1,0 +1,49 @@
+{
+  "name": "cellgen-webapp",
+  "version": "0.2.14",
+  "description": "CellGen visualiser — parse cellular genome organisation strings and render SVG diagrams",
+  "type": "module",
+  "license": "MIT",
+  "author": "Nabil-Fareed Alikhan <nabil@happykhan.com> (https://www.happykhan.com)",
+  "homepage": "https://cell-format.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgps-group/cell-format.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "vitest run && eslint . && npm run build"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.0",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@playwright/test": "^1.59.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "jsdom": "^24.1.3",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.11.0",
+    "vite": "^6.3.0",
+    "vitest": "^4.0.18"
+  }
+}

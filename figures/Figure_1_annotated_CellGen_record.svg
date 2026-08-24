@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Annotated CellGen record and circular visualisation</title>
+  <desc id="desc">A complete Klebsiella pneumoniae CellGen record with annotated chromosome, plasmid, nested mobile elements, genes and attributes, paired with its circular visualisation.</desc>
+  <defs>
+    <style>
+      .sans { font-family: Inter, Arial, sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .panel-label { font: 700 28px Inter, Arial, sans-serif; fill: #17212b; }
+      .panel-title { font: 700 24px Inter, Arial, sans-serif; fill: #17212b; }
+      .code { font: 20px "SFMono-Regular", Consolas, "Liberation Mono", monospace; fill: #27313c; }
+      .code-muted { fill: #6b7480; }
+      .small { font: 15px Inter, Arial, sans-serif; fill: #65707d; }
+      .label { font: 700 17px Inter, Arial, sans-serif; }
+      .diagram-label { font: 700 17px Inter, Arial, sans-serif; fill: #24303c; }
+    </style>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#203040" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1800" height="1000" fill="#ffffff"/>
+
+  <text x="40" y="45" class="panel-label">A</text>
+  <text x="88" y="45" class="panel-title">CellGen record and structural annotation</text>
+  <text x="1120" y="45" class="panel-label">B</text>
+  <text x="1168" y="45" class="panel-title">Circular visualisation</text>
+
+  <!-- Panel A: annotated source record -->
+  <rect x="40" y="70" width="1020" height="885" rx="14" fill="#f8fafc" stroke="#d7dee7" stroke-width="2"/>
+
+  <!-- Grammar key -->
+  <rect x="68" y="94" width="258" height="42" rx="8" fill="#eef4fd" stroke="#3975dc" stroke-width="2"/>
+  <text x="88" y="121" class="label" fill="#3975dc">( ) chromosome</text>
+  <rect x="340" y="94" width="292" height="42" rx="8" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="360" y="121" class="label" fill="#d96708">{ } other entity</text>
+  <rect x="646" y="94" width="288" height="42" rx="8" fill="#f4f5f7" stroke="#7c8794" stroke-width="2"/>
+  <text x="666" y="121" class="label" fill="#596574">[ ] attributes</text>
+
+  <!-- Major record blocks. Borders sit outside the code rather than crossing it. -->
+  <rect x="66" y="155" width="666" height="347" rx="12" fill="#eef4fd" fill-opacity="0.62" stroke="#3975dc" stroke-width="3"/>
+  <rect x="66" y="526" width="666" height="386" rx="12" fill="#fff7eb" fill-opacity="0.76" stroke="#e77914" stroke-width="3" stroke-dasharray="8 6"/>
+
+  <!-- Soft highlights identify nested entities without drawing through glyphs. -->
+  <rect x="100" y="202" width="570" height="104" rx="10" fill="#fff7eb" stroke="none"/>
+  <rect x="138" y="234" width="430" height="31" rx="15" fill="#fdebec" stroke="none"/>
+  <rect x="100" y="573" width="570" height="104" rx="10" fill="#fffaf2" stroke="none"/>
+  <rect x="138" y="605" width="462" height="31" rx="15" fill="#fdebec" stroke="none"/>
+
+  <!-- Annotation tags -->
+  <path d="M 732 183 L 770 183" stroke="#3975dc" stroke-width="2"/>
+  <rect x="770" y="166" width="254" height="34" rx="17" fill="#3975dc"/>
+  <text x="897" y="189" text-anchor="middle" class="label" fill="#ffffff">chromosome ( )</text>
+  <path d="M 670 247 L 746 247 L 746 226 L 770 226" fill="none" stroke="#e77914" stroke-width="2"/>
+  <rect x="770" y="209" width="254" height="34" rx="17" fill="#e77914"/>
+  <text x="897" y="232" text-anchor="middle" class="label" fill="#ffffff">Tn4401 transposon { }</text>
+  <path d="M 732 554 L 770 554" stroke="#e77914" stroke-width="2"/>
+  <rect x="770" y="537" width="254" height="34" rx="17" fill="#e77914"/>
+  <text x="897" y="560" text-anchor="middle" class="label" fill="#ffffff">pKPC plasmid { }</text>
+  <path d="M 670 618 L 746 618 L 746 597 L 770 597" fill="none" stroke="#e77914" stroke-width="2"/>
+  <rect x="770" y="580" width="254" height="34" rx="17" fill="#e77914"/>
+  <text x="897" y="603" text-anchor="middle" class="label" fill="#ffffff">intI1 integron { }</text>
+
+  <!-- Attribute callouts -->
+  <path d="M 650 392 L 746 392 L 746 294 L 770 294" fill="none" stroke="#7c8794" stroke-width="2"/>
+  <rect x="770" y="277" width="254" height="34" rx="17" fill="#687584"/>
+  <text x="897" y="300" text-anchor="middle" class="label" fill="#ffffff">host and topology</text>
+  <path d="M 650 763 L 746 763 L 746 665 L 770 665" fill="none" stroke="#7c8794" stroke-width="2"/>
+  <rect x="770" y="648" width="254" height="34" rx="17" fill="#687584"/>
+  <text x="897" y="671" text-anchor="middle" class="label" fill="#ffffff">type and mobility</text>
+
+  <!-- Code -->
+  <g class="code">
+    <text x="88" y="185">(</text>
+    <text x="110" y="224">{</text>
+    <text x="148" y="257"><tspan fill="#e77914">{}</tspan><tspan fill="#b52525">blaKPC-2</tspan><tspan class="code-muted">[type="gene"]</tspan></text>
+    <text x="110" y="296">}<tspan fill="#c45e05">Tn4401</tspan><tspan class="code-muted">[type="transposon"]</tspan></text>
+    <text x="88" y="335">)<tspan fill="#2f68c5">chromosome</tspan>[</text>
+    <text x="110" y="374">host=<tspan fill="#6b3fa0">"Klebsiella pneumoniae"</tspan>,</text>
+    <text x="110" y="413">topology=<tspan fill="#6b3fa0">"circular"</tspan></text>
+    <text x="88" y="452">],</text>
+
+    <text x="88" y="556">{</text>
+    <text x="110" y="595">{</text>
+    <text x="148" y="628"><tspan fill="#e77914">{}</tspan><tspan fill="#b52525">blaCTX-M-15</tspan><tspan class="code-muted">[type="gene"]</tspan></text>
+    <text x="110" y="667">}<tspan fill="#c45e05">intI1</tspan><tspan class="code-muted">[type="integron"]</tspan></text>
+    <text x="88" y="706">}<tspan fill="#c45e05">pKPC</tspan>[</text>
+    <text x="110" y="745">type=<tspan fill="#6b3fa0">"plasmid"</tspan>,</text>
+    <text x="110" y="784">mobility=<tspan fill="#6b3fa0">"conjugative"</tspan></text>
+    <text x="88" y="823">]</text>
+  </g>
+
+  <text x="88" y="940" class="small">Nesting records physical containment; attributes describe each entity without changing the grammar.</text>
+
+  <!-- Panel B: circular renderer -->
+  <rect x="1120" y="70" width="640" height="885" rx="14" fill="#ffffff" stroke="#d7dee7" stroke-width="2"/>
+  <text x="1154" y="112" class="diagram-label" font-style="italic">Klebsiella pneumoniae</text>
+  <text x="1154" y="137" class="small">Direct SVG export from the CellGen circular view</text>
+
+  <!-- Unmodified SVG output exported from cell-format.vercel.app -->
+  <svg x="1238" y="160" width="404" height="746" viewBox="479.8 163.1 328.0 606.0" preserveAspectRatio="xMidYMid meet" style="background:white">
+    <circle cx="624.5" cy="624.5" r="90" fill="#dde8f8" stroke="#3a6fba" stroke-width="8"/>
+    <path d="M 595.17,522.59 A 106.00,106.00 0 0,1 653.75,522.59 L 649.33,537.97 A 90.00,90.00 0 0,0 599.59,537.97 Z" fill="#e05252" stroke="white" stroke-width="0.5"/>
+    <path d="M 591.19,508.75 A 120.40,120.40 0 0,1 654.83,507.95 L 651.20,521.89 A 106.00,106.00 0 0,0 595.17,522.59 Z" fill="#c0392b" stroke="white" stroke-width="0.5"/>
+    <line x1="623.0" y1="504.1" x2="734.5" y2="503.8" stroke="#bbb" stroke-width="0.7"/>
+    <text x="737.5" y="507.8" text-anchor="start" font-size="10" fill="#444" font-family="Inter, Arial, sans-serif">blaKPC-2</text>
+    <line x1="624.5" y1="518.5" x2="734.5" y2="518.8" stroke="#bbb" stroke-width="0.7"/>
+    <text x="737.5" y="522.8" text-anchor="start" font-size="11" fill="#444" font-family="Inter, Arial, sans-serif">Tn4401</text>
+    <text x="624.5" y="629.5" text-anchor="middle" font-size="15" fill="#333" font-family="Inter, Arial, sans-serif">chromosome</text>
+    <circle cx="624.5" cy="259.1" r="44" fill="#e6f5e6" stroke="#3a9943" stroke-width="5"/>
+    <path d="M 609.54,207.20 A 54.00,54.00 0 0,1 639.38,207.20 L 636.62,216.81 A 44.00,44.00 0 0,0 612.30,216.81 Z" fill="#9b59b6" stroke="white" stroke-width="0.5"/>
+    <path d="M 607.05,198.55 A 63.00,63.00 0 0,1 640.35,198.14 L 638.08,206.85 A 54.00,54.00 0 0,0 609.54,207.20 Z" fill="#c0392b" stroke="white" stroke-width="0.5"/>
+    <line x1="623.7" y1="196.1" x2="688.5" y2="193.1" stroke="#bbb" stroke-width="0.7"/>
+    <text x="691.5" y="197.1" text-anchor="start" font-size="10" fill="#444" font-family="Inter, Arial, sans-serif">blaCTX-M-15</text>
+    <line x1="624.5" y1="205.1" x2="688.5" y2="208.1" stroke="#bbb" stroke-width="0.7"/>
+    <text x="691.5" y="212.1" text-anchor="start" font-size="11" fill="#444" font-family="Inter, Arial, sans-serif">intI1</text>
+    <text x="624.5" y="263.1" text-anchor="middle" font-size="11" fill="#333" font-family="Inter, Arial, sans-serif">pKPC</text>
+  </svg>
+  <text x="1440" y="930" text-anchor="middle" class="small">The circular panel is the renderer output, not a redrawn schematic.</text>
+</svg>

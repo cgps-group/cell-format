@@ -1,0 +1,33 @@
+LOCUS       chrA                     100 bp    DNA     circular BCT 24-AUG-2026
+DEFINITION  Klebsiella pneumoniae chromosome.
+ACCESSION   CHRA0001
+VERSION     CHRA0001.1
+FEATURES             Location/Qualifiers
+     source          1..100
+                     /organism="Klebsiella pneumoniae"
+     mobile_element  10..80
+                     /mobile_element_type="transposon:Tn4401"
+     CDS             30..50
+                     /gene="blaKPC-2"
+     CDS             85..95
+                     /gene="coreA"
+ORIGIN
+        1 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+       61 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+//
+LOCUS       pKPC                     100 bp    DNA     circular BCT 24-AUG-2026
+DEFINITION  Klebsiella pneumoniae plasmid pKPC.
+ACCESSION   PKPC0001
+VERSION     PKPC0001.1
+FEATURES             Location/Qualifiers
+     source          1..100
+                     /organism="Klebsiella pneumoniae"
+                     /plasmid="pKPC"
+     mobile_element  10..80
+                     /mobile_element_type="integron:intI1"
+     CDS             30..50
+                     /gene="blaCTX-M-15"
+ORIGIN
+        1 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+       61 aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa
+//

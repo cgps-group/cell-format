@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Blue chromosome circle -->
+  <circle cx="11" cy="16" r="9" fill="#dde8f8" stroke="#3a6fba" stroke-width="2.5"/>
+  <!-- Green plasmid circle -->
+  <circle cx="24" cy="10" r="5" fill="#e6f5e6" stroke="#3a9943" stroke-width="2"/>
+  <!-- Small red element on chromosome border -->
+  <rect x="17" y="10" width="5" height="3" rx="1" fill="#e05252" transform="rotate(-30 19.5 11.5)"/>
+</svg>

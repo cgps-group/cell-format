@@ -1,114 +1,120 @@
-# Cell organisation format - Wolvercote format
+# CellGen
 
-## Objective
-To describe the composition and organisation of bacterial genomes focusing on the distribution of mobile genetic elements.
+A compact, human-readable notation for describing cellular genome organisation, inspired by the Newick format for phylogenetic trees.
 
-## Motivation
-Long-read sequencing has enabled the description of the complete genomic composition of bacterial cells and the identification of the location of its mobile genetic elements. Through hybrid assemblies, we are capable of characterizing complete plasmids and accurately describing transposons, previously a challenging task due to its repetitive nature. As we are able to better understand the genomic organization of bacterial cells, we need a common language to describe the location of its mobile genetic elements in the context of all its replicons. For this purpose, we present a computer-friendly format, inspired by the Newick format for trees, which aims to be readable to the human eye.
+## Overview
 
-## Definition
+Long-read sequencing now routinely produces complete genome assemblies, revealing chromosomes and the biological entities contained within or alongside them. These entities may be plasmids, mobile genetic elements, genes, gene clusters or other structures. CellGen records their containment relationships in a single line of text.
 
-Describe main format
+**Key features**
 
-## Annotation
+- Describes chromosomes and any other labelled biological entity
+- Captures nested containment (e.g. an integron inside a plasmid)
+- Represents multiple cells in one string (e.g. two strains sharing a plasmid)
+- Supports free-text labels and key-value attributes
+- Machine-parseable and human-readable
 
-Describe the ability to annotate using `:`
+## Web app
+
+**[cell-format.vercel.app](https://cell-format.vercel.app/)** — paste a CellGen string and get an SVG diagram. Or upload a GenBank/GFF3 file to generate a CellGen representation automatically.
+
+## Format definition
 
 ### Grammar
 
 ```
-CellSet → Cell | Cell ";" CellSet
-Cell → CellContent | CellContent "," Cell
-CellContent → ChromosomeSet | ChromosomeSet "," NonChromosomeSet
-ChromosomeSet → Chromosome | Chromosome "," ChromosomeSet
-NonChromosomeSet → NonChromosome | NonChromosome ", NonChromosomeSet
-Chromosome → "(" NonChromosome ")" Label | "(" NonChromosome ")" Label AttributeSet
-NonChromosome →  empty | "{" NonChromosome "}" Label | "{" NonChromosome "}" Label AttributeSet
-Label → empty | string
+CellSet      → Cell (';' Cell)*
+Cell         → CellularElement (',' CellularElement)*
+CellularElement → Chromosome | Entity
+Chromosome   → '(' Entity* ')' Label AttributeSet?
+Entity       → '{' Entity* '}' Label AttributeSet?
+Label        → string | empty
+AttributeSet → '[' KeyValue (',' KeyValue)* ']'
+KeyValue     → Key '=' '"' Value '"'
 ```
 
-## Examples
+- `( ... )` means chromosome, and only chromosome.
+- `{ ... }` means any other biological entity. Its class is supplied by its label or a `type` attribute, for example `plasmid`, `transposon`, `gene`, `gene_cluster` or `starship`.
+- `;` — separates cells in a multi-cell set
+- `,` — separates replicons within a cell
+- `[key="value"]` — optional attributes on any element
 
-### Example 1
+### Examples
 
-* A cell with a single chromosome carrying an integron
-
-<img src="img/sample-1.png" alt="drawing" width="40%"/>
-
+**Single chromosome with an integron**
 ```
 ({}integron)my_chr
 ```
 
-### Example 2
-
-* A cell with a single chromosome and single plasmid
-
-<img src="img/sample-2.png" alt="drawing" width="40%"/>
-
+**Chromosome and a plasmid**
 ```
-()chr1,{}pBAD
+()chr1, {}pBAD
 ```
 
-### Example 3
-
-* A cell with a single chromosome, a single plasmid, and another copy of the plasmid integrated in the chromosome
-
-<img src="img/sample-3.png" alt="drawing" width="40%"/>
-
+**Chromosome and plasmid where the plasmid is also integrated in the chromosome**
 ```
-({}plasmid1)chromosome,{}plasmid1
+({}plasmid1)chromosome, {}plasmid1
 ```
 
-### Example 4
-
-* A cell with a single chromosome and two plasmids, where each plasmid carry identical copies of an integron
-
-<img src="img/sample-4.png" alt="drawing" width="40%"/>
-
-```
-()chromosome, { {}integronA }plasmid1, { {}integronA }plasmid2
-```
-
-### Example 5
-
-* A cell with a single chromosome carrying a transposon and a plasmid carrying a transposon and an integron
-
-<img src="img/sample-5.png" alt="drawing" width="40%"/>
-
+**Chromosome with a transposon; plasmid carrying a transposon and an integron**
 ```
 ( {}transposon1 )chromosome , { {}transposon2, {}integron }plasmid
 ```
 
-### Example 6
-
-* Two cells from different species but both carrying the same plasmid
-
-<img src="img/sample-6.png" alt="drawing" width="40%"/>
-
+**Two cells sharing the same plasmid**
 ```
-()chromosome1,{}plasmidA ; ()chromosome2,{}plasmidA
+()chromosome1, {}plasmidA ; ()chromosome2, {}plasmidA
 ```
 
-### Example 7
-
-* A cell with a single chromosome with one attribute
-
+**Chromosome with attributes**
 ```
-()chromosome[attribute="value"]
+()chromosome[organism="Escherichia coli", strain="K-12"]
 ```
 
-### Example 8
-
-* A cell with a single chromosome with two attributes
-
+**Plasmid with nested integrons, each carrying identical gene cassettes**
 ```
-()chromosome[attribute="value", attribute 2="value a,value b,value c"]
+()chromosome, { {}integronA }plasmid1, { {}integronA }plasmid2
 ```
 
-### Authors
+**Fungal chromosome containing a Starship (schematic)**
+```
+({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]
+```
 
-#### Centre for Genomic Pathogen Surveilance, University of Oxford
-* Julio Diaz Caballero
-* Nabil-Fareed Alikhan
-* Khalil AbuDahab
-* David Aanensen
+This example represents the characteristic architecture described for fungal Starships: a chromosome-integrated element containing a DUF3435 tyrosine recombinase (the captain) and downstream cargo. It is a structural illustration, not a transcription of one annotated sequence. See [Gluck-Thaler et al. (2022)](https://doi.org/10.1093/molbev/msac109).
+
+## Web app (`webapp/`)
+
+A fully client-side React and TypeScript application.
+
+### Features
+
+- **Live parser** — type or paste a CellGen string; errors shown inline with position
+- **SVG renderer** — circular diagrams: blue for chromosomes, green for top-level non-chromosomal entities, and coloured arcs for contained entities
+- **GenBank / GFF3 import** — upload an annotated assembly file to auto-generate the CellGen string
+- **Download** — export the diagram as SVG or the format string as plain text
+- **No server required** — everything runs in the browser
+
+### Run locally
+
+```bash
+cd webapp
+npm install
+npm run dev
+```
+
+### Build
+
+```bash
+cd webapp
+npm run build   # output in webapp/dist/
+```
+
+## Authors
+
+Centre for Genomic Pathogen Surveillance, University of Oxford
+
+- Julio Diaz Caballero
+- Nabil-Fareed Alikhan
+- Khalil AbuDahab
+- David Aanensen

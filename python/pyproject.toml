@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cellgen"
+version = "0.1.0"
+description = "Parser, validator, and SVG renderer for CellGen cellular genome organisation strings"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Julio Diaz Caballero"},
+    {name = "Nabil-Fareed Alikhan", email = "nabil@happykhan.com"},
+    {name = "Khalil AbuDahab"},
+    {name = "David Aanensen"},
+]
+keywords = ["bioinformatics", "genomics", "bacteria", "plasmid", "mobile genetic elements"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+genbank = ["biopython>=1.80"]
+docs = ["mkdocs-material>=9.5"]
+test = ["pytest>=8.0", "biopython>=1.80"]
+analysis = ["biopython>=1.80", "matplotlib>=3.9"]
+
+[project.scripts]
+cellgen = "cellgen.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/cgps-group/cell-format"
+Repository = "https://github.com/cgps-group/cell-format"
+Issues = "https://github.com/cgps-group/cell-format/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cellgen*"]
