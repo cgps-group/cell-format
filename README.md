@@ -16,7 +16,74 @@ Long-read sequencing now routinely produces complete genome assemblies, revealin
 
 ## Web app
 
-**[cell-format.vercel.app](https://cell-format.vercel.app/)** — paste a CellGen string and get an SVG diagram. Or upload a GenBank/GFF3 file to generate a CellGen representation automatically.
+**[cell-format.vercel.app](https://cell-format.vercel.app/)**: paste a CellGen string and get an SVG diagram, or upload a GenBank or GFF3 file to generate a CellGen representation automatically.
+
+## Use CellGen in Python
+
+CellGen includes a Python parser, validator, canonical serialiser, SVG renderer and annotated-record importer. From a cloned checkout, install it with:
+
+```bash
+python -m pip install "./python[genbank]"
+```
+
+It can also be installed directly from the main repository:
+
+```bash
+python -m pip install "cellgen[genbank] @ git+https://github.com/cgps-group/cell-format.git#subdirectory=python"
+```
+
+Parse and inspect a record:
+
+```python
+from cellgen import parse, to_cellgen
+
+record = parse('({}Tn4401)chromosome,{}pKPC[type="plasmid"]')
+chromosome = record.cells[0].replicons[0]
+
+print(chromosome.label)                # chromosome
+print(chromosome.children[0].label)    # Tn4401
+print(to_cellgen(record))              # canonical CellGen text
+```
+
+Invalid input raises a positioned `ParseError`:
+
+```python
+from cellgen import ParseError, parse
+
+try:
+    parse('({}Tn4401')
+except ParseError as error:
+    print(error.code, error.line, error.column)
+    print(error.as_dict())
+```
+
+The command-line interface exposes the same implementation:
+
+```bash
+cellgen validate '()chromosome,{}pKPC[type="plasmid"]'
+cellgen render '({}Tn4401)chromosome' --output diagram.svg
+cellgen convert assembly.gbk
+cellgen convert annotation.gff3
+```
+
+See the [Python guide](docs/python.md) for the complete public API and GenBank, GFF3 and MOB-suite examples.
+
+## Use the TypeScript parser
+
+The browser application uses the reference TypeScript implementation in [`webapp/src/cellgen`](webapp/src/cellgen). Its public source entry point is [`webapp/src/cellgen/index.ts`](webapp/src/cellgen/index.ts):
+
+```typescript
+import { parseCellGen, toCellGen } from './cellgen'
+
+const result = parseCellGen('()chromosome,{}pKPC[type="plasmid"]')
+if (result.ok) {
+  console.log(toCellGen(result.value))
+} else {
+  console.error(result.error.code, result.error.line, result.error.column)
+}
+```
+
+The TypeScript implementation is currently distributed as repository source rather than as an npm package. See the [TypeScript guide](docs/typescript.md) and the [format specification](docs/specification.md) when integrating it or implementing CellGen in another language.
 
 ## Format definition
 
@@ -35,9 +102,9 @@ KeyValue     → Key '=' '"' Value '"'
 
 - `( ... )` means chromosome, and only chromosome.
 - `{ ... }` means any other biological entity. Its class is supplied by its label or a `type` attribute, for example `plasmid`, `transposon`, `gene`, `gene_cluster` or `starship`.
-- `;` — separates cells in a multi-cell set
-- `,` — separates replicons within a cell
-- `[key="value"]` — optional attributes on any element
+- `;` separates cells in a multi-cell set
+- `,` separates replicons within a cell
+- `[key="value"]` adds optional attributes to any element
 
 ### Examples
 
@@ -89,11 +156,11 @@ A fully client-side React and TypeScript application.
 
 ### Features
 
-- **Live parser** — type or paste a CellGen string; errors shown inline with position
-- **SVG renderer** — circular diagrams: blue for chromosomes, green for top-level non-chromosomal entities, and coloured arcs for contained entities
-- **GenBank / GFF3 import** — upload an annotated assembly file to auto-generate the CellGen string
-- **Download** — export the diagram as SVG or the format string as plain text
-- **No server required** — everything runs in the browser
+- **Live parser:** type or paste a CellGen string; errors are shown inline with position
+- **SVG renderer:** circular diagrams use blue for chromosomes, green for top-level non-chromosomal entities, and coloured arcs for contained entities
+- **GenBank / GFF3 import:** upload an annotated assembly file to generate the CellGen string
+- **Download:** export the diagram as SVG or the format string as plain text
+- **No server required:** everything runs in the browser
 
 ### Run locally
 

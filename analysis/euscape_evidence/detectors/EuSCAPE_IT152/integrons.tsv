@@ -1,0 +1,2 @@
+# cmd: integron_finder /Users/nfareed/Documents/Codex/2026-08-25-cellgen-figure3/cell-format/analysis/data/euscape/fasta/EuSCAPE_IT152.fasta --outdir /Users/nfareed/Documents/Codex/2026-08-25-cellgen-figure3/cell-format/analysis/data/euscape/detectors/EuSCAPE_IT152/integron --cpu 2 --local-max --quiet
+# No Integron found

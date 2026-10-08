@@ -83,14 +83,14 @@ test.describe('interactive builder', () => {
   test('builder is shown by default with format string below', async ({ page }) => {
     await page.goto('/')
     await expect(page.getByText('Cell 1')).toBeVisible()
-    await expect(page.getByRole('button', { name: '+ Add element' })).toBeVisible()
+    await expect(page.getByRole('button', { name: '+ Add entity', exact: true })).toBeVisible()
     await expect(page.locator('.cellgen-editor')).toBeVisible()
   })
 
   test('adding a chromosome updates the format string', async ({ page }) => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('chromosome')
     await page.locator('.builder-modal-input').first().fill('myChromosome')
     await page.getByRole('button', { name: 'Add', exact: true }).click()
@@ -101,7 +101,7 @@ test.describe('interactive builder', () => {
   test('adding a plasmid shows Add inside button', async ({ page }) => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('plasmid')
     await page.locator('.builder-modal-input').first().fill('pBAD')
     await page.getByRole('button', { name: 'Add', exact: true }).click()
@@ -111,7 +111,7 @@ test.describe('interactive builder', () => {
   test('can nest an element inside a plasmid', async ({ page }) => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('plasmid')
     await page.locator('.builder-modal-input').first().fill('pKpQIL')
     await page.getByRole('button', { name: 'Add', exact: true }).click()
@@ -136,7 +136,7 @@ test.describe('interactive builder', () => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('()myChromosome')
     await page.locator('.builder-label-btn').filter({ hasText: 'myChromosome' }).click()
-    await expect(page.getByText('Edit element')).toBeVisible()
+    await expect(page.getByText('Edit entity')).toBeVisible()
     await expect(page.locator('.builder-modal-input').first()).toHaveValue('myChromosome')
   })
 
@@ -159,6 +159,23 @@ test.describe('interactive builder', () => {
 })
 
 test.describe('import section', () => {
+  test('uploads selected genes and renders on a narrow keyboard-accessible screen', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/')
+    await page.getByRole('button', { name: '+ Import GenBank / GFF' }).click()
+    const picker = page.getByLabel('Choose file')
+    await expect(picker).toBeVisible()
+    await picker.focus()
+    await expect(picker).toBeFocused()
+    await picker.setInputFiles(new URL('../../tests/fixtures/assembly.gbk', import.meta.url).pathname)
+    await page.getByLabel(/Retain specific genes/).fill('coreA')
+    await page.getByRole('button', { name: 'Import selected file' }).click()
+    await expect(page.getByRole('status')).toContainText('omitted 0 uncontained genes')
+    await expect(page.locator('.cellgen-editor')).toHaveValue(/coreA/)
+    await expect(page.locator('.svg-viewer svg')).toBeVisible()
+    await expect(page.locator('.validation-error')).not.toBeVisible()
+  })
+
   test('import toggle shows file upload widget', async ({ page }) => {
     await page.goto('/')
     await page.getByRole('button', { name: '+ Import GenBank / GFF' }).click()
@@ -223,7 +240,7 @@ test.describe('Klebsiella examples', () => {
 test.describe('builder colour feature', () => {
   test('colour picker is shown in add modal for entity types', async ({ page }) => {
     await page.goto('/')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('plasmid')
     // colour input should be present (type=color)
     await expect(page.locator('input[type="color"]')).toBeVisible()
@@ -232,7 +249,7 @@ test.describe('builder colour feature', () => {
   test('colour attribute appears in format string when non-default', async ({ page }) => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('plasmid')
     await page.locator('.builder-modal-input').first().fill('myPlasmid')
     // Set a custom colour via the text hex input
@@ -246,7 +263,7 @@ test.describe('builder colour feature', () => {
   test('Element type is available when adding inside a plasmid', async ({ page }) => {
     await page.goto('/')
     await page.locator('.cellgen-editor').fill('')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await page.locator('.builder-modal-select').selectOption('plasmid')
     await page.locator('.builder-modal-input').first().fill('pTest')
     await page.getByRole('button', { name: 'Add', exact: true }).click()
@@ -254,9 +271,9 @@ test.describe('builder colour feature', () => {
     await expect(page.locator('.builder-modal-select option[value="element"]')).toBeAttached()
   })
 
-  test('top-level Add element offers chromosome and non-chromosomal entity types', async ({ page }) => {
+  test('top-level Add entity offers chromosome and non-chromosomal entity types', async ({ page }) => {
     await page.goto('/')
-    await page.getByRole('button', { name: '+ Add element' }).click()
+    await page.getByRole('button', { name: '+ Add entity', exact: true }).click()
     await expect(page.locator('.builder-modal-select option[value="chromosome"]')).toBeAttached()
     await expect(page.locator('.builder-modal-select option[value="plasmid"]')).toBeAttached()
     await expect(page.locator('.builder-modal-select option[value="transposon"]')).toBeAttached()
