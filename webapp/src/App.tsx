@@ -27,6 +27,9 @@ export default function App() {
   const [text, setText] = useState(EXAMPLES[0].value)
   const [uploadFiles, setUploadFiles] = useState<File[]>([])
   const [uploadError, setUploadError] = useState('')
+  const [retainUncontainedGenes, setRetainUncontainedGenes] = useState(false)
+  const [selectedFeatureIds, setSelectedFeatureIds] = useState('')
+  const [importSummary, setImportSummary] = useState('')
   const [showImport, setShowImport] = useState(false)
   const [builderSyncVersion, setBuilderSyncVersion] = useState(0)
   const [copied, setCopied] = useState(false)
@@ -61,7 +64,12 @@ export default function App() {
 
   const handleFilesChange = useCallback((files: File[]) => {
     setUploadFiles(files)
-    const file = files[0]
+    setImportSummary('')
+    setUploadError('')
+  }, [])
+
+  const importFile = useCallback(() => {
+    const file = uploadFiles[0]
     if (!file) return
     setUploadError('')
     const reader = new FileReader()
@@ -72,18 +80,23 @@ export default function App() {
         setUploadError('Unrecognised file type. Upload a GenBank (.gb, .gbk) or GFF3 (.gff, .gff3) file.')
         return
       }
-      const result = type === 'genbank' ? parseGenBank(content) : parseGFF(content)
-      if (!result.cellgen) {
-        setUploadError('No recognisable replicons found in this file. Check the file contains LOCUS records or ##sequence-region directives.')
-        return
+      try {
+        const options = { retainUncontainedGenes,
+          selectedFeatureIds: selectedFeatureIds.split(',').map(value => value.trim()).filter(Boolean) }
+        const result = type === 'genbank' ? parseGenBank(content, options) : parseGFF(content, options)
+        fromBuilder.current = false
+        setText(result.cellgen)
+        const unmatched = result.unmatchedSelectedIds.length
+          ? ` Unmatched selected IDs: ${result.unmatchedSelectedIds.join(', ')}.` : ''
+        setImportSummary(`Imported ${result.replicons.length} sequence record(s); retained ${result.retainedFeatures} features and omitted ${result.omittedGenes} uncontained genes.${unmatched}`)
+        setBuilderSyncVersion((v) => v + 1)
+      } catch (error) {
+        setUploadError(error instanceof Error ? error.message : 'Could not read this annotation file.')
       }
-      fromBuilder.current = false
-      setText(result.cellgen)
-      setBuilderSyncVersion((v) => v + 1)
-      setShowImport(false)
     }
+    reader.onerror = () => setUploadError('Could not read this file. Try choosing it again.')
     reader.readAsText(file)
-  }, [])
+  }, [uploadFiles, retainUncontainedGenes, selectedFeatureIds])
 
   const downloadSVG = () => {
     if (!svgOutput) return
@@ -183,17 +196,23 @@ export default function App() {
 
         {showImport && (
           <div className="upload-row">
+            <p>Choose an annotated GenBank (.gb, .gbk, .genbank) or GFF3 (.gff, .gff3) file. GFF3 may include embedded FASTA; sequence is optional when coordinates are supplied.</p>
             <FileUpload
               files={uploadFiles}
               onFilesChange={handleFilesChange}
-              label="Import GenBank or GFF3"
+              label="Choose file"
               accept=".gb,.gbk,.genbank,.gff,.gff3"
               multiple={false}
-              hint="Upload a GenBank or GFF3 file to auto-generate the CellGen format string"
+              hint="All sequence records in one file are grouped into one cell. Unknown contigs remain unclassified."
             />
-            {uploadError && <div className="validation-error">{uploadError}</div>}
+            <label className="import-selection"><input type="checkbox" checked={retainUncontainedGenes} onChange={event => { setRetainUncontainedGenes(event.target.checked); setImportSummary('') }} /> Retain all genes outside annotated mobile elements</label>
+            <label className="import-selection" htmlFor="selected-feature-ids">Retain specific genes by exact annotation ID, gene name or locus tag (comma separated)</label>
+            <input id="selected-feature-ids" className="import-ids" type="text" value={selectedFeatureIds} onChange={event => { setSelectedFeatureIds(event.target.value); setImportSummary('') }} placeholder="e.g. blaKPC-2, locus_042" />
+            <button className="button button-secondary" type="button" onClick={importFile} disabled={!uploadFiles.length}>Import selected file</button>
+            {uploadError && <div className="validation-error" role="alert">{uploadError}</div>}
           </div>
         )}
+        {importSummary && <p className="import-summary" role="status">{importSummary}</p>}
 
         {/* Format string — full width, above the two panels */}
         <div className="format-bar panel">
