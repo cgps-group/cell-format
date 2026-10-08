@@ -1,0 +1,9 @@
+# cmd: integron_finder /Users/nfareed/Documents/Codex/2026-08-25-cellgen-figure3/cell-format/analysis/data/euscape/fasta/EuSCAPE_PL039.fasta --outdir /Users/nfareed/Documents/Codex/2026-08-25-cellgen-figure3/cell-format/analysis/data/euscape/detectors/EuSCAPE_PL039/integron --cpu 2 --local-max --quiet
+ID_integron	ID_replicon	element	pos_beg	pos_end	strand	evalue	type_elt	annotation	model	type	default	distance_2attC	considered_topology
+integron_01	3754STDY7197112|SC|contig000002	3754STDY7197112|SC|contig000002_54	50125	50730	1	NA	protein	protein	NA	CALIN	No	NA	circ
+integron_01	3754STDY7197112|SC|contig000002	attc_001	50725	50796	1	2e-05	attC	attC	attc_4	CALIN	No	NA	circ
+integron_01	3754STDY7197112|SC|contig000002	3754STDY7197112|SC|contig000002_55	50812	51588	1	NA	protein	protein	NA	CALIN	No	NA	circ
+integron_01	3754STDY7197112|SC|contig000002	3754STDY7197112|SC|contig000002_56	51648	52472	1	NA	protein	protein	NA	CALIN	No	NA	circ
+integron_01	3754STDY7197112|SC|contig000002	attc_002	52497	52567	1	0.0088	attC	attC	attc_4	CALIN	No	1701.0	circ
+integron_01	3754STDY7197112|SC|contig000002	3754STDY7197112|SC|contig000002_57	52738	52989	1	NA	protein	protein	NA	CALIN	No	NA	circ
+integron_02	3754STDY7197112|SC|contig000002	3754STDY7197112|SC|contig000002_76	68504	69433	1	1.3e-24	protein	intI	intersection_tyr_intI	In0	No	NA	circ

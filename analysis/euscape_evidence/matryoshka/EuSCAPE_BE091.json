@@ -1,0 +1,612 @@
+[
+  {
+    "element_type": "replicon",
+    "family": "IncFIB(K)",
+    "name": "IncFIB(K)",
+    "start": 300,
+    "end": 859,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "reference_id": "IncFIB(K)_1__JN233704",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "JN233704",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_222",
+    "start": 4885,
+    "end": 5941,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GGCTTTGTTGAATAAATCGA",
+    "ir_right": "CTGATTTATTCAACAAAGCC",
+    "score": 38.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1",
+    "name": "IS1_316",
+    "start": 13321,
+    "end": 14102,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GATATTCGGTAATGACTCCAACTTACTGAT",
+    "ir_right": "GATGATTGGTAATGCTGCCAACTTACTGAT",
+    "score": 36.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "ISL3",
+    "name": "ISL3_27",
+    "start": 38274,
+    "end": 40389,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GGCCCTGATCAAATAAAA",
+    "ir_right": "GGCCCCGATCAGATAAAA",
+    "score": 28.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "ISNCY",
+    "name": "ISNCY_86",
+    "start": 54534,
+    "end": 56372,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TTAACCCATTTAGTGATGTCACTTT",
+    "ir_right": "TTCAGCCAGTTAGAAATGTCACCTT",
+    "score": 26.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS3",
+    "name": "IS3_61",
+    "start": 56155,
+    "end": 63054,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GAATCAACTGGCAAAGAAGATAAAAGAAGG",
+    "ir_right": "GAAGCGCCAGGAACAGGAGAAGAAGGAAGG",
+    "score": 20.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1",
+    "name": "IS1_316",
+    "start": 64221,
+    "end": 65878,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GCCGAAGGCCATGGCCC",
+    "ir_right": "GCCGTCGGCCATTGCCC",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 65651,
+    "end": 67202,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 0.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.45,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 66862,
+    "end": 67771,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GTACGCTGGCTACCGTGAGCA",
+    "ir_right": "GTACGCTGGCAAGCGCAAGCA",
+    "score": 26.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_334|IS5||protein:plasmid:141139",
+    "start": 72219,
+    "end": 72908,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "ATCGAGGTATCGCGTAGGGCTGTCACGCCGCCTGGATAGACGACGCTCAACCGGT",
+    "ir_right": "ATCGTGGTTTCGTACAGCGCTTCCTCCATCGCTGGATCGCTGTAGCCGAACCAGT",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "IS26_TU",
+    "name": "IS26_TU::blaSHV-11",
+    "start": 73117,
+    "end": 74867,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "cargo": "blaSHV-11",
+      "mediator_is": "IS6_292",
+      "confidence": 0.4,
+      "note": "single-IS26 translocatable unit (Partridge 2018)",
+      "confidence_label": "speculative"
+    },
+    "children": [
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS26",
+        "start": 73117,
+        "end": 73936,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": 99.878,
+        "attributes": {
+          "seqid": "3754STDY7197110|SC|contig000002",
+          "reference_id": "IS26",
+          "blast_identity": 99.88,
+          "blast_coverage": 100.0,
+          "source": "reference_scan",
+          "confidence": 1.0,
+          "confidence_label": "high"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 73117,
+        "end": 73936,
+        "strand": ".",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": "GGCACTGTTGCAAA",
+        "ir_right": "GGCACTGTTGCAAA",
+        "score": 28.0,
+        "attributes": {
+          "seqid": "3754STDY7197110|SC|contig000002",
+          "type": "c",
+          "ncopy": "2",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      },
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaSHV-11",
+        "start": 74010,
+        "end": 74867,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197110|SC|contig000002",
+          "full_name": "broad-spectrum class A beta-lactamase SHV-11",
+          "subclass": "BETA-LACTAM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "new",
+    "name": "new_1",
+    "start": 77938,
+    "end": 81195,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CGTTCCATATTGGGGTTCTAGGGATTTTCCGTCCAAAAACGACAAAGTGCTCTGGAGGCCGCGCCGTCCGTGGCCTCCAGAGGGGTATTACTTTT",
+    "ir_right": "CGTCCCACTGAGGGGTTCTAGGGATTTTCCGTCCAAAAACGACAAAGTGCTCTGGAGGCCCCGCCGTCTGTGGCCTCCAGAGGGGTATTACTTTT",
+    "score": 162.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "replicon",
+    "family": "IncX3",
+    "name": "IncX3",
+    "start": 110877,
+    "end": 111250,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "reference_id": "IncX3_1__JN247852",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "JN247852",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS6",
+    "name": "IS26",
+    "start": 116497,
+    "end": 117316,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "reference_id": "IS26",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS6",
+    "name": "IS6_292",
+    "start": 116497,
+    "end": 117316,
+    "strand": "-",
+    "tsd_length": 8,
+    "tsd_seq": null,
+    "ir_left": "GGCACTGTTGCAAA",
+    "ir_right": "GGCACTGTTGCAAA",
+    "score": 28.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1182",
+    "name": "IS1182_104",
+    "start": 122837,
+    "end": 125650,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CGCATCACCAGCACCGCCT",
+    "ir_right": "CGCAATCCCATCACCGCCT",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401a",
+        "start": 124268,
+        "end": 124388,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401a",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401a",
+    "start": 124068,
+    "end": 133974,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": "TCAAT",
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.838,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "reference_id": "Tn4401a_EU176011",
+      "blast_identity": 99.84,
+      "blast_coverage": 100.01,
+      "source": "reference_scan",
+      "variant": "a",
+      "deletion_bp": "100",
+      "note": "Naas",
+      "source_accession": "EU176011:4054-13959",
+      "blast_subject_coverage": "100.0",
+      "blast_hsp_count": "1",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": [
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaKPC-3",
+        "start": 125994,
+        "end": 126872,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197110|SC|contig000002",
+          "full_name": "carbapenem-hydrolyzing class A beta-lactamase KPC-3",
+          "subclass": "CARBAPENEM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS66",
+    "name": "IS66_46",
+    "start": 138520,
+    "end": 140694,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CAGCCGAAGCGGT",
+    "ir_right": "CAGCCGAAGGGGT",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS21",
+    "name": "IS21_122",
+    "start": 150538,
+    "end": 151168,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "ATCAGCAGGTGATCCTCCGGCG",
+    "ir_right": "ATCCGCAGTTCATCATCCAGCG",
+    "score": 24.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_222",
+    "start": 167770,
+    "end": 168827,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GGCTTTGTTGAATAAATCGA",
+    "ir_right": "CTGATTTATTCAACAAAGCC",
+    "score": 38.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 215116,
+    "end": 216311,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GGAAGGTGCGAACAAG",
+    "ir_right": "GGAAGGTGCGAATAAG",
+    "score": 28.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS3",
+    "name": "IS3_271",
+    "start": 225183,
+    "end": 226278,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TGTGTAAGTTCACACAGATATTGCAATT",
+    "ir_right": "TGTATGGGTCCAC-CACATATTGCAATT",
+    "score": 26.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS200/IS605",
+    "name": "IS200/IS605_138",
+    "start": 241702,
+    "end": 242900,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 0.0,
+    "attributes": {
+      "seqid": "3754STDY7197110|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.45,
+      "confidence_label": "low"
+    },
+    "children": []
+  }
+]

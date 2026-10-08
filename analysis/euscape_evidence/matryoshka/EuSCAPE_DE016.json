@@ -1,0 +1,386 @@
+[
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401",
+    "start": 1,
+    "end": 3872,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.923,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "reference_id": "Tn4401a_EU176011",
+      "blast_identity": 99.92,
+      "blast_coverage": 39.09,
+      "source": "reference_scan",
+      "variant": "unknown",
+      "deletion_bp": 6034,
+      "note": "best-match coverage 39.1% of known variants \u2014 likely uncatalogued variant with ~6034bp deletion",
+      "source_accession": "EU176011:4054-13959",
+      "blast_subject_coverage": "39.1",
+      "blast_hsp_count": "1",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "IS",
+        "family": "IS21",
+        "name": "IS21_259",
+        "start": 76,
+        "end": 903,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": "GTCCTGGCGCAGC",
+        "ir_right": "GTCCTGGCCAAGC",
+        "score": 18.0,
+        "attributes": {
+          "seqid": "3754STDY7197030|SC|contig000003",
+          "type": "p",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": [
+          {
+            "element_type": "res_site",
+            "family": "Tn4401",
+            "name": "res_Tn4401",
+            "start": 201,
+            "end": 321,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": null,
+            "attributes": {
+              "parent_transposon": "Tn4401",
+              "note": "expected_position_not_sequence_confirmed",
+              "confidence": 0.3,
+              "confidence_label": "speculative"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaKPC-2",
+        "start": 1068,
+        "end": 1946,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197030|SC|contig000003",
+          "full_name": "carbapenem-hydrolyzing class A beta-lactamase KPC-2",
+          "subclass": "CARBAPENEM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1182",
+    "name": "IS1182_104",
+    "start": 1999,
+    "end": 4625,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "ATGGATTACCAAC",
+    "ir_right": "ATGGATTAACAAC",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "replicon",
+    "family": "IncX3",
+    "name": "IncX3",
+    "start": 15206,
+    "end": 15579,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "reference_id": "IncX3_1__JN247852",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "JN247852",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "IS26_TU",
+    "name": "IS26_TU::blaSHV-12",
+    "start": 20825,
+    "end": 22576,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "cargo": "blaSHV-12",
+      "mediator_is": "IS6_292",
+      "confidence": 0.4,
+      "note": "single-IS26 translocatable unit (Partridge 2018)",
+      "confidence_label": "speculative"
+    },
+    "children": [
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 20825,
+        "end": 21646,
+        "strand": "-",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": "TGGCACTGTTGCAAA",
+        "ir_right": "TGGCACTGTTGCAAA",
+        "score": 30.0,
+        "attributes": {
+          "seqid": "3754STDY7197030|SC|contig000003",
+          "type": "c",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": [
+          {
+            "element_type": "IS",
+            "family": "IS6",
+            "name": "IS26",
+            "start": 20826,
+            "end": 21645,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": 100.0,
+            "attributes": {
+              "seqid": "3754STDY7197030|SC|contig000003",
+              "reference_id": "IS26",
+              "blast_identity": 100.0,
+              "blast_coverage": 100.0,
+              "source": "reference_scan",
+              "confidence": 1.0,
+              "confidence_label": "high"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "element_type": "transposon",
+        "family": "IS26_TU",
+        "name": "IS26_TU::blaSHV-12",
+        "start": 20826,
+        "end": 22576,
+        "strand": ".",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "cargo": "blaSHV-12",
+          "mediator_is": "IS26",
+          "confidence": 0.4,
+          "note": "single-IS26 translocatable unit (Partridge 2018)",
+          "confidence_label": "speculative"
+        },
+        "children": [
+          {
+            "element_type": "AMR",
+            "family": "BETA-LACTAM",
+            "name": "blaSHV-12",
+            "start": 21719,
+            "end": 22576,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": null,
+            "attributes": {
+              "seqid": "3754STDY7197030|SC|contig000003",
+              "full_name": "extended-spectrum class A beta-lactamase SHV-12",
+              "subclass": "CEFIDEROCOL/CEPHALOSPORIN",
+              "method": "ALLELEX",
+              "confidence": 0.7,
+              "confidence_label": "medium"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "new",
+    "name": "new_1",
+    "start": 25640,
+    "end": 28897,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CGTTCCATATTGGGGTTCTAGGGATTTTCCGTCCAAAAACGACAAAGTGCTCTGGAGGCCGCGCCGTCCGTGGCCTCCAGAGGGGTATTACTTTT",
+    "ir_right": "CGTCCCACTGAGGGGTTCTAGGGATTTTCCGTCCAAAAACGACAAAGTGCTCTGGAGGCCCCGCCGTCTGTGGCCTCCAGAGGGGTATTACTTTT",
+    "score": 162.0,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 42514,
+    "end": 43715,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TAGGGAAGGTGCGAATAAG",
+    "ir_right": "TAAGGAAGGTGCGAACAAG",
+    "score": 30.0,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 47760,
+    "end": 48961,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TAAGGAAGGTGCGAACAAG",
+    "ir_right": "TAGGGAAGGTGCGAATAAG",
+    "score": 30.0,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "type": "c",
+      "ncopy": "2",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401",
+    "start": 49693,
+    "end": 55685,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.967,
+    "attributes": {
+      "seqid": "3754STDY7197030|SC|contig000003",
+      "reference_id": "Tn4401a_GU386376",
+      "blast_identity": 99.97,
+      "blast_coverage": 61.13,
+      "source": "reference_scan",
+      "variant": "unknown",
+      "deletion_bp": 3810,
+      "note": "best-match coverage 61.1% of known variants \u2014 likely uncatalogued variant with ~3810bp deletion",
+      "source_accession": "GU386376:1-9803",
+      "blast_subject_coverage": "61.1",
+      "blast_hsp_count": "1",
+      "confidence": 0.8,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401",
+        "start": 49893,
+        "end": 50013,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS21",
+        "name": "IS21_203",
+        "start": 54537,
+        "end": 55683,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": "GCAGGCCT",
+        "ir_right": "GCAGGCCT",
+        "score": 16.0,
+        "attributes": {
+          "seqid": "3754STDY7197030|SC|contig000003",
+          "type": "p",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      }
+    ]
+  }
+]
