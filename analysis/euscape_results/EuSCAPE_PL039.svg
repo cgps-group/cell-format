@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="486" height="384" viewBox="0 0 486 384" style="background:white">
+  <circle cx="344.0" cy="207.0" r="44.0" fill="#e6f5e6" stroke="#3a9943" stroke-width="5"/>
+  <text x="344.0" y="153.0" text-anchor="middle" font-size="13" fill="#333" font-family="Inter, Arial, sans-serif">EuSCAPE_PL039</text>
+  <rect x="335.0" y="157.5" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(0.0,344.0,163.0)"/>
+  <text x="344.0" y="141.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISNCY</text>
+  <rect x="351.8" y="160.8" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(22.5,360.8,166.3)"/>
+  <text x="370.8" y="146.3" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS3</text>
+  <rect x="366.1" y="170.4" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(45.0,375.1,175.9)"/>
+  <text x="393.5" y="161.5" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS3</text>
+  <rect x="375.7" y="184.7" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(67.5,384.7,190.2)"/>
+  <text x="408.7" y="184.2" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISNCY</text>
+  <rect x="379.0" y="201.5" width="18.0" height="11.0" fill="#e05252" rx="2" transform="rotate(90.0,388.0,207.0)"/>
+  <text x="414.0" y="211.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">Tn4401</text>
+  <rect x="375.7" y="218.3" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(112.5,384.7,223.8)"/>
+  <text x="408.7" y="237.8" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS21</text>
+  <rect x="366.1" y="232.6" width="18.0" height="11.0" fill="#e05252" rx="2" transform="rotate(135.0,375.1,238.1)"/>
+  <text x="393.5" y="260.5" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">Tn4401</text>
+  <rect x="351.8" y="242.2" width="18.0" height="11.0" fill="#e05252" rx="2" transform="rotate(157.5,360.8,247.7)"/>
+  <text x="370.8" y="275.7" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">Tn1331</text>
+  <rect x="335.0" y="245.5" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(180.0,344.0,251.0)"/>
+  <text x="344.0" y="281.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS91</text>
+  <rect x="318.2" y="242.2" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(202.5,327.2,247.7)"/>
+  <text x="317.2" y="275.7" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISEcp1</text>
+  <rect x="303.9" y="232.6" width="18.0" height="11.0" fill="#2980b9" rx="2" transform="rotate(225.0,312.9,238.1)"/>
+  <text x="294.5" y="260.5" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">aph(6)-Id</text>
+  <rect x="294.3" y="218.3" width="18.0" height="11.0" fill="#e74c3c" rx="2" transform="rotate(247.5,303.3,223.8)"/>
+  <text x="279.3" y="237.8" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">aph(3'')-Ib</text>
+  <rect x="291.0" y="201.5" width="18.0" height="11.0" fill="#e05252" rx="2" transform="rotate(270.0,300.0,207.0)"/>
+  <text x="274.0" y="211.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">sul2</text>
+  <rect x="294.3" y="184.7" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(292.5,303.3,190.2)"/>
+  <text x="279.3" y="184.2" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISEcp1</text>
+  <rect x="303.9" y="170.4" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(315.0,312.9,175.9)"/>
+  <text x="294.5" y="161.5" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS26_island_1</text>
+  <rect x="318.2" y="160.8" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(337.5,327.2,166.3)"/>
+  <text x="317.2" y="146.3" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS66</text>
+</svg>

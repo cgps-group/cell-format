@@ -1,0 +1,11 @@
+sample	carrier_entity_count	carrier_relationship_count	carrier_maximum_depth	full_entity_count	full_relationship_count	replicon	kpc_path
+EuSCAPE_AT022	3	2	3	22	21	incfib(k)	plasmid > Tn4401a > blaKPC-2
+EuSCAPE_BE091	3	2	3	25	24	incfib(k)+incx3	plasmid > Tn4401a > blaKPC-3
+EuSCAPE_BE098	4	3	3	42	41	incfib(k)	plasmid > Tn4401a > blaKPC-3
+EuSCAPE_DE016	5	4	4	15	14	incx3	plasmid > Tn4401 > blaKPC-2
+EuSCAPE_GR158	5	4	4	12	11	incx3	plasmid > Tn4401 > blaKPC-3
+EuSCAPE_IE024	5	4	3	45	44	incfib(k)+incx5	plasmid > Tn4401a > blaKPC-2
+EuSCAPE_IT152	3	2	3	12	11	incfib(pqil)	plasmid > Tn4401a > blaKPC-3
+EuSCAPE_IT222	4	3	3	43	42	incfib(k)	plasmid > Tn4401a > blaKPC-3
+EuSCAPE_IT242	3	2	3	8	7	incfib(pqil)	plasmid > Tn4401a > blaKPC-3
+EuSCAPE_PL039	5	4	3	34	33	incfia(pbk30683)+incfii(yp)	plasmid > Tn4401 > blaKPC-3

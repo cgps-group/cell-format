@@ -551,7 +551,28 @@
 .file-upload-input {
   width: 100%;
   color: var(--cellgen-text);
+  cursor: pointer;
+  padding: 0.6rem;
+  border: 1px solid var(--cellgen-border);
+  border-radius: var(--cellgen-radius-lg);
 }
+
+.file-upload-input::file-selector-button {
+  margin-right: 0.8rem;
+  padding: 0.55rem 0.9rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--cellgen-primary);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.file-upload-input:focus-visible { outline: 3px solid var(--cellgen-primary); outline-offset: 2px; }
+.import-selection { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.7rem; }
+.import-ids { display: block; width: 100%; max-width: 34rem; padding: 0.6rem; margin: 0.4rem 0 0.8rem; border: 1px solid var(--cellgen-border); border-radius: 0.4rem; color: var(--cellgen-text); background: var(--cellgen-surface); }
+.import-summary { margin: 0.5rem 0 1rem; color: var(--cellgen-text); }
 
 .file-upload-hint,
 .file-upload-selection {
