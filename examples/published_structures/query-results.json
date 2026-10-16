@@ -1,0 +1,61 @@
+{
+  "gene_contexts": [
+    {
+      "record": "Tn21",
+      "gene": "aadA1",
+      "gene_cassette": "aadA1_cassette",
+      "integron": "In2",
+      "transposon": "Tn21",
+      "plasmid": "Not represented",
+      "path": "Tn21 > In2 > aadA1_cassette > aadA1"
+    },
+    {
+      "record": "pKpQIL",
+      "gene": "blaKPC-3",
+      "gene_cassette": "Not represented",
+      "integron": "Not represented",
+      "transposon": "Tn4401a",
+      "plasmid": "pKpQIL",
+      "path": "pKpQIL > Tn4401a > blaKPC-3"
+    },
+    {
+      "record": "pOXA-48a",
+      "gene": "blaOXA-48",
+      "gene_cassette": "Not represented",
+      "integron": "Not represented",
+      "transposon": "Tn1999",
+      "plasmid": "pOXA-48a",
+      "path": "pOXA-48a > Tn1999 > blaOXA-48"
+    }
+  ],
+  "queries": [
+    {
+      "query": "gene label equals aadA1",
+      "matches": [
+        "Tn21"
+      ]
+    },
+    {
+      "query": "gene label equals blaKPC-3 with transposon ancestor Tn4401a and plasmid ancestor pKpQIL",
+      "matches": [
+        "pKpQIL"
+      ]
+    },
+    {
+      "query": "gene label equals blaOXA-48 with transposon ancestor Tn1999",
+      "matches": [
+        "pOXA-48a"
+      ]
+    },
+    {
+      "query": "a gene has an integron ancestor inside a transposon",
+      "matches": [
+        "Tn21"
+      ]
+    },
+    {
+      "query": "gene label equals blaNDM-1",
+      "matches": []
+    }
+  ]
+}

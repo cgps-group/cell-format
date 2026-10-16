@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7.2in" height="5.8in" viewBox="0 0 1100 886">
+<rect width="1100" height="886" fill="white"/>
+<text x="25" y="32" font-family="Arial, sans-serif" font-size="25" fill="#18212b" font-weight="600">A</text>
+<text x="60" y="32" font-family="Arial, sans-serif" font-size="23" fill="#18212b" font-weight="600">CellGen representations of published structures</text>
+<text x="35" y="74" font-family="Arial, sans-serif" font-size="23" fill="#18212b" font-weight="600">Tn21</text>
+<text x="35" y="103" font-family="Arial, sans-serif" font-size="18" fill="#18212b" font-weight="400">AF071413.3</text>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="325.26" height="276.12" viewBox="0 0 278 236" role="img" aria-label="CellGen containment diagram" style="background:white" x="31" y="118">
+  <ns0:rect x="20" y="20" width="238" height="196" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">Tn21</ns0:text>
+  <ns0:text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">transposon</ns0:text>
+  <ns0:rect x="32" y="62" width="214" height="142" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="44" y="81" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">In2</ns0:text>
+  <ns0:text x="44" y="96" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">integron</ns0:text>
+  <ns0:rect x="44" y="104" width="190" height="88" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="56" y="123" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">aadA1_cassette</ns0:text>
+  <ns0:text x="56" y="138" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">gene cassette</ns0:text>
+  <ns0:rect x="56" y="146" width="116" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2" />
+  <ns0:text x="114" y="168" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">aadA1</ns0:text>
+</ns0:svg>
+<text x="390" y="74" font-family="Arial, sans-serif" font-size="23" fill="#18212b" font-weight="600">pKpQIL</text>
+<text x="390" y="103" font-family="Arial, sans-serif" font-size="18" fill="#18212b" font-weight="400">GU595196.1</text>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="325.26" height="376.73999999999995" viewBox="0 0 278 322" role="img" aria-label="CellGen containment diagram" style="background:white" x="386" y="118">
+  <ns0:rect x="20" y="20" width="238" height="282" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">pKpQIL</ns0:text>
+  <ns0:text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">plasmid</ns0:text>
+  <ns0:rect x="32" y="62" width="214" height="228" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="44" y="81" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">Tn4401a</ns0:text>
+  <ns0:text x="44" y="96" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">transposon</ns0:text>
+  <ns0:rect x="44" y="104" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="56" y="123" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">ISKpn7</ns0:text>
+  <ns0:text x="56" y="138" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">IS</ns0:text>
+  <ns0:rect x="44" y="174" width="116" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2" />
+  <ns0:text x="102" y="196" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">blaKPC-3</ns0:text>
+  <ns0:rect x="44" y="216" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="56" y="235" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">ISKpn6</ns0:text>
+  <ns0:text x="56" y="250" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">IS</ns0:text>
+</ns0:svg>
+<text x="745" y="74" font-family="Arial, sans-serif" font-size="23" fill="#18212b" font-weight="600">pOXA-48a</text>
+<text x="745" y="103" font-family="Arial, sans-serif" font-size="18" fill="#18212b" font-weight="400">JN626286.1</text>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="325.26" height="376.73999999999995" viewBox="0 0 278 322" role="img" aria-label="CellGen containment diagram" style="background:white" x="741" y="118">
+  <ns0:rect x="20" y="20" width="238" height="282" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="32" y="39" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">pOXA-48a</ns0:text>
+  <ns0:text x="32" y="54" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">plasmid</ns0:text>
+  <ns0:rect x="32" y="62" width="214" height="228" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="44" y="81" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">Tn1999</ns0:text>
+  <ns0:text x="44" y="96" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">transposon</ns0:text>
+  <ns0:rect x="44" y="104" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="56" y="123" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">IS1999</ns0:text>
+  <ns0:text x="56" y="138" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">IS</ns0:text>
+  <ns0:rect x="44" y="174" width="116" height="34" rx="17" fill="#d92d2d" stroke="#d92d2d" stroke-width="2" />
+  <ns0:text x="102" y="196" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">blaOXA-48</ns0:text>
+  <ns0:rect x="44" y="216" width="190" height="62" rx="10" fill="#fff7eb" stroke="#e77914" stroke-width="2" stroke-dasharray="7 5" />
+  <ns0:text x="56" y="235" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#e77914" text-anchor="start">IS1999</ns0:text>
+  <ns0:text x="56" y="250" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="400" fill="#687384" text-anchor="start">IS</ns0:text>
+</ns0:svg>
+<text x="25" y="530" font-family="Arial, sans-serif" font-size="25" fill="#18212b" font-weight="600">B</text>
+<text x="60" y="530" font-family="Arial, sans-serif" font-size="23" fill="#18212b" font-weight="600">Corresponding CellGen records</text>
+<text x="35" y="572" font-family="Arial, sans-serif" font-size="19" fill="#18212b" font-weight="600">Tn21</text>
+<text x="35" y="600" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">{{{{}aadA1[type=&quot;gene&quot;]}aadA1_cassette[type=&quot;gene_cassette&quot;]}In2[type=&quot;integron&quot;]}Tn21[</text>
+<text x="35" y="623" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">type=&quot;transposon&quot;, accession=&quot;AF071413.3&quot;]</text>
+<text x="35" y="665" font-family="Arial, sans-serif" font-size="19" fill="#18212b" font-weight="600">pKpQIL</text>
+<text x="35" y="693" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">{{{}ISKpn7[type=&quot;IS&quot;], {}blaKPC-3[type=&quot;gene&quot;], {}ISKpn6[type=&quot;IS&quot;]}Tn4401a[type=&quot;transposon&quot;]}pKpQIL[</text>
+<text x="35" y="716" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">type=&quot;plasmid&quot;, accession=&quot;GU595196.1&quot;]</text>
+<text x="35" y="758" font-family="Arial, sans-serif" font-size="19" fill="#18212b" font-weight="600">pOXA-48a</text>
+<text x="35" y="786" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">{{{}IS1999[type=&quot;IS&quot;, copy=&quot;1&quot;], {}blaOXA-48[type=&quot;gene&quot;], {}IS1999[type=&quot;IS&quot;, copy=&quot;2&quot;]}Tn1999[</text>
+<text x="35" y="809" font-family="DejaVu Sans Mono, monospace" font-size="16" fill="#18212b" font-weight="400">type=&quot;transposon&quot;]}pOXA-48a[type=&quot;plasmid&quot;, accession=&quot;JN626286.1&quot;]</text>
+</svg>
