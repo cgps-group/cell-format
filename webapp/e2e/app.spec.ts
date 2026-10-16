@@ -226,7 +226,7 @@ test.describe('Klebsiella examples', () => {
 
   test('fungal Starship example loads its nested captain and cargo', async ({ page }) => {
     await page.goto('/')
-    await page.getByRole('button', { name: 'Fungal Starship (schematic)' }).click()
+    await page.getByRole('button', { name: 'Fungal Starship' }).click()
     const val = await page.locator('.cellgen-editor').inputValue()
     expect(val).toContain('Starship[type="starship"')
     expect(val).toContain('DUF3435_captain')

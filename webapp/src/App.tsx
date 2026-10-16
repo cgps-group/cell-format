@@ -20,7 +20,7 @@ const EXAMPLES = [
   { label: 'OXA-48 in Tn1999', value: '()chromosome, { { {}blaOXA-48[type="gene"] }Tn1999[type="transposon"] }pOXA-48a' },
   { label: 'CTX-M on ISEcp1', value: '()chromosome, { { {}blaCTX-M-15[type="gene"] }ISEcp1[type="insertion_sequence"] }pCTX-M-3' },
   { label: 'Kp CAV1193', value: '()CAV1193, {}pCAV1193-166, {}pCAV1193-258, {}pCAV1193-78, { { {}blaKPC-3[type="gene"] }Tn4401[type="transposon"] }pKPC_CAV1193' },
-  { label: 'Fungal Starship (schematic)', value: '({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]' },
+  { label: 'Fungal Starship', value: '({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]' },
 ]
 
 export default function App() {
