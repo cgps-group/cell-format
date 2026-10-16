@@ -79,11 +79,16 @@
 }
 
 .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
   border: 1px solid var(--cellgen-border);
   border-radius: var(--cellgen-radius);
   background: var(--cellgen-surface);
   color: var(--cellgen-text-muted);
-  padding: 0.3rem 0.55rem;
+  padding: 0;
   cursor: pointer;
   font: inherit;
 }
