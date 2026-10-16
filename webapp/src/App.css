@@ -205,6 +205,7 @@
 
 .about-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.85rem;
 }
@@ -212,12 +213,35 @@
 .about-table td {
   padding: 0.3rem 0.5rem;
   border-bottom: 1px solid var(--cellgen-border);
+  vertical-align: top;
+  overflow-wrap: anywhere;
 }
 
 .about-table td:first-child {
+  width: 55%;
   font-family: var(--cellgen-font-mono);
-  white-space: nowrap;
+  white-space: normal;
   color: var(--cellgen-accent);
+}
+
+.about-table code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .about-table tr {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--cellgen-border);
+  }
+
+  .about-table td,
+  .about-table td:first-child {
+    display: block;
+    width: auto;
+    border-bottom: 0;
+  }
 }
 
 .about-links {
