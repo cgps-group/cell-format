@@ -89,7 +89,7 @@ export default function About() {
             </tbody>
           </table>
 
-          <h2>Why it matters</h2>
+          <h2>Genomic context</h2>
           <p>
             Mobile genetic elements are the main vehicle for spread of antimicrobial
             resistance. Understanding <em>where</em> a resistance gene sits — on a conjugative
