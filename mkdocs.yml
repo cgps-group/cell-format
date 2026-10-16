@@ -10,6 +10,8 @@ theme:
     - content.code.copy
 nav:
   - Overview: index.md
+  - Python parser and CLI: python.md
+  - TypeScript parser: typescript.md
   - Format specification: specification.md
   - Validation errors: validation.md
   - GenBank and GFF3 import: import.md
@@ -19,4 +21,3 @@ markdown_extensions:
   - tables
   - pymdownx.highlight
   - pymdownx.superfences
-

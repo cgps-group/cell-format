@@ -8,9 +8,18 @@
 
 interface RepliconInfo {
   id: string
-  type: 'chromosome' | 'plasmid' | 'mge'
+  type: 'chromosome' | 'plasmid' | 'mge' | 'unknown'
   label: string
   mges: string[]
+}
+
+export interface ImportOptions { retainUncontainedGenes?: boolean; selectedFeatureIds?: string[] }
+export interface ImportResult {
+  cellgen: string
+  replicons: RepliconInfo[]
+  retainedFeatures: number
+  omittedGenes: number
+  unmatchedSelectedIds: string[]
 }
 
 interface GenBankFeature {
@@ -20,43 +29,31 @@ interface GenBankFeature {
   end: number
   strand: string
   children: GenBankFeature[]
+  identifiers?: string[]
+  id?: string
+  parentId?: string
 }
 
 interface GenBankRecord {
   id: string
   accession: string
-  type: 'chromosome' | 'plasmid' | 'mge'
+  type: 'chromosome' | 'plasmid' | 'mge' | 'unknown'
   length: number
   topology: string
   features: GenBankFeature[]
 }
 
 // Keywords used to classify replicons and features
-const CHROMOSOME_KEYWORDS = ['chromosome', 'chr', 'main', 'genome']
-const PLASMID_KEYWORDS = ['plasmid', 'pbad', 'p', 'contig']
-const MGE_KEYWORDS = ['transposon', 'tn', 'integron', 'intg', 'insertion', 'is', 'phage', 'prophage', 'icr', 'imex']
-
-function classifyByLabel(label: string): 'chromosome' | 'plasmid' | 'mge' {
+function classifyByLabel(label: string): 'chromosome' | 'plasmid' | 'unknown' {
   const l = label.toLowerCase()
-  if (MGE_KEYWORDS.some(k => l.includes(k))) return 'mge'
-  if (PLASMID_KEYWORDS.some(k => l.startsWith(k) || l.includes('plasmid'))) return 'plasmid'
-  if (CHROMOSOME_KEYWORDS.some(k => l.includes(k))) return 'chromosome'
-  return 'chromosome' // default: assume chromosome
-}
-
-function repliconToCellGen(rep: RepliconInfo): string {
-  const mgeStr = rep.mges.map(m => `{}${m}`).join(', ')
-  const inner = mgeStr ? ` ${mgeStr} ` : ''
-  if (rep.type === 'chromosome') {
-    return `(${inner})${rep.label}`
-  } else {
-    return `{${inner}}${rep.label}`
-  }
+  if (l.includes('plasmid')) return 'plasmid'
+  if (l.includes('chromosome')) return 'chromosome'
+  return 'unknown'
 }
 
 // ── GenBank parser ────────────────────────────────────────────────────────────
 
-export function parseGenBank(text: string): { cellgen: string; replicons: RepliconInfo[] } {
+export function parseGenBank(text: string, options: ImportOptions = {}): ImportResult {
   const lines = text.split('\n')
   const records: GenBankRecord[] = []
   let current: GenBankRecord | null = null
@@ -96,6 +93,14 @@ export function parseGenBank(text: string): { cellgen: string; replicons: Replic
     const match = line.match(/^\s{5}(\w+)\s+(.+)$/)
     if (!match || !current) continue
     const rawType = match[1].toLowerCase()
+    if (rawType === 'source') {
+      for (let j = i + 1; j < lines.length; j++) {
+        if (/^\s{5}\w+\s+/.test(lines[j]) || lines[j].startsWith('ORIGIN') || lines[j].startsWith('//')) break
+        if (lines[j].includes('/plasmid=')) current.type = 'plasmid'
+        if (lines[j].includes('/chromosome=')) current.type = 'chromosome'
+      }
+      continue
+    }
     if (!['mobile_element', 'transposon', 'integron', 'insertion_sequence', 'cds', 'gene'].includes(rawType)) continue
     const nums = [...match[2].matchAll(/\d+/g)].map(item => Number(item[0]))
     if (!nums.length) continue
@@ -115,13 +120,24 @@ export function parseGenBank(text: string): { cellgen: string; replicons: Replic
     else if (mobile.includes('transposon')) type = 'transposon'
     const labelSource = qualifiers.mobile_element_type || qualifiers.gene || qualifiers.label || qualifiers.locus_tag || qualifiers.product || type
     const label = labelSource.split(':').pop()?.trim() || type
-    current.features.push({ type, label, start, end, strand, children: [] })
+    current.features.push({ type, label, start, end, strand, children: [],
+      identifiers: [qualifiers.gene, qualifiers.locus_tag, qualifiers.label].filter((value): value is string => Boolean(value)) })
   }
 
+  if (!records.length) throw new Error('No GenBank LOCUS records found.')
   const replicons: RepliconInfo[] = []
   const rendered: string[] = []
+  let retainedFeatures = 0
+  let omittedGenes = 0
+  const availableIds = new Set<string>()
   records.forEach(record => {
-    const roots = buildGenBankHierarchy(record.features)
+    record.features.forEach(feature => feature.identifiers?.forEach(id => availableIds.add(id)))
+    const roots = buildGenBankHierarchy(record.features, options)
+    const count = (features: GenBankFeature[]): number => features.reduce((sum, feature) => sum + 1 + count(feature.children), 0)
+    retainedFeatures += count(roots)
+    record.features.forEach(feature => {
+      if (feature.type === 'gene' && !roots.includes(feature) && !record.features.some(parent => parent.children.includes(feature))) omittedGenes++
+    })
     const fullSpan = records.length === 1
       ? roots.find(root => root.type !== 'gene' && root.start === 1 && root.end === record.length)
       : undefined
@@ -140,10 +156,11 @@ export function parseGenBank(text: string): { cellgen: string; replicons: Replic
     rendered.push(`${opener}${inner}${closer}${safeLabel(record.accession)}${attrsToCellGen(attrs)}`)
     replicons.push({ id: record.accession, type: record.type, label: record.accession, mges: roots.map(root => root.label) })
   })
-  return { cellgen: rendered.join(', '), replicons }
+  return { cellgen: rendered.join(', '), replicons, retainedFeatures, omittedGenes,
+    unmatchedSelectedIds: (options.selectedFeatureIds ?? []).filter(id => !availableIds.has(id)) }
 }
 
-function buildGenBankHierarchy(features: GenBankFeature[]): GenBankFeature[] {
+function buildGenBankHierarchy(features: GenBankFeature[], options: ImportOptions = {}): GenBankFeature[] {
   const roots: GenBankFeature[] = []
   features.forEach(feature => { feature.children = [] })
   features.forEach(feature => {
@@ -159,7 +176,9 @@ function buildGenBankHierarchy(features: GenBankFeature[]): GenBankFeature[] {
   }
   // Keep genes nested within structural entities, but omit the thousands of
   // uncontained CDS/gene records found in a normal whole-genome annotation.
-  const structuralRoots = roots.filter(root => root.type !== 'gene')
+  const selected = new Set(options.selectedFeatureIds ?? [])
+  const structuralRoots = roots.filter(root => root.type !== 'gene' || options.retainUncontainedGenes
+    || root.identifiers?.some(identifier => selected.has(identifier)))
   structuralRoots.sort((a, b) => a.start - b.start)
   structuralRoots.forEach(sort)
   return structuralRoots
@@ -182,69 +201,80 @@ function genBankFeatureToCellGen(feature: GenBankFeature, extra: Record<string, 
 
 // ── GFF3 parser ───────────────────────────────────────────────────────────────
 
-export function parseGFF(text: string): { cellgen: string; replicons: RepliconInfo[] } {
-  const replicons: Map<string, RepliconInfo> = new Map()
-  const lines = text.split('\n')
-
-  for (const line of lines) {
-    if (line.startsWith('#')) {
-      // ##sequence-region seqname start end
-      const m = line.match(/^##sequence-region\s+(\S+)/)
-      if (m) {
-        const id = m[1]
-        if (!replicons.has(id)) {
-          replicons.set(id, { id, type: classifyByLabel(id), label: id, mges: [] })
-        }
-      }
-      continue
+export function parseGFF(text: string, options: ImportOptions = {}): ImportResult {
+  const records = new Map<string, { rep: RepliconInfo; features: GenBankFeature[]; length: number; region?: [number, number] }>()
+  const get = (id: string) => {
+    if (!records.has(id)) records.set(id, {
+      rep: { id, type: classifyByLabel(id), label: id, mges: [] }, features: [], length: 0,
+    })
+    return records.get(id)!
+  }
+  let inFasta = false
+  let fastaId = ''
+  const mgeTypes = new Set(['mobile_genetic_element', 'transposable_element', 'integron',
+    'transposon', 'insertion_sequence', 'repeat_region'])
+  text.split(/\r?\n/).forEach((raw, index) => {
+    const line = raw.trim()
+    if (line === '##FASTA') { inFasta = true; return }
+    if (inFasta) {
+      if (line.startsWith('>')) { fastaId = line.slice(1).split(/\s+/)[0]; get(fastaId) }
+      else if (line && fastaId) get(fastaId).length += line.length
+      return
     }
-    if (!line.trim()) continue
-
+    if (!line) return
+    if (line.startsWith('##sequence-region')) {
+      const parts = line.split(/\s+/)
+      if (parts.length !== 4 || !/^\d+$/.test(parts[2]) || !/^\d+$/.test(parts[3]) || Number(parts[3]) < Number(parts[2]))
+        throw new Error(`Invalid sequence-region at line ${index + 1}.`)
+      get(parts[1]).region = [Number(parts[2]), Number(parts[3])]
+      if (parts[2] === '1') get(parts[1]).length = Number(parts[3])
+      return
+    }
+    if (line.startsWith('#')) return
     const cols = line.split('\t')
-    if (cols.length < 9) continue
-
-    const seqId = cols[0]
-    const featureType = cols[2].toLowerCase()
-    const attrs = cols[8]
-
-    // Ensure replicon exists
-    if (!replicons.has(seqId)) {
-      replicons.set(seqId, { id: seqId, type: classifyByLabel(seqId), label: seqId, mges: [] })
-    }
-    const rep = replicons.get(seqId)!
-
-    // Update type from feature type
-    if (featureType === 'chromosome') rep.type = 'chromosome'
-    else if (featureType === 'plasmid') rep.type = 'plasmid'
-
-    // Extract MGEs
-    if (['mobile_genetic_element', 'transposable_element', 'integron', 'transposon',
-         'insertion_sequence', 'repeat_region'].includes(featureType)) {
-      // Parse Name= or ID= from attributes
-      const nameMatch = attrs.match(/(?:Name|ID)=([^;]+)/)
-      let mgeLabel = nameMatch ? nameMatch[1] : featureType
-      mgeLabel = mgeLabel.split(':').pop() ?? mgeLabel
-      mgeLabel = mgeLabel.replace(/[^a-zA-Z0-9_\-. ]/g, '').trim()
-      if (mgeLabel && !rep.mges.includes(mgeLabel)) {
-        rep.mges.push(mgeLabel)
-      }
-    }
+    if (cols.length !== 9) throw new Error(`Expected nine GFF3 columns at line ${index + 1}.`)
+    const [id, , rawType, rawStart, rawEnd, , strand, , rawAttrs] = cols
+    const start = Number(rawStart), end = Number(rawEnd)
+    if (!Number.isInteger(start) || !Number.isInteger(end) || start < 1 || end < start)
+      throw new Error(`Invalid GFF3 coordinates at line ${index + 1}.`)
+    const record = get(id)
+    const type = rawType.toLowerCase()
+    if (type === 'chromosome' || type === 'plasmid') record.rep.type = type
+    if (!mgeTypes.has(type) && type !== 'gene' && type !== 'cds') return
+    const attrs = Object.fromEntries(rawAttrs.split(';').map(part => part.split('=', 2)).filter(part => part.length === 2))
+    const label = decodeURIComponent(attrs.Name || attrs.gene || attrs.ID || type)
+    record.features.push({ type: type === 'cds' ? 'gene' : type, label,
+      start, end, strand, children: [], id: attrs.ID, parentId: attrs.Parent,
+      identifiers: [attrs.ID, attrs.Name, attrs.gene, attrs.locus_tag].filter((value): value is string => Boolean(value)) })
+  })
+  if (!records.size) throw new Error('No GFF3 sequence records found.')
+  const replicons: RepliconInfo[] = []
+  const rendered: string[] = []
+  let retainedFeatures = 0, omittedGenes = 0
+  const availableIds = new Set<string>()
+  for (const record of records.values()) {
+    record.features.forEach(feature => feature.identifiers?.forEach(id => availableIds.add(id)))
+    const geneIds = new Set(record.features.filter(feature => feature.type === 'gene' && feature.id && !feature.parentId)
+      .map(feature => `${feature.start}:${feature.end}:${feature.id}`))
+    const features = record.features.filter(feature => !(feature.type === 'gene' && feature.parentId
+      && geneIds.has(`${feature.start}:${feature.end}:${feature.parentId}`)))
+    const roots = buildGenBankHierarchy(features, options)
+    const count = (nodes: GenBankFeature[]): number => nodes.reduce((sum, node) => sum + 1 + count(node.children), 0)
+    retainedFeatures += count(roots)
+    omittedGenes += features.filter(feature => feature.type === 'gene'
+      && !roots.includes(feature) && !features.some(parent => parent.children.includes(feature))).length
+    const rep = record.rep
+    rep.mges = roots.map(root => root.label)
+    replicons.push(rep)
+    const attrs: Record<string, string> = { type: rep.type, accession: rep.id }
+    if (record.region) { attrs.region_start = String(record.region[0]); attrs.region_end = String(record.region[1]) }
+    if (record.length) attrs.length = String(record.length)
+    const open = rep.type === 'chromosome' ? '(' : '{'
+    const close = rep.type === 'chromosome' ? ')' : '}'
+    rendered.push(`${open}${roots.map(node => genBankFeatureToCellGen(node)).join(', ')}${close}${safeLabel(rep.id)}${attrsToCellGen(attrs)}`)
   }
-
-  return buildResult([...replicons.values()])
-}
-
-function buildResult(replicons: RepliconInfo[]): { cellgen: string; replicons: RepliconInfo[] } {
-  if (replicons.length === 0) {
-    return { cellgen: '', replicons: [] }
-  }
-
-  // Group into a single cell (all replicons together)
-  const parts = replicons.map(repliconToCellGen)
-  return {
-    cellgen: parts.join(', '),
-    replicons,
-  }
+  return { cellgen: rendered.join(', '), replicons, retainedFeatures, omittedGenes,
+    unmatchedSelectedIds: (options.selectedFeatureIds ?? []).filter(id => !availableIds.has(id)) }
 }
 
 export function detectFileType(filename: string, content: string): 'genbank' | 'gff' | 'unknown' {

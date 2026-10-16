@@ -89,7 +89,7 @@ export default function About() {
             </tbody>
           </table>
 
-          <h2>Why it matters</h2>
+          <h2>Genomic context</h2>
           <p>
             Mobile genetic elements are the main vehicle for spread of antimicrobial
             resistance. Understanding <em>where</em> a resistance gene sits — on a conjugative
@@ -103,15 +103,6 @@ export default function About() {
             can capture, for example, a <em>Klebsiella pneumoniae</em> chromosome carrying the
             <em>blaKPC-3</em> gene nested inside transposon Tn4401 inside the IncFII/IncR
             plasmid pKpQIL, exactly the arrangement seen in KPC-producing outbreak strains.
-          </p>
-          <p>
-            The fungal Starship example is deliberately schematic. It represents a Starship
-            integrated in a chromosome, with a DUF3435 captain gene and a cargo gene cluster,
-            following the architecture described by{' '}
-            <a href="https://doi.org/10.1093/molbev/msac109" target="_blank" rel="noreferrer">
-              Gluck-Thaler and colleagues
-            </a>
-            . It does not claim sequence-resolved boundaries for a particular isolate.
           </p>
 
           <h2>This tool</h2>

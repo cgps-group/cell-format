@@ -14,6 +14,7 @@ Usage:
 
 from __future__ import annotations
 import re
+from urllib.parse import unquote
 from pathlib import Path
 from .types import Attributes, Cell, CellSet, CellularElement, ChromosomeNode, EntityNode
 
@@ -42,7 +43,8 @@ def _classify_qualifier(qualifier_text: str) -> str:
 
 # ── GenBank ───────────────────────────────────────────────────────────────────
 
-def from_genbank_file(path: str | Path) -> CellSet:
+def from_genbank_file(path: str | Path, *, retain_uncontained_genes: bool = False,
+                      selected_feature_ids: set[str] | None = None) -> CellSet:
     """Parse an assembly or standalone element GenBank file into one cell.
 
     Multi-record files are treated as assemblies. A single record whose
@@ -60,7 +62,8 @@ def from_genbank_file(path: str | Path) -> CellSet:
 
     replicons: list[CellularElement] = []
     for record in records:
-        roots = _extract_gb_hierarchy(record)
+        roots = _extract_gb_hierarchy(record, retain_uncontained_genes=retain_uncontained_genes,
+                                      selected_feature_ids=selected_feature_ids or set())
         full_span = _full_span_mobile_root(record, roots)
         if len(records) == 1 and full_span is not None:
             replicons.append(full_span)
@@ -95,7 +98,9 @@ def _classify_gb_record(record) -> str:  # type: ignore[no-untyped-def]
         if feat.type == "source":
             if "plasmid" in feat.qualifiers:
                 return "plasmid"
-    return "chromosome"
+            if "chromosome" in feat.qualifiers:
+                return "chromosome"
+    return "unknown"
 
 
 def _feature_type(feat) -> str | None:  # type: ignore[no-untyped-def]
@@ -129,8 +134,10 @@ def _feature_label(feat, entity_type: str) -> str:  # type: ignore[no-untyped-de
     return entity_type
 
 
-def _extract_gb_hierarchy(record) -> list[EntityNode]:  # type: ignore[no-untyped-def]
+def _extract_gb_hierarchy(record, *, retain_uncontained_genes: bool = False,
+                          selected_feature_ids: set[str] | None = None) -> list[EntityNode]:  # type: ignore[no-untyped-def]
     entries: list[tuple[int, int, str, EntityNode]] = []
+    selected_feature_ids = selected_feature_ids or set()
     for feat in record.features:
         entity_type = _feature_type(feat)
         if entity_type is None or feat.location is None:
@@ -150,19 +157,21 @@ def _extract_gb_hierarchy(record) -> list[EntityNode]:  # type: ignore[no-untype
             attributes=attrs,
             size_bp=end - start + 1,
         )
-        entries.append((start, end, entity_type, node))
+        identifiers = {str(value) for key in ("gene", "locus_tag", "label")
+                       for value in feat.qualifiers.get(key, [])}
+        entries.append((start, end, entity_type, node, identifiers))
 
     # A gene can be a child but never a coordinate-derived parent. Each node is
     # attached to its smallest strict enclosing non-gene feature.
     roots: list[EntityNode] = []
-    for start, end, _, node in entries:
+    for start, end, entity_type, node, identifiers in entries:
         parents = [entry for entry in entries
                    if entry[2] != "gene" and entry[0] <= start and end <= entry[1]
                    and (entry[0], entry[1]) != (start, end)]
         if parents:
             parent = min(parents, key=lambda entry: (entry[1] - entry[0], entry[0]))[3]
             parent.children.append(node)
-        else:
+        elif entity_type != "gene" or retain_uncontained_genes or identifiers & selected_feature_ids:
             roots.append(node)
 
     def sort_children(node: EntityNode) -> None:
@@ -173,7 +182,6 @@ def _extract_gb_hierarchy(record) -> list[EntityNode]:  # type: ignore[no-untype
     # Keep genes when they describe the contents of a structural entity, but
     # omit uncontained genes rather than flattening a whole annotation into the
     # replicon root.
-    roots = [node for node in roots if node.attributes.get("type") != "gene"]
     roots.sort(key=lambda node: int(node.attributes.get("start", "0")))
     for root in roots:
         sort_children(root)
@@ -193,74 +201,102 @@ def _full_span_mobile_root(record, roots: list[EntityNode]) -> EntityNode | None
 
 # ── GFF3 ──────────────────────────────────────────────────────────────────────
 
-def from_gff_file(path: str | Path) -> CellSet:
-    """Parse a GFF3 file → CellSet."""
-    seq_info: dict[str, dict] = {}  # seq_id → {type, label, mges, size}
+def from_gff_file(path: str | Path, *, retain_uncontained_genes: bool = False,
+                  selected_feature_ids: set[str] | None = None) -> CellSet:
+    """Parse one GFF3 annotation set into one cell; FASTA sequence is optional."""
+    seq_info: dict[str, dict] = {}
+    mge_types = {"mobile_genetic_element", "transposable_element", "transposon",
+                 "insertion_sequence", "integron", "repeat_region"}
+    in_fasta = False
+    fasta_id: str | None = None
+
+    def info_for(seq_id: str) -> dict:
+        return seq_info.setdefault(seq_id, {"type": _guess_type_from_id(seq_id),
+                                            "size": None, "features": [], "fasta_length": 0,
+                                            "region": None})
 
     with open(path) as fh:
-        for raw in fh:
+        for number, raw in enumerate(fh, 1):
             line = raw.strip()
-            if not line or line.startswith("##FASTA"):
-                break
+            if line == "##FASTA":
+                in_fasta = True
+                continue
+            if in_fasta:
+                if line.startswith(">"):
+                    fasta_id = line[1:].split()[0]
+                    info_for(fasta_id)
+                elif line and fasta_id:
+                    info_for(fasta_id)["fasta_length"] += len(line)
+                continue
+            if not line:
+                continue
             if line.startswith("##sequence-region"):
                 parts = line.split()
-                seq_id = parts[1]
-                if seq_id not in seq_info:
-                    seq_info[seq_id] = {
-                        "type": _guess_type_from_id(seq_id),
-                        "label": seq_id,
-                        "mges": [],
-                        "seen_mges": set(),
-                        "size": int(parts[3]) if len(parts) > 3 else None,
-                    }
+                if len(parts) != 4 or not parts[2].isdigit() or not parts[3].isdigit() or int(parts[2]) > int(parts[3]):
+                    raise ValueError(f"Invalid sequence-region at line {number}")
+                info_for(parts[1])["region"] = (int(parts[2]), int(parts[3]))
+                if parts[2] == "1":
+                    info_for(parts[1])["size"] = int(parts[3])
                 continue
             if line.startswith("#"):
                 continue
             cols = line.split("\t")
-            if len(cols) < 9:
+            if len(cols) != 9:
+                raise ValueError(f"Expected nine GFF3 columns at line {number}")
+            seq_id, _, feature_type, start_text, end_text, _, strand, _, attrs_text = cols
+            if not start_text.isdigit() or not end_text.isdigit() or int(start_text) < 1 or int(end_text) < int(start_text):
+                raise ValueError(f"Invalid GFF3 coordinates at line {number}")
+            start, end = int(start_text), int(end_text)
+            kind = feature_type.lower()
+            info = info_for(seq_id)
+            if kind in {"chromosome", "plasmid"}:
+                info["type"] = kind
+            if kind not in mge_types | {"gene", "cds"}:
                 continue
-            seq_id, _, feat_type, start, end, _, _, _, attrs_str = cols[:9]
-            feat_type = feat_type.lower()
+            attributes = _parse_gff_attrs(attrs_text)
+            label = unquote(attributes.get("Name") or attributes.get("gene") or attributes.get("ID") or kind)
+            node = EntityNode(label=label, size_bp=end - start + 1,
+                              attributes={"type": "gene" if kind == "cds" else kind,
+                                          "start": str(start), "end": str(end), "strand": strand})
+            identifiers = {unquote(attributes[key]) for key in ("ID", "Name", "gene", "locus_tag") if key in attributes}
+            info["features"].append((start, end, "gene" if kind in {"gene", "cds"} else kind,
+                                     node, identifiers, attributes.get("ID"), attributes.get("Parent")))
 
-            if seq_id not in seq_info:
-                seq_info[seq_id] = {
-                    "type": _guess_type_from_id(seq_id),
-                    "label": seq_id,
-                    "mges": [],
-                    "seen_mges": set(),
-                    "size": None,
-                }
-            info = seq_info[seq_id]
-
-            if feat_type == "chromosome":
-                info["type"] = "chromosome"
-            elif feat_type in ("plasmid", "mobile_genetic_element"):
-                info["type"] = "plasmid"
-
-            _MGE_GFF_TYPES = {
-                "mobile_genetic_element", "transposable_element", "transposon",
-                "insertion_sequence", "integron", "repeat_region",
-            }
-            if feat_type in _MGE_GFF_TYPES:
-                attrs = _parse_gff_attrs(attrs_str)
-                label = attrs.get("Name") or attrs.get("ID") or feat_type
-                label = label.split(":")[-1]
-                label = re.sub(r"[^a-zA-Z0-9_\-. ]", "", label).strip()
-                size = int(end) - int(start) + 1 if start.isdigit() and end.isdigit() else None
-                if label and label not in info["seen_mges"]:
-                    info["seen_mges"].add(label)
-                    info["mges"].append(EntityNode(label=label, size_bp=size))
-
+    if not seq_info:
+        raise ValueError(f"No GFF3 sequence records found in {path}")
     replicons: list[CellularElement] = []
-    for info in seq_info.values():
-        label = info["label"]
-        mges = info["mges"]
-        size = info["size"]
+    for seq_id, info in seq_info.items():
+        entries = info["features"]
+        # GFF3 commonly gives a gene and its CDS the same span. The CDS Parent
+        # explicitly identifies the gene; represent that biological locus once.
+        gene_ids = {(entry[0], entry[1], entry[5]) for entry in entries
+                    if entry[2] == "gene" and entry[5]}
+        entries = [entry for entry in entries if not (entry[2] == "gene" and entry[6]
+                   and (entry[0], entry[1], entry[6]) in gene_ids)]
+        roots: list[EntityNode] = []
+        for start, end, kind, node, identifiers, _, _ in entries:
+            parents = [entry for entry in entries if entry[2] != "gene"
+                       and entry[0] <= start and end <= entry[1]
+                       and (entry[0], entry[1]) != (start, end)]
+            if parents:
+                min(parents, key=lambda entry: (entry[1] - entry[0], entry[0]))[3].children.append(node)
+            elif kind != "gene" or retain_uncontained_genes or identifiers & (selected_feature_ids or set()):
+                roots.append(node)
+        def sort_nodes(nodes: list[EntityNode]) -> None:
+            nodes.sort(key=lambda node: (int(node.attributes["start"]), int(node.attributes["end"])))
+            for node in nodes:
+                sort_nodes(node.children)
+        sort_nodes(roots)
+        size = info["size"] or info["fasta_length"] or None
+        attrs: Attributes = {"type": info["type"], "accession": seq_id}
+        if info["region"]:
+            attrs["region_start"], attrs["region_end"] = map(str, info["region"])
+        if size is not None:
+            attrs["length"] = str(size)
         if info["type"] == "chromosome":
-            replicons.append(ChromosomeNode(label=label, children=mges, size_bp=size))
+            replicons.append(ChromosomeNode(label=seq_id, children=roots, attributes=attrs, size_bp=size))
         else:
-            replicons.append(EntityNode(label=label, children=mges, size_bp=size))
-
+            replicons.append(EntityNode(label=seq_id, children=roots, attributes=attrs, size_bp=size))
     return CellSet(cells=[Cell(replicons=replicons)])
 
 
@@ -275,11 +311,11 @@ def _parse_gff_attrs(s: str) -> dict[str, str]:
 
 def _guess_type_from_id(seq_id: str) -> str:
     l = seq_id.lower()
-    if any(k in l for k in ("plasmid", "pbad", "plas")):
+    if "plasmid" in l:
         return "plasmid"
-    if any(k in l for k in ("chromosome", "chr", "genome")):
+    if "chromosome" in l:
         return "chromosome"
-    return "chromosome"
+    return "unknown"
 
 
 # ── MOB-suite ─────────────────────────────────────────────────────────────────

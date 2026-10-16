@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install -e "./python[test,docs]"
+      - run: python -m pip wheel ./python --no-deps --wheel-dir /tmp/cellgen-wheel
       - run: python tests/test_parser.py
       - run: pytest -q tests/test_genbank.py tests/test_figure3_results.py
       - run: mkdocs build --strict

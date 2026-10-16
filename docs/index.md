@@ -16,8 +16,8 @@ The browser visualiser is available at [cell-format.vercel.app](https://cell-for
 ## Python
 
 ```bash
-cd python
-python -m pip install -e ".[genbank]"
+python -m pip install "./python[genbank]"
 cellgen validate '()chromosome,{}pKPC[type="plasmid"]'
 ```
 
+Continue with the [Python parser and command-line guide](python.md), the [TypeScript parser guide](typescript.md), or the [format specification](specification.md).

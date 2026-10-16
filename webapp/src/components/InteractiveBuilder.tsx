@@ -400,7 +400,7 @@ export function InteractiveBuilder({ onUpdate, syncFrom, syncVersion }: Props) {
           })}
 
           <button className="builder-add-btn" onClick={() => openModal(ci, { kind: 'cell' })}>
-            + Add element
+            + Add entity
           </button>
         </div>
       ))}
@@ -417,7 +417,7 @@ export function InteractiveBuilder({ onUpdate, syncFrom, syncVersion }: Props) {
         <div className="builder-modal-overlay" onClick={() => setModal(null)}>
           <div className="builder-modal" onClick={(e) => e.stopPropagation()}>
             <div className="builder-modal-title">
-              {modal.isEdit ? 'Edit element' : modal.target.kind === 'cell' ? 'Add element' : 'Add entity'}
+              {modal.isEdit ? 'Edit entity' : 'Add entity'}
             </div>
 
             {!isChrEdit && (

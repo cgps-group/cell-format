@@ -1,0 +1,183 @@
+[
+  {
+    "element_type": "replicon",
+    "family": "IncFIB(pQil)",
+    "name": "IncFIB(pQil)",
+    "start": 217,
+    "end": 956,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "reference_id": "IncFIB(pQil)_1__JN233705",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "JN233705",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "ISL3",
+    "name": "ISL3_111",
+    "start": 11014,
+    "end": 12588,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CTTTTCAATCGCCGGCGAAA",
+    "ir_right": "CTTTTCACCACCCTGCGAAA",
+    "score": 20.0,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1182",
+    "name": "IS1182_104",
+    "start": 20831,
+    "end": 23644,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CGCATCACCAGCACCGCCT",
+    "ir_right": "CGCAATCCCATCACCGCCT",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401a",
+        "start": 22262,
+        "end": 22382,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401a",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401a",
+    "start": 22062,
+    "end": 31968,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": "TCAAT",
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.838,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "reference_id": "Tn4401a_EU176011",
+      "blast_identity": 99.84,
+      "blast_coverage": 100.01,
+      "source": "reference_scan",
+      "variant": "a",
+      "deletion_bp": "100",
+      "note": "Naas",
+      "source_accession": "EU176011:4054-13959",
+      "blast_subject_coverage": "100.0",
+      "blast_hsp_count": "1",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": [
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaKPC-3",
+        "start": 23988,
+        "end": 24866,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "60325_D01|SC|contig000002",
+          "full_name": "carbapenem-hydrolyzing class A beta-lactamase KPC-3",
+          "subclass": "CARBAPENEM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS5",
+    "name": "IS5_112",
+    "start": 73163,
+    "end": 74372,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GTATTTTGGAAGGTGCGAACAAG",
+    "ir_right": "GTATTAAGGAAGGTGCGAATAAG",
+    "score": 34.0,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS3",
+    "name": "IS3_271",
+    "start": 83237,
+    "end": 84332,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TGTGTAAGTTCACACAGATATTGCAATT",
+    "ir_right": "TGTATGGGTCCAC-CACATATTGCAATT",
+    "score": 26.0,
+    "attributes": {
+      "seqid": "60325_D01|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  }
+]

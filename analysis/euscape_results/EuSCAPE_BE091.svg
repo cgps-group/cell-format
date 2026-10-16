@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="486" height="384" viewBox="0 0 486 384" style="background:white">
+  <circle cx="344.0" cy="207.0" r="44.0" fill="#e6f5e6" stroke="#3a9943" stroke-width="5"/>
+  <text x="344.0" y="153.0" text-anchor="middle" font-size="13" fill="#333" font-family="Inter, Arial, sans-serif">EuSCAPE_BE091</text>
+  <rect x="335.0" y="157.5" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(0.0,344.0,163.0)"/>
+  <text x="344.0" y="141.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="348.6" y="159.7" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(18.0,357.6,165.2)"/>
+  <text x="365.6" y="144.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS1</text>
+  <rect x="360.9" y="165.9" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(36.0,369.9,171.4)"/>
+  <text x="385.1" y="154.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISL3</text>
+  <rect x="370.6" y="175.6" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(54.0,379.6,181.1)"/>
+  <text x="400.6" y="169.9" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">ISNCY</text>
+  <rect x="376.8" y="187.9" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(72.0,385.8,193.4)"/>
+  <text x="410.6" y="189.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS3</text>
+  <rect x="379.0" y="201.5" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(90.0,388.0,207.0)"/>
+  <text x="414.0" y="211.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS1</text>
+  <rect x="376.8" y="215.1" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(108.0,385.8,220.6)"/>
+  <text x="410.6" y="232.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="370.6" y="227.4" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(126.0,379.6,232.9)"/>
+  <text x="400.6" y="252.1" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="360.9" y="237.1" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(144.0,369.9,242.6)"/>
+  <text x="385.1" y="267.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="348.6" y="243.3" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(162.0,357.6,248.8)"/>
+  <text x="365.6" y="277.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS26_TU::blaSHV-11</text>
+  <rect x="335.0" y="245.5" width="18.0" height="11.0" fill="#2980b9" rx="2" transform="rotate(180.0,344.0,251.0)"/>
+  <text x="344.0" y="281.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">new_1</text>
+  <rect x="321.4" y="243.3" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(198.0,330.4,248.8)"/>
+  <text x="322.4" y="277.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS26</text>
+  <rect x="309.1" y="237.1" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(216.0,318.1,242.6)"/>
+  <text x="302.9" y="267.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS1182</text>
+  <rect x="299.4" y="227.4" width="18.0" height="11.0" fill="#e05252" rx="2" transform="rotate(234.0,308.4,232.9)"/>
+  <text x="287.4" y="252.1" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">Tn4401a</text>
+  <rect x="293.2" y="215.1" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(252.0,302.2,220.6)"/>
+  <text x="277.4" y="232.6" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS66</text>
+  <rect x="291.0" y="201.5" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(270.0,300.0,207.0)"/>
+  <text x="274.0" y="211.0" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS21</text>
+  <rect x="293.2" y="187.9" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(288.0,302.2,193.4)"/>
+  <text x="277.4" y="189.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="299.4" y="175.6" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(306.0,308.4,181.1)"/>
+  <text x="287.4" y="169.9" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS5</text>
+  <rect x="309.1" y="165.9" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(324.0,318.1,171.4)"/>
+  <text x="302.9" y="154.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS3</text>
+  <rect x="321.4" y="159.7" width="18.0" height="11.0" fill="#f39c12" rx="2" transform="rotate(342.0,330.4,165.2)"/>
+  <text x="322.4" y="144.4" text-anchor="middle" font-size="12" fill="#444" font-family="Inter, Arial, sans-serif">IS200/IS605</text>
+</svg>

@@ -1,0 +1,293 @@
+[
+  {
+    "element_type": "replicon",
+    "family": "IncFIB(pQil)",
+    "name": "IncFIB(pQil)",
+    "start": 217,
+    "end": 956,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "reference_id": "IncFIB(pQil)_1__JN233705",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "JN233705",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "ISL3",
+    "name": "ISL3_111",
+    "start": 11014,
+    "end": 12588,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CTTTTCAATCGCCGGCGAAA",
+    "ir_right": "CTTTTCACCACCCTGCGAAA",
+    "score": 20.0,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS6",
+    "name": "IS6_292",
+    "start": 24719,
+    "end": 25059,
+    "strand": "+",
+    "tsd_length": 8,
+    "tsd_seq": null,
+    "ir_left": "ATCAGTTACCGTGAG",
+    "ir_right": "ATCCCTTAACGTGAG",
+    "score": 18.0,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "AMR",
+    "family": "BETA-LACTAM",
+    "name": "blaTEM-1",
+    "start": 25168,
+    "end": 26025,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "full_name": "broad-spectrum class A beta-lactamase TEM-1",
+      "subclass": "BETA-LACTAM",
+      "method": "ALLELEX",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "IS26_TU",
+    "name": "IS26_TU::blaOXA",
+    "start": 26728,
+    "end": 28536,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "cargo": "blaOXA",
+      "mediator_is": "IS6_292",
+      "confidence": 0.4,
+      "note": "single-IS26 translocatable unit (Partridge 2018)",
+      "confidence_label": "speculative"
+    },
+    "children": [
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaOXA",
+        "start": 26728,
+        "end": 27549,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "61088_F05|SC|contig000003",
+          "full_name": "OXA-9 family oxacillin-hydrolyzing class D beta-lactamase",
+          "subclass": "BETA-LACTAM",
+          "method": "INTERNAL_STOP",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS26",
+        "start": 27717,
+        "end": 28536,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": 100.0,
+        "attributes": {
+          "seqid": "61088_F05|SC|contig000003",
+          "reference_id": "IS26",
+          "blast_identity": 100.0,
+          "blast_coverage": 100.0,
+          "source": "reference_scan",
+          "confidence": 1.0,
+          "confidence_label": "high"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 27717,
+        "end": 28536,
+        "strand": "-",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": "GGCACTGTTGCAAA",
+        "ir_right": "GGCACTGTTGCAAA",
+        "score": 28.0,
+        "attributes": {
+          "seqid": "61088_F05|SC|contig000003",
+          "type": "c",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1182",
+    "name": "IS1182_104",
+    "start": 34057,
+    "end": 36870,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CGCATCACCAGCACCGCCT",
+    "ir_right": "CGCAATCCCATCACCGCCT",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401a",
+        "start": 35488,
+        "end": 35608,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401a",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401a",
+    "start": 35288,
+    "end": 45194,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": "TCAAT",
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.838,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "reference_id": "Tn4401a_EU176011",
+      "blast_identity": 99.84,
+      "blast_coverage": 100.01,
+      "source": "reference_scan",
+      "variant": "a",
+      "deletion_bp": "100",
+      "note": "Naas",
+      "source_accession": "EU176011:4054-13959",
+      "blast_subject_coverage": "100.0",
+      "blast_hsp_count": "1",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": [
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaKPC-3",
+        "start": 37214,
+        "end": 38092,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "61088_F05|SC|contig000003",
+          "full_name": "carbapenem-hydrolyzing class A beta-lactamase KPC-3",
+          "subclass": "CARBAPENEM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1",
+    "name": "IS1_316",
+    "start": 66513,
+    "end": 67280,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "GGTAATGCTGCCAACTTACTGAT",
+    "ir_right": "GGTAATGACTCCAACTTACTGAT",
+    "score": 34.0,
+    "attributes": {
+      "seqid": "61088_F05|SC|contig000003",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  }
+]

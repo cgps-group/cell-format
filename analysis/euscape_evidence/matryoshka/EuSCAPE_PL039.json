@@ -1,0 +1,823 @@
+[
+  {
+    "element_type": "IS",
+    "family": "ISNCY",
+    "name": "ISNCY_229",
+    "start": 4064,
+    "end": 4847,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TTCTCGATGCCGCGCTGT",
+    "ir_right": "TTCCCCATGACGGGCTGT",
+    "score": 20.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS3",
+    "name": "IS3_369",
+    "start": 23324,
+    "end": 24883,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TTTGAACAGCGCCTCGAAGTGGTTATGCACTA",
+    "ir_right": "TTTGATAAGTGCCT-TAAGTTGCTCTGCGCTA",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS3",
+    "name": "IS3_61",
+    "start": 28789,
+    "end": 30377,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TGCGGATGTTTTCCTGGAC",
+    "ir_right": "TGCGGACAAATTCCTGGAC",
+    "score": 22.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "c",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "ISNCY",
+    "name": "ISNCY_86",
+    "start": 30332,
+    "end": 31809,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "TATGAATGCATA",
+    "ir_right": "TATGAATGGATA",
+    "score": 20.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401",
+    "start": 38385,
+    "end": 41315,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "Tn4401b_CP069050",
+      "blast_identity": 100.0,
+      "blast_coverage": 29.29,
+      "source": "reference_scan",
+      "variant": "unknown",
+      "deletion_bp": 7075,
+      "note": "best-match coverage 29.3% of known variants \u2014 likely uncatalogued variant with ~7075bp deletion",
+      "source_accession": "CP069050:59180-69185",
+      "blast_subject_coverage": "29.3",
+      "blast_hsp_count": "1",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401",
+        "start": 38585,
+        "end": 38705,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS1182",
+        "name": "IS1182_104",
+        "start": 38684,
+        "end": 40229,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": "CTAGGAGCCTGCGCGGCAGA",
+        "ir_right": "TCTGCCGCGCAGACTCCTAG",
+        "score": 36.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "c",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      },
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaKPC-3",
+        "start": 40311,
+        "end": 41189,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "full_name": "carbapenem-hydrolyzing class A beta-lactamase KPC-3",
+          "subclass": "CARBAPENEM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS21",
+    "name": "IS21_259",
+    "start": 40336,
+    "end": 43181,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "AGCGCGAGTCTAGCC",
+    "ir_right": "AGCGCGATACCAGCC",
+    "score": 18.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn4401",
+        "name": "res_Tn4401",
+        "start": 41516,
+        "end": 41636,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn4401",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn4401",
+    "name": "Tn4401",
+    "start": 41316,
+    "end": 48280,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.971,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "Tn4401a_GU386376",
+      "blast_identity": 99.97,
+      "blast_coverage": 71.05,
+      "source": "reference_scan",
+      "variant": "unknown",
+      "deletion_bp": 2838,
+      "note": "best-match coverage 71.0% of known variants \u2014 likely uncatalogued variant with ~2838bp deletion",
+      "source_accession": "GU386376:1-9803",
+      "blast_subject_coverage": "71.0",
+      "blast_hsp_count": "1",
+      "confidence": 0.8,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "transposon",
+    "family": "Tn1331",
+    "name": "Tn1331",
+    "start": 48321,
+    "end": 54179,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.078,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "Tn1331",
+      "blast_identity": 99.08,
+      "blast_coverage": 51.6,
+      "source": "reference_scan",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "res_site",
+        "family": "Tn1331",
+        "name": "res_Tn1331",
+        "start": 48521,
+        "end": 48641,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "parent_transposon": "Tn1331",
+          "note": "expected_position_not_sequence_confirmed",
+          "confidence": 0.3,
+          "confidence_label": "speculative"
+        },
+        "children": []
+      },
+      {
+        "element_type": "integron",
+        "family": "CALIN_integron",
+        "name": "integron_01",
+        "start": 50125,
+        "end": 52989,
+        "strand": ".",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "cassette_array": "|3754STDY7197112|SC|contig000002_54|3754STDY7197112|SC|contig000002_55|3754STDY7197112|SC|contig000002_56|3754STDY7197112|SC|contig000002_57|",
+          "cassette_count": "4",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": [
+          {
+            "element_type": "AMR",
+            "family": "AMINOGLYCOSIDE",
+            "name": "aac(6')-Ib",
+            "start": 50176,
+            "end": 50727,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": null,
+            "attributes": {
+              "seqid": "3754STDY7197112|SC|contig000002",
+              "full_name": "AAC(6')-Ib family aminoglycoside 6'-N-acetyltransferase",
+              "subclass": "AMIKACIN/KANAMYCIN/TOBRAMYCIN",
+              "method": "EXACTX",
+              "confidence": 0.7,
+              "confidence_label": "medium"
+            },
+            "children": []
+          },
+          {
+            "element_type": "AMR",
+            "family": "AMINOGLYCOSIDE",
+            "name": "aadA1",
+            "start": 50800,
+            "end": 51585,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": null,
+            "attributes": {
+              "seqid": "3754STDY7197112|SC|contig000002",
+              "full_name": "ANT(3'')-Ia family aminoglycoside nucleotidyltransferase AadA1",
+              "subclass": "STREPTOMYCIN",
+              "method": "EXACTX",
+              "confidence": 0.7,
+              "confidence_label": "medium"
+            },
+            "children": []
+          },
+          {
+            "element_type": "AMR",
+            "family": "BETA-LACTAM",
+            "name": "blaOXA-9",
+            "start": 51648,
+            "end": 52469,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": null,
+            "attributes": {
+              "seqid": "3754STDY7197112|SC|contig000002",
+              "full_name": "oxacillin-hydrolyzing class D beta-lactamase OXA-9",
+              "subclass": "BETA-LACTAM",
+              "method": "ALLELEX",
+              "confidence": 0.7,
+              "confidence_label": "medium"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "element_type": "AMR",
+        "family": "BETA-LACTAM",
+        "name": "blaTEM-1",
+        "start": 53172,
+        "end": 54029,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "full_name": "broad-spectrum class A beta-lactamase TEM-1",
+          "subclass": "BETA-LACTAM",
+          "method": "ALLELEX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "IS",
+    "family": "IS91",
+    "name": "IS91_365",
+    "start": 54141,
+    "end": 54685,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CCTTAACGTGAGTTTTCGTTCCACTGAGCGTCAGACCCCTAAAAG",
+    "ir_right": "CCTTAGCGTAGGATTCCGCCCCTTCCCGCAAACGACCCCAAACAG",
+    "score": 18.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1380",
+    "name": "ISEcp1",
+    "start": 54647,
+    "end": 57570,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 99.966,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "ISEcp1",
+      "blast_identity": 99.97,
+      "blast_coverage": 1.76,
+      "source": "reference_scan",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "AMR",
+    "family": "AMINOGLYCOSIDE",
+    "name": "aph(6)-Id",
+    "start": 54756,
+    "end": 55589,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "full_name": "aminoglycoside O-phosphotransferase APH(6)-Id",
+      "subclass": "STREPTOMYCIN",
+      "method": "EXACTX",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "AMR",
+    "family": "AMINOGLYCOSIDE",
+    "name": "aph(3'')-Ib",
+    "start": 55592,
+    "end": 56392,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "full_name": "aminoglycoside O-phosphotransferase APH(3'')-Ib",
+      "subclass": "STREPTOMYCIN",
+      "method": "EXACTX",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "AMR",
+    "family": "SULFONAMIDE",
+    "name": "sul2",
+    "start": 56456,
+    "end": 57268,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "full_name": "sulfonamide-resistant dihydropteroate synthase Sul2",
+      "subclass": "SULFONAMIDE",
+      "method": "EXACTX",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS1380",
+    "name": "ISEcp1",
+    "start": 57679,
+    "end": 59046,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 93.787,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "ISEcp1",
+      "blast_identity": 93.79,
+      "blast_coverage": 0.82,
+      "source": "reference_scan",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "IS",
+        "family": "IS110",
+        "name": "IS110_208",
+        "start": 57704,
+        "end": 59020,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": "ATGGTCACTCCC",
+        "ir_right": "ATGGTCACTCCC",
+        "score": 24.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "p",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "element_type": "transposon",
+    "family": "IS26_island",
+    "name": "IS26_island_1",
+    "start": 60805,
+    "end": 70311,
+    "strand": ".",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": null,
+    "attributes": {
+      "cargo_count": 1,
+      "cargo": "dfrA14",
+      "confidence": 0.7,
+      "confidence_label": "medium"
+    },
+    "children": [
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS26",
+        "start": 60805,
+        "end": 61624,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": 100.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "reference_id": "IS26",
+          "blast_identity": 100.0,
+          "blast_coverage": 100.0,
+          "source": "reference_scan",
+          "confidence": 1.0,
+          "confidence_label": "high"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 60805,
+        "end": 61624,
+        "strand": "-",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": "GGCACTGTTGCAAA",
+        "ir_right": "GGCACTGTTGCAAA",
+        "score": 28.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "c",
+          "ncopy": "2",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS1",
+        "name": "IS1_316",
+        "start": 63168,
+        "end": 63434,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": 0.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "p",
+          "ncopy": "1",
+          "confidence": 0.45,
+          "confidence_label": "low"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 66275,
+        "end": 67429,
+        "strand": "-",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": "TGTCATTTTCAGAAGACGAC",
+        "ir_right": "GTCGTCTTCTGAAAATGACA",
+        "score": 246.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "c",
+          "ncopy": "1",
+          "confidence": 0.6,
+          "confidence_label": "low"
+        },
+        "children": []
+      },
+      {
+        "element_type": "AMR",
+        "family": "TRIMETHOPRIM",
+        "name": "dfrA14",
+        "start": 67878,
+        "end": 68348,
+        "strand": "-",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "full_name": "trimethoprim-resistant dihydrofolate reductase DfrA14",
+          "subclass": "TRIMETHOPRIM",
+          "method": "EXACTX",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      },
+      {
+        "element_type": "integron",
+        "family": "In0_integron",
+        "name": "integron_02",
+        "start": 68504,
+        "end": 69433,
+        "strand": "+",
+        "tsd_length": null,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": null,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "cassette_array": "",
+          "cassette_count": "0",
+          "confidence": 0.7,
+          "confidence_label": "medium"
+        },
+        "children": []
+      },
+      {
+        "element_type": "IS",
+        "family": "IS6",
+        "name": "IS6_292",
+        "start": 69272,
+        "end": 70311,
+        "strand": ".",
+        "tsd_length": 8,
+        "tsd_seq": null,
+        "ir_left": null,
+        "ir_right": null,
+        "score": 0.0,
+        "attributes": {
+          "seqid": "3754STDY7197112|SC|contig000002",
+          "type": "c",
+          "ncopy": "2",
+          "confidence": 0.45,
+          "confidence_label": "low"
+        },
+        "children": [
+          {
+            "element_type": "IS",
+            "family": "IS6",
+            "name": "IS26",
+            "start": 69272,
+            "end": 70091,
+            "strand": "+",
+            "tsd_length": null,
+            "tsd_seq": null,
+            "ir_left": null,
+            "ir_right": null,
+            "score": 100.0,
+            "attributes": {
+              "seqid": "3754STDY7197112|SC|contig000002",
+              "reference_id": "IS26",
+              "blast_identity": 100.0,
+              "blast_coverage": 100.0,
+              "source": "reference_scan",
+              "confidence": 1.0,
+              "confidence_label": "high"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_type": "replicon",
+    "family": "IncFIA(pBK30683)",
+    "name": "IncFIA(pBK30683)",
+    "start": 74508,
+    "end": 74802,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 100.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "IncFIA(pBK30683)_1__KF954760",
+      "blast_identity": 100.0,
+      "blast_coverage": 100.0,
+      "source": "reference_scan",
+      "source_accession": "KF954760",
+      "confidence": 1.0,
+      "confidence_label": "high"
+    },
+    "children": []
+  },
+  {
+    "element_type": "IS",
+    "family": "IS66",
+    "name": "IS66_46",
+    "start": 74936,
+    "end": 77375,
+    "strand": "-",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": "CAGCGTACATATC",
+    "ir_right": "CAGCGAAAATATC",
+    "score": 18.0,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "type": "p",
+      "ncopy": "1",
+      "confidence": 0.6,
+      "confidence_label": "low"
+    },
+    "children": []
+  },
+  {
+    "element_type": "replicon",
+    "family": "IncFII(Yp)",
+    "name": "IncFII(Yp)",
+    "start": 138234,
+    "end": 138453,
+    "strand": "+",
+    "tsd_length": null,
+    "tsd_seq": null,
+    "ir_left": null,
+    "ir_right": null,
+    "score": 95.475,
+    "attributes": {
+      "seqid": "3754STDY7197112|SC|contig000002",
+      "reference_id": "IncFII(Yp)_1__CP000670",
+      "blast_identity": 95.47,
+      "blast_coverage": 96.09,
+      "source": "reference_scan",
+      "source_accession": "CP000670",
+      "confidence": 0.9,
+      "confidence_label": "high"
+    },
+    "children": []
+  }
+]

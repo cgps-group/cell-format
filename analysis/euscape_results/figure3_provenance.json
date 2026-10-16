@@ -1,0 +1,30 @@
+{
+  "source": "EuSCAPE hybrid assemblies supplied as euscape.tar.gz",
+  "selection": "First ten assemblies, ordered by assembly contig count then sample ID, with one exact KPC annotation, a largest contig of at least 5 Mb and a KPC-bearing contig below 500 kb.",
+  "detectors": [
+    "AMRFinder+ 4.2.7 (database 2026-08-07.1)",
+    "ISEScan 1.7.3",
+    "IntegronFinder 2.0.3"
+  ],
+  "annotation": "Matryoshka plus its bundled reference scan",
+  "normalisation": "Overlapping duplicate calls from multiple detectors were collapsed, retaining the highest-scoring and most specific call. The comparison was anchored on the Tn4401-family subtree containing blaKPC. Coordinates and sample-specific labels were excluded.",
+  "comparison": "Each carrier hierarchy was represented as a multiset of entity facts and parent-child containment facts. Pairwise similarity is the multiset Jaccard index: shared facts divided by union facts, reported as a percentage.",
+  "samples": [
+    "EuSCAPE_AT022",
+    "EuSCAPE_BE091",
+    "EuSCAPE_BE098",
+    "EuSCAPE_DE016",
+    "EuSCAPE_GR158",
+    "EuSCAPE_IE024",
+    "EuSCAPE_IT152",
+    "EuSCAPE_IT222",
+    "EuSCAPE_IT242",
+    "EuSCAPE_PL039"
+  ],
+  "detail_examples": [
+    "EuSCAPE_AT022",
+    "EuSCAPE_BE098",
+    "EuSCAPE_DE016",
+    "EuSCAPE_IE024"
+  ]
+}
