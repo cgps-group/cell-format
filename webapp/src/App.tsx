@@ -20,7 +20,7 @@ const EXAMPLES = [
   { label: 'OXA-48 in Tn1999', value: '()chromosome, { { {}blaOXA-48[type="gene"] }Tn1999[type="transposon"] }pOXA-48a' },
   { label: 'CTX-M on ISEcp1', value: '()chromosome, { { {}blaCTX-M-15[type="gene"] }ISEcp1[type="insertion_sequence"] }pCTX-M-3' },
   { label: 'Kp CAV1193', value: '()CAV1193, {}pCAV1193-166, {}pCAV1193-258, {}pCAV1193-78, { { {}blaKPC-3[type="gene"] }Tn4401[type="transposon"] }pKPC_CAV1193' },
-  { label: 'Fungal Starship (schematic)', value: '({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]' },
+  { label: 'Fungal Starship', value: '({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]' },
 ]
 
 export default function App() {
@@ -188,6 +188,8 @@ export default function App() {
         <div className="import-toggle-row">
           <button
             className="import-toggle-btn"
+            aria-expanded={showImport}
+            aria-controls="import-panel"
             onClick={() => setShowImport((v) => !v)}
           >
             {showImport ? '− Hide import' : '+ Import GenBank / GFF'}
@@ -195,8 +197,8 @@ export default function App() {
         </div>
 
         {showImport && (
-          <div className="upload-row">
-            <p>Choose an annotated GenBank (.gb, .gbk, .genbank) or GFF3 (.gff, .gff3) file. GFF3 may include embedded FASTA; sequence is optional when coordinates are supplied.</p>
+          <section id="import-panel" className="upload-row panel" aria-label="Import GenBank or GFF3">
+            <p className="import-description">Choose an annotated GenBank (.gb, .gbk, .genbank) or GFF3 (.gff, .gff3) file. GFF3 may include embedded FASTA; sequence is optional when coordinates are supplied.</p>
             <FileUpload
               files={uploadFiles}
               onFilesChange={handleFilesChange}
@@ -206,13 +208,18 @@ export default function App() {
               hint="All sequence records in one file are grouped into one cell. Unknown contigs remain unclassified."
             />
             <label className="import-selection"><input type="checkbox" checked={retainUncontainedGenes} onChange={event => { setRetainUncontainedGenes(event.target.checked); setImportSummary('') }} /> Retain all genes outside annotated mobile elements</label>
-            <label className="import-selection" htmlFor="selected-feature-ids">Retain specific genes by exact annotation ID, gene name or locus tag (comma separated)</label>
+            <div className="import-gene-field">
+            <label htmlFor="selected-feature-ids">Retain specific genes by exact annotation ID, gene name or locus tag (comma separated)</label>
             <input id="selected-feature-ids" className="import-ids" type="text" value={selectedFeatureIds} onChange={event => { setSelectedFeatureIds(event.target.value); setImportSummary('') }} placeholder="e.g. blaKPC-2, locus_042" />
+            </div>
+            <div className="import-actions">
             <button className="button button-secondary" type="button" onClick={importFile} disabled={!uploadFiles.length}>Import selected file</button>
+            </div>
             {uploadError && <div className="validation-error" role="alert">{uploadError}</div>}
-          </div>
+            {importSummary && <p className="import-summary" role="status">{importSummary}</p>}
+          </section>
         )}
-        {importSummary && <p className="import-summary" role="status">{importSummary}</p>}
+        {!showImport && importSummary && <p className="import-summary" role="status">{importSummary}</p>}
 
         {/* Format string — full width, above the two panels */}
         <div className="format-bar panel">

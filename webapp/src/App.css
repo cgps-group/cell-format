@@ -559,14 +559,22 @@
 
 /* ── File upload row ─────────────────────────── */
 .upload-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.import-description {
+  margin: 0;
+  max-width: 80ch;
+  color: var(--cellgen-text-muted);
 }
 
 .file-upload {
-  padding: 0.9rem;
-  border: 1px dashed var(--cellgen-border);
-  border-radius: var(--cellgen-radius-lg);
-  background: var(--cellgen-surface);
+  min-width: 0;
 }
 
 .file-upload-label {
@@ -578,7 +586,9 @@
 }
 
 .file-upload-input {
+  display: block;
   width: 100%;
+  max-width: 34rem;
   color: var(--cellgen-text);
   cursor: pointer;
   padding: 0.6rem;
@@ -591,17 +601,19 @@
   padding: 0.55rem 0.9rem;
   border: 0;
   border-radius: 0.4rem;
-  background: var(--cellgen-primary);
-  color: white;
+  background: var(--cellgen-accent);
+  color: var(--cellgen-surface);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
-.file-upload-input:focus-visible { outline: 3px solid var(--cellgen-primary); outline-offset: 2px; }
-.import-selection { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.7rem; }
-.import-ids { display: block; width: 100%; max-width: 34rem; padding: 0.6rem; margin: 0.4rem 0 0.8rem; border: 1px solid var(--cellgen-border); border-radius: 0.4rem; color: var(--cellgen-text); background: var(--cellgen-surface); }
+.file-upload-input:focus-visible { outline: 3px solid var(--cellgen-accent); outline-offset: 2px; }
+.import-selection { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0; }
+.import-selection input { flex-shrink: 0; margin-top: 0.25rem; }
+.import-ids { display: block; width: 100%; max-width: 34rem; padding: 0.6rem; margin-top: 0.4rem; border: 1px solid var(--cellgen-border); border-radius: 0.4rem; color: var(--cellgen-text); background: var(--cellgen-surface); }
 .import-summary { margin: 0.5rem 0 1rem; color: var(--cellgen-text); }
+.upload-row .import-summary { margin: 0; }
 
 .file-upload-hint,
 .file-upload-selection {
