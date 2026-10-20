@@ -1,0 +1,35 @@
+[
+  {
+    "record": "Tn21",
+    "accession": "AF071413.3",
+    "sequence_url": "https://www.ebi.ac.uk/ena/browser/view/AF071413.3",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/api/embl/AF071413.3?download=false",
+    "paper": "https://doi.org/10.1128/MMBR.63.3.507-522.1999",
+    "download_sha256": "c5f4982b12befa41294f2454956a7b93383ca78ff27caab0b46fa125622857c6",
+    "represented_genes": [
+      "aadA1"
+    ]
+  },
+  {
+    "record": "pKpQIL",
+    "accession": "GU595196.1",
+    "sequence_url": "https://www.ebi.ac.uk/ena/browser/view/GU595196.1",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/api/embl/GU595196.1?download=false",
+    "paper": "https://doi.org/10.1128/AAC.00175-10",
+    "download_sha256": "da784847c494f73e2089b676c6dc9081635c92802ce58939587f94c64bd483dc",
+    "represented_genes": [
+      "blaKPC-3"
+    ]
+  },
+  {
+    "record": "pOXA-48a",
+    "accession": "JN626286.1",
+    "sequence_url": "https://www.ebi.ac.uk/ena/browser/view/JN626286.1",
+    "download_url": "https://www.ebi.ac.uk/ena/browser/api/embl/JN626286.1?download=false",
+    "paper": "https://doi.org/10.1128/AAC.05289-11",
+    "download_sha256": "e57815563703d6433f5f4932a24163b0dc1a46c3fe35e0e216d1914e6670648d",
+    "represented_genes": [
+      "blaOXA-48"
+    ]
+  }
+]

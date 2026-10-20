@@ -1,0 +1,4 @@
+record	gene	gene_cassette	integron	transposon	plasmid	path
+Tn21	aadA1	aadA1_cassette	In2	Tn21	Not represented	Tn21 > In2 > aadA1_cassette > aadA1
+pKpQIL	blaKPC-3	Not represented	Not represented	Tn4401a	pKpQIL	pKpQIL > Tn4401a > blaKPC-3
+pOXA-48a	blaOXA-48	Not represented	Not represented	Tn1999	pOXA-48a	pOXA-48a > Tn1999 > blaOXA-48
