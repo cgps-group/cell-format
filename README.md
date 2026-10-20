@@ -50,6 +50,81 @@ A semicolon separates the cells. Each cell here contains a chromosome and a plas
 
 These images are static exports from the visualiser's circular and containment views.
 
+## Examples from the manuscript
+
+The manuscript uses three published structures to demonstrate nested containment. The notation below shows the entities and their types; the [full records](examples/published_structures/README.md) also retain source annotations, including coordinates where available.
+
+### Tn21
+
+The transposon Tn21 contains the integron In2, which contains an `aadA1` gene cassette and its gene. See [Liebert et al. (1999)](https://doi.org/10.1128/MMBR.63.3.507-522.1999) and the [full Tn21 record](examples/published_structures/Tn21.cellgen).
+
+```text
+{
+  {
+    { {}aadA1[type="gene"] }aadA1_cassette[type="gene_cassette"]
+  }In2[type="integron"]
+}Tn21[type="transposon", accession="AF071413.3"]
+```
+
+<img src="docs/images/manuscript-tn21.png" width="340" alt="Containment view showing aadA1 inside its gene cassette, inside integron In2, inside transposon Tn21.">
+
+### pKpQIL
+
+The plasmid pKpQIL contains Tn4401a, with `blaKPC-3`, ISKpn7 and ISKpn6 represented inside the transposon. See [Leavitt et al. (2010)](https://doi.org/10.1128/AAC.00175-10) and the [full pKpQIL record](examples/published_structures/pKpQIL.cellgen).
+
+```text
+{
+  {
+    {}ISKpn7[type="IS"],
+    {}blaKPC-3[type="gene"],
+    {}ISKpn6[type="IS"]
+  }Tn4401a[type="transposon"]
+}pKpQIL[type="plasmid", accession="GU595196.1"]
+```
+
+<img src="docs/images/manuscript-pkpqil.png" width="340" alt="Containment view showing ISKpn7, blaKPC-3 and ISKpn6 inside Tn4401a inside plasmid pKpQIL.">
+
+### pOXA-48a
+
+The plasmid pOXA-48a contains Tn1999, with `blaOXA-48` and two copies of IS1999 represented inside the transposon. See [Poirel et al. (2012)](https://doi.org/10.1128/AAC.05289-11) and the [full pOXA-48a record](examples/published_structures/pOXA-48a.cellgen).
+
+```text
+{
+  {
+    {}IS1999[type="IS", copy="1"],
+    {}blaOXA-48[type="gene"],
+    {}IS1999[type="IS", copy="2"]
+  }Tn1999[type="transposon"]
+}pOXA-48a[type="plasmid", accession="JN626286.1"]
+```
+
+<img src="docs/images/manuscript-poxa48a.png" width="340" alt="Containment view showing two copies of IS1999 and blaOXA-48 inside Tn1999 inside plasmid pOXA-48a.">
+
+The [query example](examples/published_structures/README.md) retrieves each gene's enclosing cassette, integron, transposon and plasmid from these records. The manuscript's [Figure 3](figures/Figure_3_published_structures.png) shows the three structures together.
+
+## Grammar
+
+In this EBNF, quoted punctuation is literal, square brackets mark optional content, and braces mark repetition.
+
+```ebnf
+Document        = Cell , { ";" , Cell } ;
+Cell            = CellularElement , { "," , CellularElement } ;
+CellularElement = Chromosome | Entity ;
+Chromosome      = "(" , [ EntitySet ] , ")" , Annotation ;
+Entity          = "{" , [ EntitySet ] , "}" , Annotation ;
+EntitySet       = Entity , { "," , Entity } ;
+Annotation      = [ Label ] , [ Attributes ] ;
+Attributes      = "[" , KeyValue , { "," , KeyValue } , "]" ;
+KeyValue        = Key , "=" , Quoted ;
+Label           = BareLabel | Quoted ;
+```
+
+A bare label uses letters, digits, underscores, dots, colons or hyphens. Labels containing spaces or reserved punctuation must be double-quoted, for example `{}"resistance gene"[type="gene"]`. Attribute values are double-quoted strings; attribute keys start with a letter or underscore and use the same characters as bare labels.
+
+Each cell contains at least one top-level chromosome or entity. Chromosomes cannot be nested, but other entities can be nested to any depth. Commas separate siblings and attributes; semicolons separate cells. Whitespace and line breaks between tokens are optional, so the examples above can also be written on one line.
+
+See the [format specification](docs/specification.md) for escaping and validation rules.
+
 ## Documentation
 
 - [Web visualiser](docs/visualiser.md): build and edit records, import annotations, export diagrams and run the app locally.
@@ -59,4 +134,13 @@ These images are static exports from the visualiser's circular and containment v
 - [More examples](docs/examples.md) and [published biological structures](examples/real_world.md).
 - [GenBank and GFF3 import](docs/import.md): annotation handling and import options.
 - [Validation](docs/validation.md): diagnostics and conformance checks.
-- [Authors](docs/credits.md).
+
+## Authors
+
+Centre for Genomic Pathogen Surveillance, University of Oxford
+
+- Julio Diaz Caballero
+- Nabil-Fareed Alikhan
+- Khalil AbuDahab
+- Sophia David
+- David Aanensen
