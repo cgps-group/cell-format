@@ -44,3 +44,29 @@ npm run check
 ```
 
 This runs the parser, serialiser, importer and renderer tests, linting and the production build.
+
+## Visualiser architecture
+
+The website composes the import panel, format editor, interactive builder and diagram preview in `webapp/src/App.tsx`.
+
+- `src/editor/useVisualiser.ts` owns the text draft, import options and feedback, selected diagram view and builder input snapshot. Valid external edits replace that snapshot; incomplete text keeps the previous builder contents. Builder edits update the text without reloading the builder.
+- `src/editor/builderModel.ts` contains the existing builder data shapes, conversions and path operations, independent of React. `src/editor/useInteractiveBuilder.ts` owns builder edits and temporary modal state. `src/components/InteractiveBuilder.tsx` renders the existing cards and modal.
+- `src/components/AnnotationImport.tsx`, `FormatEditor.tsx` and `DiagramPreview.tsx` receive explicit inputs and callbacks. Their markup and controls are unchanged.
+- `src/editor/diagram.ts` selects the existing renderer for both preview and export. `src/editor/useDocumentExports.ts` contains the existing browser downloads and clipboard feedback.
+
+This is a code organisation and style refactor. It preserves the existing builder conversion rules, import handling, download encoding and clipboard timing. The parser, importers, renderers, styles and example records are unchanged.
+
+Browser checks start their own server rather than reusing an unrelated local development server. If port 5173 is occupied:
+
+```bash
+cd webapp
+CELLGEN_TEST_PORT=5175 npm run test:e2e
+```
+
+To compare screenshots, controls, editor workflows and exported file bytes against an independently served baseline checkout, start that checkout on a separate port and run:
+
+```bash
+CELLGEN_TEST_PORT=5177 CELLGEN_BASELINE_URL=http://127.0.0.1:5176 npm run test:e2e -- --grep 'unchanged interface'
+```
+
+The optional comparison suite covers desktop and narrow screens in both themes. It is skipped when no baseline URL is supplied.

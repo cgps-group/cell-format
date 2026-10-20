@@ -293,8 +293,8 @@ test.describe('about page content', () => {
     await expect(page.locator('.about-table')).toBeVisible()
   })
 
-  test('About page shows why it matters section', async ({ page }) => {
+  test('About page shows genomic context section', async ({ page }) => {
     await page.goto('/about')
-    await expect(page.getByRole('heading', { name: 'Why it matters' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Genomic context' })).toBeVisible()
   })
 })
