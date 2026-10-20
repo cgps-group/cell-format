@@ -1,27 +1,40 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { AnnotationImport } from './components/AnnotationImport'
-import { DiagramPreview } from './components/DiagramPreview'
-import { FormatEditor } from './components/FormatEditor'
-import { InteractiveBuilder } from './components/InteractiveBuilder'
-import { ThemeToggle } from './components/ThemeToggle'
-import { renderDiagram } from './editor/diagram'
-import type { DiagramView } from './editor/diagram'
-import { EXAMPLES } from './editor/examples'
-import { useCellGenDocument } from './editor/useCellGenDocument'
-import './App.css'
+import { Link } from "react-router-dom";
+import { AnnotationImport } from "./components/AnnotationImport";
+import { DiagramPreview } from "./components/DiagramPreview";
+import { FormatEditor } from "./components/FormatEditor";
+import { InteractiveBuilder } from "./components/InteractiveBuilder";
+import { ThemeToggle } from "./components/ThemeToggle";
+import { EXAMPLES } from "./editor/examples";
+import { useVisualiser } from "./editor/useVisualiser";
+import { useDocumentExports } from "./editor/useDocumentExports";
+import "./App.css";
 
-declare const __APP_VERSION__: string
+declare const __APP_VERSION__: string;
 
 export default function App() {
-  const { text, document, parsed, replaceText, dispatch } = useCellGenDocument(EXAMPLES[0].value)
-  const [showImport, setShowImport] = useState(false)
-  const [diagramView, setDiagramView] = useState<DiagramView>('circular')
-  const svg = useMemo(
-    () => (parsed.ok ? renderDiagram(parsed.value, diagramView) : null),
-    [parsed, diagramView],
-  )
-
+  const {
+    text,
+    parsed,
+    svgOutput,
+    builderInput,
+    showImport,
+    setShowImport,
+    importSummary,
+    handleBuilderUpdate,
+    handleTextChange,
+    loadExample,
+    diagramView,
+    setDiagramView,
+    uploadFiles,
+    handleFilesChange,
+    retainUncontainedGenes,
+    onRetainGenesChange,
+    selectedFeatureIds,
+    onSelectedIdsChange,
+    importFile,
+    uploadError,
+  } = useVisualiser();
+  const exports = useDocumentExports(text, svgOutput);
   return (
     <div className="app">
       <header className="app-header">
@@ -68,39 +81,67 @@ export default function App() {
         {/* Examples bar */}
         <div className="examples-bar">
           {EXAMPLES.map((ex) => (
-            <button key={ex.label} className="example-btn" onClick={() => replaceText(ex.value)}>
+            <button key={ex.label} className="example-btn" onClick={() => loadExample(ex.value)}>
               {ex.label}
             </button>
           ))}
         </div>
 
+        {/* Import toggle */}
         <div className="import-toggle-row">
           <button
             className="import-toggle-btn"
             aria-expanded={showImport}
             aria-controls="import-panel"
-            onClick={() => setShowImport((value) => !value)}
+            onClick={() => setShowImport((v) => !v)}
           >
-            {showImport ? '− Hide import' : '+ Import GenBank / GFF'}
+            {showImport ? "− Hide import" : "+ Import GenBank / GFF"}
           </button>
         </div>
-        <AnnotationImport visible={showImport} onImport={replaceText} />
-        <FormatEditor text={text} parsed={parsed} svg={svg} onTextChange={replaceText} />
+
+        {showImport && (
+          <AnnotationImport
+            uploadFiles={uploadFiles}
+            onFilesChange={handleFilesChange}
+            retainUncontainedGenes={retainUncontainedGenes}
+            onRetainGenesChange={onRetainGenesChange}
+            selectedFeatureIds={selectedFeatureIds}
+            onSelectedIdsChange={onSelectedIdsChange}
+            onImport={importFile}
+            uploadError={uploadError}
+            importSummary={importSummary}
+          />
+        )}
+        {!showImport && importSummary && (
+          <p className="import-summary" role="status">
+            {importSummary}
+          </p>
+        )}
+        <FormatEditor
+          text={text}
+          parsed={parsed}
+          svgOutput={svgOutput}
+          onTextChange={handleTextChange}
+          {...exports}
+        />
+
         <div className="editor-layout">
+          {/* Left: builder */}
           <div className="panel">
             <div className="panel-title">Interactive builder</div>
-            <InteractiveBuilder value={document} onChange={dispatch} />
+            <InteractiveBuilder onUpdate={handleBuilderUpdate} input={builderInput} />
           </div>
-          <DiagramPreview svg={svg} view={diagramView} onViewChange={setDiagramView} />
+
+          <DiagramPreview svg={svgOutput} view={diagramView} onViewChange={setDiagramView} />
         </div>
       </main>
 
       <footer className="app-footer">
-        CellGen · cellular genome organisation ·{' '}
+        CellGen · cellular genome organisation ·{" "}
         <a href="https://github.com/cgps-group/cell-format/issues" target="_blank" rel="noreferrer">
           Report a bug
         </a>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import type { DiagramView } from '../editor/diagram'
+import type { DiagramView } from "../editor/diagram";
 
 interface Props {
-  svg: string | null
-  view: DiagramView
-  onViewChange: (view: DiagramView) => void
+  svg: string | null;
+  view: DiagramView;
+  onViewChange: (view: DiagramView) => void;
 }
 
 export function DiagramPreview({ svg, view, onViewChange }: Props) {
@@ -14,17 +14,17 @@ export function DiagramPreview({ svg, view, onViewChange }: Props) {
         <div className="view-toggle" role="group" aria-label="Diagram representation">
           <button
             type="button"
-            className={`view-toggle-btn${view === 'circular' ? ' active' : ''}`}
-            aria-pressed={view === 'circular'}
-            onClick={() => onViewChange('circular')}
+            className={`view-toggle-btn${view === "circular" ? " active" : ""}`}
+            aria-pressed={view === "circular"}
+            onClick={() => onViewChange("circular")}
           >
             Circular
           </button>
           <button
             type="button"
-            className={`view-toggle-btn${view === 'containment' ? ' active' : ''}`}
-            aria-pressed={view === 'containment'}
-            onClick={() => onViewChange('containment')}
+            className={`view-toggle-btn${view === "containment" ? " active" : ""}`}
+            aria-pressed={view === "containment"}
+            onClick={() => onViewChange("containment")}
           >
             Containment
           </button>
@@ -34,11 +34,11 @@ export function DiagramPreview({ svg, view, onViewChange }: Props) {
         {svg ? (
           <div dangerouslySetInnerHTML={{ __html: svg }} />
         ) : (
-          <span style={{ color: 'var(--cellgen-text-muted)', fontSize: '0.9rem' }}>
+          <span style={{ color: "var(--cellgen-text-muted)", fontSize: "0.9rem" }}>
             Fix the format error to see the diagram
           </span>
         )}
       </div>
     </div>
-  )
+  );
 }

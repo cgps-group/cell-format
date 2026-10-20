@@ -1,79 +1,27 @@
-import { useEffect, useRef, useState } from 'react'
-import { detectFileType, parseGenBank, parseGFF } from '../cellgen/genbank'
-import { FileUpload } from './FileUpload'
-
+import { FileUpload } from "./FileUpload";
 interface Props {
-  visible: boolean
-  onImport: (value: string) => void
+  uploadFiles: File[];
+  onFilesChange: (files: File[]) => void;
+  retainUncontainedGenes: boolean;
+  onRetainGenesChange: (retain: boolean) => void;
+  selectedFeatureIds: string;
+  onSelectedIdsChange: (ids: string) => void;
+  onImport: () => void;
+  uploadError: string;
+  importSummary: string;
 }
 
-export function AnnotationImport({ visible, onImport }: Props) {
-  const [files, setFiles] = useState<File[]>([])
-  const [retainUncontainedGenes, setRetainUncontainedGenes] = useState(false)
-  const [selectedFeatureIds, setSelectedFeatureIds] = useState('')
-  const [error, setError] = useState('')
-  const [summary, setSummary] = useState('')
-  const [busy, setBusy] = useState(false)
-  const request = useRef(0)
-  useEffect(
-    () => () => {
-      request.current += 1
-    },
-    [],
-  )
-
-  const clearResult = () => {
-    request.current += 1
-    setBusy(false)
-    setError('')
-    setSummary('')
-  }
-
-  const importFile = async () => {
-    const file = files[0]
-    if (!file) return
-    const currentRequest = ++request.current
-    setError('')
-    setSummary('')
-    setBusy(true)
-    try {
-      const content = await file.text()
-      if (request.current !== currentRequest) return
-      const type = detectFileType(file.name, content)
-      if (type === 'unknown')
-        throw new Error(
-          'Unrecognised file type. Upload a GenBank (.gb, .gbk) or GFF3 (.gff, .gff3) file.',
-        )
-      const options = {
-        retainUncontainedGenes,
-        selectedFeatureIds: selectedFeatureIds
-          .split(',')
-          .map((value) => value.trim())
-          .filter(Boolean),
-      }
-      const result =
-        type === 'genbank' ? parseGenBank(content, options) : parseGFF(content, options)
-      onImport(result.cellgen)
-      const unmatched = result.unmatchedSelectedIds.length
-        ? ` Unmatched selected IDs: ${result.unmatchedSelectedIds.join(', ')}.`
-        : ''
-      setSummary(
-        `Imported ${result.replicons.length} sequence record(s); retained ${result.retainedFeatures} features and omitted ${result.omittedGenes} uncontained genes.${unmatched}`,
-      )
-    } catch (cause) {
-      if (request.current === currentRequest)
-        setError(cause instanceof Error ? cause.message : 'Could not read this annotation file.')
-    } finally {
-      if (request.current === currentRequest) setBusy(false)
-    }
-  }
-
-  if (!visible)
-    return summary ? (
-      <p className="import-summary" role="status">
-        {summary}
-      </p>
-    ) : null
+export function AnnotationImport({
+  uploadFiles,
+  onFilesChange,
+  retainUncontainedGenes,
+  onRetainGenesChange,
+  selectedFeatureIds,
+  onSelectedIdsChange,
+  onImport,
+  uploadError,
+  importSummary,
+}: Props) {
   return (
     <section id="import-panel" className="upload-row panel" aria-label="Import GenBank or GFF3">
       <p className="import-description">
@@ -81,11 +29,8 @@ export function AnnotationImport({ visible, onImport }: Props) {
         include embedded FASTA; sequence is optional when coordinates are supplied.
       </p>
       <FileUpload
-        files={files}
-        onFilesChange={(value) => {
-          setFiles(value)
-          clearResult()
-        }}
+        files={uploadFiles}
+        onFilesChange={onFilesChange}
         label="Choose file"
         accept=".gb,.gbk,.genbank,.gff,.gff3"
         multiple={false}
@@ -95,11 +40,8 @@ export function AnnotationImport({ visible, onImport }: Props) {
         <input
           type="checkbox"
           checked={retainUncontainedGenes}
-          onChange={(event) => {
-            setRetainUncontainedGenes(event.target.checked)
-            clearResult()
-          }}
-        />{' '}
+          onChange={(event) => onRetainGenesChange(event.target.checked)}
+        />{" "}
         Retain all genes outside annotated mobile elements
       </label>
       <div className="import-gene-field">
@@ -111,10 +53,7 @@ export function AnnotationImport({ visible, onImport }: Props) {
           className="import-ids"
           type="text"
           value={selectedFeatureIds}
-          onChange={(event) => {
-            setSelectedFeatureIds(event.target.value)
-            clearResult()
-          }}
+          onChange={(event) => onSelectedIdsChange(event.target.value)}
           placeholder="e.g. blaKPC-2, locus_042"
         />
       </div>
@@ -122,22 +61,22 @@ export function AnnotationImport({ visible, onImport }: Props) {
         <button
           className="button button-secondary"
           type="button"
-          onClick={importFile}
-          disabled={!files.length || busy}
+          onClick={onImport}
+          disabled={!uploadFiles.length}
         >
-          {busy ? 'Importing…' : 'Import selected file'}
+          Import selected file
         </button>
       </div>
-      {error && (
+      {uploadError && (
         <div className="validation-error" role="alert">
-          {error}
+          {uploadError}
         </div>
       )}
-      {summary && (
+      {importSummary && (
         <p className="import-summary" role="status">
-          {summary}
+          {importSummary}
         </p>
       )}
     </section>
-  )
+  );
 }

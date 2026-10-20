@@ -1,49 +1,52 @@
-import type { ParseResult } from '../cellgen/types'
-import { useDocumentExports } from '../editor/useDocumentExports'
+import type { parseCellGen } from "../cellgen/parser";
 
 interface Props {
-  text: string
-  parsed: ParseResult
-  svg: string | null
-  onTextChange: (text: string) => void
+  text: string;
+  parsed: ReturnType<typeof parseCellGen>;
+  svgOutput: string | null;
+  onTextChange: (text: string) => void;
+  copied: boolean;
+  downloadCellGen: () => void;
+  downloadSVG: () => void;
+  downloadPNG: () => void;
+  copyFormat: () => void;
 }
 
-export function FormatEditor({ text, parsed, svg, onTextChange }: Props) {
-  const exports = useDocumentExports(text, svg)
+export function FormatEditor({
+  text,
+  parsed,
+  svgOutput,
+  onTextChange,
+  copied,
+  downloadCellGen,
+  downloadSVG,
+  downloadPNG,
+  copyFormat,
+}: Props) {
   return (
     <div className="format-bar panel">
       <div className="format-bar-header">
         <div className="format-preview-label">CellGen string</div>
         <div className="format-bar-actions">
-          <button
-            className="button button-secondary"
-            onClick={exports.downloadText}
-            disabled={!text}
-          >
+          <button className="button button-secondary" onClick={downloadCellGen} disabled={!text}>
             Download .txt
           </button>
-          <button className="button button-secondary" onClick={exports.downloadSVG} disabled={!svg}>
+          <button className="button button-secondary" onClick={downloadSVG} disabled={!svgOutput}>
             Download SVG
           </button>
-          <button className="button button-primary" onClick={exports.downloadPNG} disabled={!svg}>
+          <button className="button button-primary" onClick={downloadPNG} disabled={!svgOutput}>
             Download PNG
           </button>
         </div>
       </div>
       <textarea
-        aria-label="CellGen string"
-        className={`cellgen-editor format-preview-textarea${!parsed.ok ? ' error' : ''}`}
+        className={`cellgen-editor format-preview-textarea${!parsed.ok ? " error" : ""}`}
         value={text}
         onChange={(event) => onTextChange(event.target.value)}
         spellCheck={false}
         placeholder="e.g. ()chr1,{}pBAD"
         rows={2}
       />
-      {exports.error && (
-        <div className="validation-error" role="alert">
-          {exports.error}
-        </div>
-      )}
       <div className="format-bar-below">
         {!parsed.ok ? (
           <div className="validation-error">
@@ -56,8 +59,8 @@ export function FormatEditor({ text, parsed, svg, onTextChange }: Props) {
             {parsed.error.context && (
               <pre>
                 {parsed.error.context}
-                {'\n'}
-                {' '.repeat(Math.max(0, parsed.error.column - 1))}^
+                {"\n"}
+                {" ".repeat(Math.max(0, parsed.error.column - 1))}^
               </pre>
             )}
           </div>
@@ -66,13 +69,13 @@ export function FormatEditor({ text, parsed, svg, onTextChange }: Props) {
         )}
         <button
           className="copy-btn"
-          onClick={exports.copy}
+          onClick={copyFormat}
           disabled={!text}
           title="Copy to clipboard"
         >
-          {exports.copied ? 'Copied!' : 'Copy'}
+          {copied ? "Copied!" : "Copy"}
         </button>
       </div>
     </div>
-  )
+  );
 }
