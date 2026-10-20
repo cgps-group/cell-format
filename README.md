@@ -8,12 +8,11 @@ CellGen is a compact text format for describing cellular genome organisation. It
 
 | Notation | Meaning |
 | --- | --- |
-| `()chromosome` | A chromosome labelled `chromosome` |
-| `{}pBAD[type="plasmid"]` | A plasmid labelled `pBAD` |
-| `{…}label` or `(…)label` | Entities inside the brackets are contained within the labelled entity or chromosome |
-| `,` | Separates entities at the same level within a cell |
+| `(...)label` | A chromosome and the entities inside it |
+| `{...}label` | Another biological entity and what it contains |
+| `,` | Separates entities at the same level |
 | `;` | Separates cells |
-| `[key="value"]` | Adds attributes, such as an entity's type or an accession |
+| `[key="value"]` | Adds attributes, such as a type or accession |
 
 Parentheses mean chromosome, and only chromosome. Curly braces can represent any other biological entity; use a `type` attribute to state its class. Labels follow the closing bracket. Empty brackets mean that no contained entities are recorded.
 
