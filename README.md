@@ -1,187 +1,62 @@
 # CellGen
 
-A compact, human-readable notation for describing cellular genome organisation, inspired by the Newick format for phylogenetic trees.
+CellGen is a compact text format for describing cellular genome organisation. It records chromosomes, other biological entities such as plasmids and genes, and what is contained within them.
 
-## Overview
+**[Open the visualiser](https://cell-format.vercel.app/)** to build a record, paste your own notation or import an annotated GenBank or GFF3 file.
 
-Long-read sequencing now routinely produces complete genome assemblies, revealing chromosomes and the biological entities contained within or alongside them. These entities may be plasmids, mobile genetic elements, genes, gene clusters or other structures. CellGen records their containment relationships in a single line of text.
+## Reading the format
 
-**Key features**
+| Notation | Meaning |
+| --- | --- |
+| `(...)label` | A chromosome and the entities inside it |
+| `{...}label` | Another biological entity and what it contains |
+| `,` | Separates entities at the same level |
+| `;` | Separates cells |
+| `[key="value"]` | Adds attributes, such as a type or accession |
 
-- Describes chromosomes and any other labelled biological entity
-- Captures nested containment (e.g. an integron inside a plasmid)
-- Represents multiple cells in one string (e.g. two strains sharing a plasmid)
-- Supports free-text labels and key-value attributes
-- Machine-parseable and human-readable
+Parentheses mean chromosome, and only chromosome. Curly braces can represent any other biological entity; use a `type` attribute to state its class. Labels follow the closing bracket. Empty brackets mean that no contained entities are recorded.
 
-## Web app
+## A chromosome and a plasmid
 
-**[cell-format.vercel.app](https://cell-format.vercel.app/)**: paste a CellGen string and get an SVG diagram, or upload a GenBank or GFF3 file to generate a CellGen representation automatically.
-
-## Use CellGen in Python
-
-CellGen includes a Python parser, validator, canonical serialiser, SVG renderer and annotated-record importer. From a cloned checkout, install it with:
-
-```bash
-python -m pip install "./python[genbank]"
+```text
+()chr1, {}pBAD[type="plasmid"]
 ```
 
-It can also be installed directly from the main repository:
+The chromosome and plasmid are separate entities in one cell.
 
-```bash
-python -m pip install "cellgen[genbank] @ git+https://github.com/cgps-group/cell-format.git#subdirectory=python"
+<img src="docs/images/chromosome-and-plasmid.png" width="260" alt="Circular view showing chromosome chr1 and a separate plasmid pBAD in one cell.">
+
+## Nested containment
+
+```text
+{
+  { {}blaKPC-3[type="gene"] }Tn4401[type="transposon"]
+}pKpQIL[type="plasmid"]
 ```
 
-Parse and inspect a record:
+The gene `blaKPC-3` is inside the transposon `Tn4401`, which is inside the plasmid `pKpQIL`. Nesting the brackets records those relationships directly.
 
-```python
-from cellgen import parse, to_cellgen
+<img src="docs/images/nested-containment.png" width="340" alt="Containment view showing blaKPC-3 inside Tn4401 inside plasmid pKpQIL.">
 
-record = parse('({}Tn4401)chromosome,{}pKPC[type="plasmid"]')
-chromosome = record.cells[0].replicons[0]
+## Two cells
 
-print(chromosome.label)                # chromosome
-print(chromosome.children[0].label)    # Tn4401
-print(to_cellgen(record))              # canonical CellGen text
+```text
+()chr1, {}pA[type="plasmid"] ; ()chr2, {}pB[type="plasmid"]
 ```
 
-Invalid input raises a positioned `ParseError`:
+A semicolon separates the cells. Each cell here contains a chromosome and a plasmid.
 
-```python
-from cellgen import ParseError, parse
+<img src="docs/images/two-cells.png" width="620" alt="Circular view of two cells: chr1 with plasmid pA, and chr2 with plasmid pB.">
 
-try:
-    parse('({}Tn4401')
-except ParseError as error:
-    print(error.code, error.line, error.column)
-    print(error.as_dict())
-```
+These images are static exports from the visualiser's circular and containment views.
 
-The command-line interface exposes the same implementation:
+## Documentation
 
-```bash
-cellgen validate '()chromosome,{}pKPC[type="plasmid"]'
-cellgen render '({}Tn4401)chromosome' --output diagram.svg
-cellgen convert assembly.gbk
-cellgen convert annotation.gff3
-```
-
-See the [Python guide](docs/python.md) for the complete public API and GenBank, GFF3 and MOB-suite examples.
-
-## Use the TypeScript parser
-
-The browser application uses the reference TypeScript implementation in [`webapp/src/cellgen`](webapp/src/cellgen). Its public source entry point is [`webapp/src/cellgen/index.ts`](webapp/src/cellgen/index.ts):
-
-```typescript
-import { parseCellGen, toCellGen } from './cellgen'
-
-const result = parseCellGen('()chromosome,{}pKPC[type="plasmid"]')
-if (result.ok) {
-  console.log(toCellGen(result.value))
-} else {
-  console.error(result.error.code, result.error.line, result.error.column)
-}
-```
-
-The TypeScript implementation is currently distributed as repository source rather than as an npm package. See the [TypeScript guide](docs/typescript.md) and the [format specification](docs/specification.md) when integrating it or implementing CellGen in another language.
-
-## Format definition
-
-### Grammar
-
-```
-CellSet      → Cell (';' Cell)*
-Cell         → CellularElement (',' CellularElement)*
-CellularElement → Chromosome | Entity
-Chromosome   → '(' Entity* ')' Label AttributeSet?
-Entity       → '{' Entity* '}' Label AttributeSet?
-Label        → string | empty
-AttributeSet → '[' KeyValue (',' KeyValue)* ']'
-KeyValue     → Key '=' '"' Value '"'
-```
-
-- `( ... )` means chromosome, and only chromosome.
-- `{ ... }` means any other biological entity. Its class is supplied by its label or a `type` attribute, for example `plasmid`, `transposon`, `gene`, `gene_cluster` or `starship`.
-- `;` separates cells in a multi-cell set
-- `,` separates replicons within a cell
-- `[key="value"]` adds optional attributes to any element
-
-### Examples
-
-**Single chromosome with an integron**
-```
-({}integron)my_chr
-```
-
-**Chromosome and a plasmid**
-```
-()chr1, {}pBAD
-```
-
-**Chromosome and plasmid where the plasmid is also integrated in the chromosome**
-```
-({}plasmid1)chromosome, {}plasmid1
-```
-
-**Chromosome with a transposon; plasmid carrying a transposon and an integron**
-```
-( {}transposon1 )chromosome , { {}transposon2, {}integron }plasmid
-```
-
-**Two cells sharing the same plasmid**
-```
-()chromosome1, {}plasmidA ; ()chromosome2, {}plasmidA
-```
-
-**Chromosome with attributes**
-```
-()chromosome[organism="Escherichia coli", strain="K-12"]
-```
-
-**Plasmid with nested integrons, each carrying identical gene cassettes**
-```
-()chromosome, { {}integronA }plasmid1, { {}integronA }plasmid2
-```
-
-**Fungal chromosome containing a Starship (schematic)**
-```
-({ {}DUF3435_captain[type="gene", role="captain"], {}cargo_gene_cluster[type="gene_cluster", role="cargo"] }Starship[type="starship", representation="schematic"])chromosome[organism="Macrophomina phaseolina"]
-```
-
-This example represents the characteristic architecture described for fungal Starships: a chromosome-integrated element containing a DUF3435 tyrosine recombinase (the captain) and downstream cargo. It is a structural illustration, not a transcription of one annotated sequence. See [Gluck-Thaler et al. (2022)](https://doi.org/10.1093/molbev/msac109).
-
-## Web app (`webapp/`)
-
-A fully client-side React and TypeScript application.
-
-### Features
-
-- **Live parser:** type or paste a CellGen string; errors are shown inline with position
-- **SVG renderer:** circular diagrams use blue for chromosomes, green for top-level non-chromosomal entities, and coloured arcs for contained entities
-- **GenBank / GFF3 import:** upload an annotated assembly file to generate the CellGen string
-- **Download:** export the diagram as SVG or the format string as plain text
-- **No server required:** everything runs in the browser
-
-### Run locally
-
-```bash
-cd webapp
-npm install
-npm run dev
-```
-
-### Build
-
-```bash
-cd webapp
-npm run build   # output in webapp/dist/
-```
-
-## Authors
-
-Centre for Genomic Pathogen Surveillance, University of Oxford
-
-- Julio Diaz Caballero
-- Nabil-Fareed Alikhan
-- Khalil AbuDahab
-- David Aanensen
+- [Web visualiser](docs/visualiser.md): build and edit records, import annotations, export diagrams and run the app locally.
+- [Python](docs/python.md): installation, parser API and command-line tools.
+- [TypeScript](docs/typescript.md): parser and renderer APIs, and integration with other applications.
+- [Format specification](docs/specification.md): grammar, labels, attributes and syntax rules.
+- [More examples](docs/examples.md) and [published biological structures](examples/real_world.md).
+- [GenBank and GFF3 import](docs/import.md): annotation handling and import options.
+- [Validation](docs/validation.md): diagnostics and conformance checks.
+- [Authors](docs/credits.md).
