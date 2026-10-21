@@ -15,6 +15,43 @@ function parse(input: string) {
 }
 
 describe('GenBank conversion', () => {
+  it('does not turn Tn21 notes about integron components into whole integrons', () => {
+    const root = parse(parseGenBank(fixture('prokka/tn21-reference.gbk')).cellgen).cells[0].replicons[0]
+    const integrons = (node: typeof root): string[] => [
+      ...(node.attributes.type === 'integron' ? [node.label] : []),
+      ...node.children.flatMap(integrons),
+    ]
+    expect(integrons(root)).toEqual(['Integron In2'])
+  })
+  it('imports actual Prokka GenBank without duplicating gene/CDS pairs', () => {
+    const source = fixture('prokka/pbr322.gbk')
+    const result = parseGenBank(source, { retainUncontainedGenes: true })
+    const root = parse(result.cellgen).cells[0].replicons[0]
+    expect(root.attributes.type).toBe('plasmid')
+    expect(root.attributes.length).toBe('4361')
+    expect(root.children).toHaveLength(5)
+    expect(parseGenBank(source).omittedGenes).toBe(5)
+    const selected = parseGenBank(source, { selectedFeatureIds: ['TEST_00002'] })
+    expect(parse(selected.cellgen).cells[0].replicons[0].children.map(child => child.label)).toEqual(['TEST_00002'])
+  })
+  it('reads wrapped definitions, locations and mobile-element qualifiers', () => {
+    const source = `LOCUS       opaque 100 bp DNA circular
+DEFINITION  An annotated sequence with a
+            plasmid description.
+FEATURES             Location/Qualifiers
+     misc_feature    join(10..40,
+                     60..90)
+                     /note="class 1
+                     integron"
+     CDS             20..30
+                     /gene="inside"
+ORIGIN
+//`
+    const root = parse(parseGenBank(source).cellgen).cells[0].replicons[0]
+    expect(root.attributes.type).toBe('plasmid')
+    expect(root.children[0].attributes).toMatchObject({ type: 'integron', start: '10', end: '90' })
+    expect(root.children[0].children[0].label).toBe('inside')
+  })
   it('counts omitted genes and retains them when explicitly selected', () => {
     const source = fixture('assembly.gbk')
     const standard = parseGenBank(source)
@@ -64,6 +101,20 @@ describe('GenBank conversion', () => {
 })
 
 describe('GFF3 conversion', () => {
+  it('imports actual Prokka GFF with correct length and selectable gene/CDS identifiers', () => {
+    const source = fixture('prokka/pbr322.gff')
+    const result = parseGFF(source, { retainUncontainedGenes: true })
+    const root = parse(result.cellgen).cells[0].replicons[0]
+    expect(root.attributes.type).toBe('unknown')
+    expect(root.attributes.length).toBe('4361')
+    expect(root.children).toHaveLength(5)
+    expect(parseGFF(source.split('##FASTA')[0], { retainUncontainedGenes: true }).cellgen).toBe(result.cellgen)
+    for (const id of ['TEST_00002', 'TEST_00002_gene']) {
+      const selected = parseGFF(source, { selectedFeatureIds: [id] })
+      expect(selected.unmatchedSelectedIds).toEqual([])
+      expect(parse(selected.cellgen).cells[0].replicons[0].children.map(child => child.label)).toEqual(['TEST_00002'])
+    }
+  })
   const gff = `##gff-version 3
 ##sequence-region contig_1 1 100
 contig_1\t.\tmobile_genetic_element\t10\t80\t.\t+\t.\tID=m1;Name=Tn1

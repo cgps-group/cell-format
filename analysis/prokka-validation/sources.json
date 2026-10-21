@@ -1,0 +1,98 @@
+[
+  {
+    "name": "ecoli-k12",
+    "accession": "U00096.3",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/U00096.3?download=false",
+    "sha256": "c41a4207c8916ba6138460d129ce5604cb307d40b7d56207878a9e731a418074",
+    "bytes": 4719094
+  },
+  {
+    "name": "ecoli-k12",
+    "accession": "U00096.3",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/U00096.3?download=false",
+    "sha256": "be4d2e5c9f88594b28b7693a8e799f6d2963826ace7b7250d6c561fb04fae5eb",
+    "bytes": 10980605
+  },
+  {
+    "name": "pbr322",
+    "accession": "J01749.1",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/J01749.1?download=false",
+    "sha256": "0305da9e7a86d602957e039cd7c585c26e208e397429768ce5806c5b75c6d0da",
+    "bytes": 4497
+  },
+  {
+    "name": "pbr322",
+    "accession": "J01749.1",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/J01749.1?download=false",
+    "sha256": "587d73b61c50bd0d2f809884345fe6aca9094e4b55645f8a7fb9454c5a3c2c50",
+    "bytes": 31121
+  },
+  {
+    "name": "pacyc184",
+    "accession": "X06403.1",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/X06403.1?download=false",
+    "sha256": "a29324d9a3947061d0f7e70b22edab1cd76f1118e9c12bf022d27df6464ccad8",
+    "bytes": 4361
+  },
+  {
+    "name": "pacyc184",
+    "accession": "X06403.1",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/X06403.1?download=false",
+    "sha256": "4ce9b23704e9fa599077094262b88366b53aee73baad90e7380c38fc37f15e87",
+    "bytes": 9795
+  },
+  {
+    "name": "phix174",
+    "accession": "J02482.1",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/J02482.1?download=false",
+    "sha256": "310dceb45038259969e1987063650696ed89174cc1571eacdd8a9c10f5333098",
+    "bytes": 5534
+  },
+  {
+    "name": "phix174",
+    "accession": "J02482.1",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/J02482.1?download=false",
+    "sha256": "c6db85507223054f1dbeab51737a7957cfc28d2edf84e09d937a0b8e9d16e3aa",
+    "bytes": 26170
+  },
+  {
+    "name": "pkpqil",
+    "accession": "GU595196.1",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/GU595196.1?download=false",
+    "sha256": "21ace1d1459e9c5d16efc5ab035a925b35aa12a7b9a8aa165487cbc85210c1de",
+    "bytes": 115613
+  },
+  {
+    "name": "pkpqil",
+    "accession": "GU595196.1",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/GU595196.1?download=false",
+    "sha256": "da784847c494f73e2089b676c6dc9081635c92802ce58939587f94c64bd483dc",
+    "bytes": 248201
+  },
+  {
+    "name": "tn21",
+    "accession": "AF071413.3",
+    "format": "fasta",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/fasta/AF071413.3?download=false",
+    "sha256": "f065d7b674e7820b9cee5a4b1d489d242670ce552e57a4b330b52b53fafca6e5",
+    "bytes": 20148
+  },
+  {
+    "name": "tn21",
+    "accession": "AF071413.3",
+    "format": "embl",
+    "url": "https://www.ebi.ac.uk/ena/browser/api/embl/AF071413.3?download=false",
+    "sha256": "c5f4982b12befa41294f2454956a7b93383ca78ff27caab0b46fa125622857c6",
+    "bytes": 84746
+  }
+]

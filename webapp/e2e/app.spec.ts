@@ -159,6 +159,22 @@ test.describe('interactive builder', () => {
 })
 
 test.describe('import section', () => {
+  for (const extension of ['gbk', 'gff']) {
+    test(`imports actual Prokka ${extension} and renders a selected locus`, async ({ page }) => {
+      await page.goto('/')
+      await page.getByRole('button', { name: '+ Import GenBank / GFF' }).click()
+      await page.getByLabel('Choose file').setInputFiles(
+        new URL(`../../tests/fixtures/prokka/pbr322.${extension}`, import.meta.url).pathname,
+      )
+      await page.getByLabel(/Retain specific genes/).fill('TEST_00002')
+      await page.getByRole('button', { name: 'Import selected file' }).click()
+      await expect(page.getByRole('status')).toContainText('retained 1 feature')
+      await expect(page.locator('.cellgen-editor')).toHaveValue(/length="4361"/)
+      await expect(page.locator('.cellgen-editor')).toHaveValue(/TEST_00002/)
+      await expect(page.locator('.validation-error')).not.toBeVisible()
+      await expect(page.locator('.svg-viewer svg')).toBeVisible()
+    })
+  }
   test('uploads selected genes and renders on a narrow keyboard-accessible screen', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/')

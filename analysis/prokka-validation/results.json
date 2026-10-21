@@ -1,0 +1,699 @@
+{
+  "image": "staphb/prokka@sha256:6bb2522e077ef08a8be7a3856fe80372ede3b832becba0728e1ddbe83d89a042",
+  "biopython": "1.88",
+  "cases": [
+    {
+      "sample": "ecoli-k12",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/ecoli-k12.gbk",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 124
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/ecoli-k12.gbk",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 4721
+    },
+    {
+      "sample": "pbr322",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/pbr322.gbk",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 2
+    },
+    {
+      "sample": "pbr322",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/pbr322.gbk",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 4
+    },
+    {
+      "sample": "pacyc184",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/pacyc184.gbk",
+      "type": "plasmid",
+      "length": "4245",
+      "retained": 0
+    },
+    {
+      "sample": "pacyc184",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/pacyc184.gbk",
+      "type": "plasmid",
+      "length": "4245",
+      "retained": 0
+    },
+    {
+      "sample": "phix174",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/phix174.gbk",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 0
+    },
+    {
+      "sample": "phix174",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/phix174.gbk",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 11
+    },
+    {
+      "sample": "pkpqil",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/pkpqil.gbk",
+      "type": "plasmid",
+      "length": "113637",
+      "retained": 9
+    },
+    {
+      "sample": "pkpqil",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/pkpqil.gbk",
+      "type": "plasmid",
+      "length": "113637",
+      "retained": 124
+    },
+    {
+      "sample": "tn21",
+      "source": "reference",
+      "mode": "default",
+      "file": "inputs/tn21.gbk",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 22
+    },
+    {
+      "sample": "tn21",
+      "source": "reference",
+      "mode": "all-genes",
+      "file": "inputs/tn21.gbk",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 42
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/ecoli-k12/ecoli-k12.gbk",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 0
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/ecoli-k12/ecoli-k12.gbk",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 4305
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/ecoli-k12/ecoli-k12.gbk",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 1
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/ecoli-k12/ecoli-k12.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 0
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/ecoli-k12/ecoli-k12.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 4305
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/ecoli-k12/ecoli-k12.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 1
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/ecoli-k12/ecoli-k12.no-fasta.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 0
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/ecoli-k12/ecoli-k12.no-fasta.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 4305
+    },
+    {
+      "sample": "ecoli-k12",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/ecoli-k12/ecoli-k12.no-fasta.gff",
+      "type": "unknown",
+      "length": "4641652",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pbr322/pbr322.gbk",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pbr322/pbr322.gbk",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322/pbr322.gbk",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pbr322/pbr322.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pbr322/pbr322.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322/pbr322.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/pbr322/pbr322.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/pbr322/pbr322.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322/pbr322.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pacyc184/pacyc184.gbk",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 0
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pacyc184/pacyc184.gbk",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 5
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pacyc184/pacyc184.gbk",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 1
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pacyc184/pacyc184.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 0
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pacyc184/pacyc184.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 5
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pacyc184/pacyc184.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 1
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/pacyc184/pacyc184.no-fasta.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 0
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/pacyc184/pacyc184.no-fasta.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 5
+    },
+    {
+      "sample": "pacyc184",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/pacyc184/pacyc184.no-fasta.gff",
+      "type": "unknown",
+      "length": "4245",
+      "retained": 1
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/phix174/phix174.gbk",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 0
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/phix174/phix174.gbk",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 6
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/phix174/phix174.gbk",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 1
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/phix174/phix174.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 0
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/phix174/phix174.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 6
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/phix174/phix174.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 1
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/phix174/phix174.no-fasta.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 0
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/phix174/phix174.no-fasta.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 6
+    },
+    {
+      "sample": "phix174",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/phix174/phix174.no-fasta.gff",
+      "type": "unknown",
+      "length": "5386",
+      "retained": 1
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pkpqil/pkpqil.gbk",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 0
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pkpqil/pkpqil.gbk",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 128
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pkpqil/pkpqil.gbk",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 1
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pkpqil/pkpqil.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 0
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pkpqil/pkpqil.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 128
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pkpqil/pkpqil.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 1
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/pkpqil/pkpqil.no-fasta.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 0
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/pkpqil/pkpqil.no-fasta.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 128
+    },
+    {
+      "sample": "pkpqil",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/pkpqil/pkpqil.no-fasta.gff",
+      "type": "unknown",
+      "length": "113637",
+      "retained": 1
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/tn21/tn21.gbk",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 0
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/tn21/tn21.gbk",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 21
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/tn21/tn21.gbk",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 1
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/tn21/tn21.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 0
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/tn21/tn21.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 21
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/tn21/tn21.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 1
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/tn21/tn21.no-fasta.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 0
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/tn21/tn21.no-fasta.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 21
+    },
+    {
+      "sample": "tn21",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/tn21/tn21.no-fasta.gff",
+      "type": "unknown",
+      "length": "19672",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gbk",
+      "type": "plasmid",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gbk",
+      "type": "plasmid",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gbk",
+      "type": "plasmid",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "default",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "all-genes",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka",
+      "mode": "selected-gene",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka-no-fasta",
+      "mode": "default",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 0
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka-no-fasta",
+      "mode": "all-genes",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 5
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka-no-fasta",
+      "mode": "selected-CDS",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    },
+    {
+      "sample": "pbr322-metadata",
+      "source": "prokka-no-fasta",
+      "mode": "selected-gene",
+      "file": "prokka/pbr322-metadata/pbr322-metadata.no-fasta.gff",
+      "type": "unknown",
+      "length": "4361",
+      "retained": 1
+    }
+  ]
+}

@@ -24,6 +24,7 @@ export interface ImportResult {
 
 interface GenBankFeature {
   type: string
+  sourceType?: string
   label: string
   start: number
   end: number
@@ -84,7 +85,9 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
     }
 
     if (line.startsWith('DEFINITION') && current) {
-      const def = line.replace('DEFINITION', '').trim().toLowerCase()
+      let definition = line.slice(12).trim()
+      while (i + 1 < lines.length && /^ {12}\S/.test(lines[i + 1])) definition += ` ${lines[++i].trim()}`
+      const def = definition.toLowerCase()
       if (def.includes('plasmid')) current.type = 'plasmid'
       else if (def.includes('chromosome')) current.type = 'chromosome'
       continue
@@ -101,26 +104,34 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
       }
       continue
     }
-    if (!['mobile_element', 'transposon', 'integron', 'insertion_sequence', 'cds', 'gene'].includes(rawType)) continue
-    const nums = [...match[2].matchAll(/\d+/g)].map(item => Number(item[0]))
+    if (!['mobile_element', 'transposon', 'integron', 'insertion_sequence', 'misc_feature', 'cds', 'gene'].includes(rawType)) continue
+    let location = match[2]
+    let qualifierText = ''
+    for (let j = i + 1; j < lines.length; j++) {
+      if (/^\s{5}\w+\s+/.test(lines[j]) || lines[j].startsWith('ORIGIN') || lines[j].startsWith('//')) break
+      const continuation = lines[j].trim()
+      if (!qualifierText && !continuation.startsWith('/')) location += continuation
+      else qualifierText += ` ${continuation}`
+    }
+    const nums = [...location.matchAll(/\d+/g)].map(item => Number(item[0]))
     if (!nums.length) continue
     const start = Math.min(...nums)
     const end = Math.max(...nums)
-    const strand = match[2].includes('complement') ? '-' : '+'
+    const strand = location.includes('complement') ? '-' : '+'
     const qualifiers: Record<string, string> = {}
-    for (let j = i + 1; j < lines.length; j++) {
-      if (/^\s{5}\w+\s+/.test(lines[j]) || lines[j].startsWith('ORIGIN') || lines[j].startsWith('//')) break
-      const qualifier = lines[j].match(/\/(\w+)="([^"]*)"/)
-      if (qualifier) qualifiers[qualifier[1]] = qualifier[2]
-    }
+    for (const qualifier of qualifierText.matchAll(/\/(\w+)="([^"]*)"/g)) qualifiers[qualifier[1]] = qualifier[2]
+    if (rawType === 'misc_feature'
+      && !/^(?:class\s+\d+\s+)?integron(?:\s+in[\w.-]+)?(?:[.;:]|$)/i.test(qualifiers.note?.trim() ?? '')) continue
     let type = rawType === 'cds' ? 'gene' : rawType
+    if (rawType === 'misc_feature') type = 'integron'
     const mobile = qualifiers.mobile_element_type?.toLowerCase() ?? ''
     if (mobile.includes('insertion sequence')) type = 'insertion_sequence'
     else if (mobile.includes('integron')) type = 'integron'
     else if (mobile.includes('transposon')) type = 'transposon'
-    const labelSource = qualifiers.mobile_element_type || qualifiers.gene || qualifiers.label || qualifiers.locus_tag || qualifiers.product || type
-    const label = labelSource.split(':').pop()?.trim() || type
-    current.features.push({ type, label, start, end, strand, children: [],
+    const labelSource = qualifiers.mobile_element_type || qualifiers.gene || qualifiers.label || qualifiers.locus_tag || qualifiers.product || qualifiers.note || type
+    const colon = labelSource.indexOf(':')
+    const label = (colon < 0 ? labelSource : labelSource.slice(colon + 1)).trim() || type
+    current.features.push({ type, sourceType: rawType, label, start, end, strand, children: [],
       identifiers: [qualifiers.gene, qualifiers.locus_tag, qualifiers.label].filter((value): value is string => Boolean(value)) })
   }
 
@@ -131,6 +142,7 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
   let omittedGenes = 0
   const availableIds = new Set<string>()
   records.forEach(record => {
+    record.features = collapseGenBankGenePairs(record.features)
     record.features.forEach(feature => feature.identifiers?.forEach(id => availableIds.add(id)))
     const roots = buildGenBankHierarchy(record.features, options)
     const count = (features: GenBankFeature[]): number => features.reduce((sum, feature) => sum + 1 + count(feature.children), 0)
@@ -158,6 +170,23 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
   })
   return { cellgen: rendered.join(', '), replicons, retainedFeatures, omittedGenes,
     unmatchedSelectedIds: (options.selectedFeatureIds ?? []).filter(id => !availableIds.has(id)) }
+}
+
+function collapseGenBankGenePairs(features: GenBankFeature[]): GenBankFeature[] {
+  const codingFeatures = new Map<string, GenBankFeature>()
+  const key = (feature: GenBankFeature, id: string) => `${feature.start}:${feature.end}:${feature.strand}:${id}`
+  for (const feature of features) {
+    if (feature.sourceType === 'cds') {
+      for (const id of feature.identifiers ?? []) codingFeatures.set(key(feature, id), feature)
+    }
+  }
+  return features.filter(feature => {
+    if (feature.sourceType !== 'gene') return true
+    const codingFeature = feature.identifiers?.map(id => codingFeatures.get(key(feature, id))).find(Boolean)
+    if (!codingFeature) return true
+    codingFeature.identifiers = [...new Set([...codingFeature.identifiers ?? [], ...feature.identifiers ?? []])]
+    return false
+  })
 }
 
 function buildGenBankHierarchy(features: GenBankFeature[], options: ImportOptions = {}): GenBankFeature[] {
@@ -202,10 +231,10 @@ function genBankFeatureToCellGen(feature: GenBankFeature, extra: Record<string, 
 // ── GFF3 parser ───────────────────────────────────────────────────────────────
 
 export function parseGFF(text: string, options: ImportOptions = {}): ImportResult {
-  const records = new Map<string, { rep: RepliconInfo; features: GenBankFeature[]; length: number; region?: [number, number] }>()
+  const records = new Map<string, { rep: RepliconInfo; features: GenBankFeature[]; length: number; fastaLength: number; region?: [number, number] }>()
   const get = (id: string) => {
     if (!records.has(id)) records.set(id, {
-      rep: { id, type: classifyByLabel(id), label: id, mges: [] }, features: [], length: 0,
+      rep: { id, type: classifyByLabel(id), label: id, mges: [] }, features: [], length: 0, fastaLength: 0,
     })
     return records.get(id)!
   }
@@ -218,7 +247,7 @@ export function parseGFF(text: string, options: ImportOptions = {}): ImportResul
     if (line === '##FASTA') { inFasta = true; return }
     if (inFasta) {
       if (line.startsWith('>')) { fastaId = line.slice(1).split(/\s+/)[0]; get(fastaId) }
-      else if (line && fastaId) get(fastaId).length += line.length
+      else if (line && fastaId) get(fastaId).fastaLength += line.length
       return
     }
     if (!line) return
@@ -243,9 +272,9 @@ export function parseGFF(text: string, options: ImportOptions = {}): ImportResul
     if (!mgeTypes.has(type) && type !== 'gene' && type !== 'cds') return
     const attrs = Object.fromEntries(rawAttrs.split(';').map(part => part.split('=', 2)).filter(part => part.length === 2))
     const label = decodeURIComponent(attrs.Name || attrs.gene || attrs.ID || type)
-    record.features.push({ type: type === 'cds' ? 'gene' : type, label,
+    record.features.push({ type: type === 'cds' ? 'gene' : type, sourceType: type, label,
       start, end, strand, children: [], id: attrs.ID, parentId: attrs.Parent,
-      identifiers: [attrs.ID, attrs.Name, attrs.gene, attrs.locus_tag].filter((value): value is string => Boolean(value)) })
+      identifiers: [attrs.ID, attrs.Name, attrs.gene, attrs.locus_tag].filter((value): value is string => Boolean(value)).map(decodeURIComponent) })
   })
   if (!records.size) throw new Error('No GFF3 sequence records found.')
   const replicons: RepliconInfo[] = []
@@ -254,10 +283,18 @@ export function parseGFF(text: string, options: ImportOptions = {}): ImportResul
   const availableIds = new Set<string>()
   for (const record of records.values()) {
     record.features.forEach(feature => feature.identifiers?.forEach(id => availableIds.add(id)))
-    const geneIds = new Set(record.features.filter(feature => feature.type === 'gene' && feature.id && !feature.parentId)
-      .map(feature => `${feature.start}:${feature.end}:${feature.id}`))
-    const features = record.features.filter(feature => !(feature.type === 'gene' && feature.parentId
-      && geneIds.has(`${feature.start}:${feature.end}:${feature.parentId}`)))
+    const genes = new Map(record.features.filter(feature => feature.sourceType === 'gene' && feature.id)
+      .map(feature => [`${feature.start}:${feature.end}:${feature.strand}:${feature.id}`, feature]))
+    const duplicateGenes = new Set<GenBankFeature>()
+    for (const feature of record.features) {
+      if (feature.sourceType !== 'cds' || !feature.parentId) continue
+      const gene = genes.get(`${feature.start}:${feature.end}:${feature.strand}:${feature.parentId}`)
+      if (gene) {
+        feature.identifiers = [...new Set([...feature.identifiers ?? [], ...gene.identifiers ?? []])]
+        duplicateGenes.add(gene)
+      }
+    }
+    const features = record.features.filter(feature => !duplicateGenes.has(feature))
     const roots = buildGenBankHierarchy(features, options)
     const count = (nodes: GenBankFeature[]): number => nodes.reduce((sum, node) => sum + 1 + count(node.children), 0)
     retainedFeatures += count(roots)
@@ -268,7 +305,7 @@ export function parseGFF(text: string, options: ImportOptions = {}): ImportResul
     replicons.push(rep)
     const attrs: Record<string, string> = { type: rep.type, accession: rep.id }
     if (record.region) { attrs.region_start = String(record.region[0]); attrs.region_end = String(record.region[1]) }
-    if (record.length) attrs.length = String(record.length)
+    if (record.length || record.fastaLength) attrs.length = String(record.length || record.fastaLength)
     const open = rep.type === 'chromosome' ? '(' : '{'
     const close = rep.type === 'chromosome' ? ')' : '}'
     rendered.push(`${open}${roots.map(node => genBankFeatureToCellGen(node)).join(', ')}${close}${safeLabel(rep.id)}${attrsToCellGen(attrs)}`)

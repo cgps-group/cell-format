@@ -1,0 +1,1476 @@
+LOCUS       AF071413               19672 bp    DNA     linear   BCT 01-JAN-1980
+DEFINITION  Assembled sequence of transposon Tn21 containing transposition
+            genes, the integron In2, and the mercury resistance operon..
+ACCESSION   AF071413
+VERSION     AF071413.3
+DBLINK      MD5: 99c92bb16cc9ff4185b81ae83c976384
+            EuropePMC: PMC103744
+            EuropePMC: PMC1169491
+            EuropePMC: PMC1195402
+            EuropePMC: PMC127428
+            EuropePMC: PMC127583
+            EuropePMC: PMC134392
+            EuropePMC: PMC1366881
+            EuropePMC: PMC1426972
+            EuropePMC: PMC149023
+            EuropePMC: PMC149298
+            EuropePMC: PMC149312
+            EuropePMC: PMC1538643
+            EuropePMC: PMC1797678
+            EuropePMC: PMC182646
+            EuropePMC: PMC1855856
+            EuropePMC: PMC1891394
+            EuropePMC: PMC219399
+            EuropePMC: PMC2493119
+            EuropePMC: PMC2565918
+            EuropePMC: PMC2570304
+            EuropePMC: PMC2681836
+            EuropePMC: PMC2687260
+            EuropePMC: PMC2798558
+            EuropePMC: PMC3088239
+            EuropePMC: PMC3122386
+            EuropePMC: PMC3147655
+            EuropePMC: PMC353138
+            EuropePMC: PMC5075081
+            EuropePMC: PMC525457
+            EuropePMC: PMC549245
+            EuropePMC: PMC6045662
+            EuropePMC: PMC6188201
+            EuropePMC: PMC6361801
+            EuropePMC: PMC89037
+            EuropePMC: PMC89589
+            EuropePMC: PMC89914
+            EuropePMC: PMC90453
+            EuropePMC: PMC90776
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  Escherichia coli
+            Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacterales;
+            Enterobacteriaceae; Escherichia.
+REFERENCE   1  (bases 2952 to 4066)
+  AUTHORS   Diver W.P., Grinsted J., Fritzinger D.C., Brown N.L., Altenbuchner
+            J., Rogowsky P., Schmitt R.
+  TITLE     DNA sequences of and complementation by the tnpR genes of Tn21,
+            Tn501 and Tn1721
+  JOURNAL   Mol. Gen. Genet. 191(2):189-193(1983).
+   PUBMED   6312271
+REFERENCE   2  (bases 15973 to 19672)
+  AUTHORS   Barrineau P., Gilbert P., Jackson W.J., Jones C.S., Summers A.O.,
+            Wisdom S.
+  TITLE     The DNA sequence of the mercury resistance operon of the IncFII
+            plasmid NR1
+  JOURNAL   J. Mol. Appl. Genet. 2(6):601-619(1984).
+   PUBMED   6530603
+REFERENCE   3  (bases 18411 to 19672)
+  AUTHORS   Misra T.K., Brown N.L., Fritzinger D.C., Pridmore R.D., Barnes W.M.,
+            Haberstroh L., Silver S.
+  TITLE     Mercuric ion-resistance operons of plasmid R100 and transposon
+            Tn501: the beginning of the operon including the regulatory region
+            and the first two structural genes
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 81(19):5975-5979(1984).
+   PUBMED   6091128
+REFERENCE   4  (bases 16253 to 18549)
+  AUTHORS   Misra T.K., Brown N.L., Haberstroh L., Schmidt A., Goddette D.,
+            Silver S.
+  TITLE     Mercuric reductase structural genes from plasmid R100 and transposon
+            Tn501: functional domains of the enzyme
+  JOURNAL   Gene 34(2-3):253-262(1985).
+   PUBMED   2989109
+REFERENCE   5  (bases 2952 to 4066)
+  AUTHORS   Rogowsky P., Halford S.E., Schmitt R.
+  TITLE     Definition of three resolvase binding sites at the res loci of Tn21
+            and Tn1721
+  JOURNAL   EMBO J. 4(8):2135-2141(1985).
+   PUBMED   2998784
+REFERENCE   6  (bases 3057 to 4105)
+  AUTHORS   Hyde D.R., Tu C.P.
+  TITLE     tnpM: a novel regulatory gene that enhances Tn21 transposition and
+            suppresses cointegrate resolution
+  JOURNAL   Cell 42(2):629-638(1985).
+   PUBMED   2992807
+REFERENCE   7  (bases 14935 to 15434)
+  AUTHORS   Brown N.L., Misra T.K., Winnie J.N., Schmidt A., Seiff M., Silver S.
+  TITLE     The nucleotide sequence of the mercuric resistance operons of
+            plasmid R100 and transposon Tn501: further evidence for mer genes
+            which enhance the activity of the mercuric ion detoxification system
+  JOURNAL   Mol. Gen. Genet. 202(1):143-151(1986).
+   PUBMED   3007931
+REFERENCE   8  (bases 1 to 3056)
+  AUTHORS   Ward E., Grinsted J.
+  TITLE     The nucleotide sequence of the tnpA gene of Tn21
+  JOURNAL   Nucleic Acids Res. 15(4):1799-1806(1987).
+   PUBMED   3029727
+REFERENCE   9  (bases 4106 to 7537)
+  AUTHORS   Sundstrom L., Radstrom P., Swedberg G., Skold O.
+  TITLE     Site-specific recombination promotes linkage between trimethoprim-
+            and sulfonamide resistance genes. Sequence characterization of dhfrV
+            and sulI and a recombination active locus of Tn21
+  JOURNAL   Mol. Gen. Genet. 213(2-3):191-201(1988).
+   PUBMED   3054482
+REFERENCE   10
+  AUTHORS   Schmidt F.R., Nucken E.J., Henschke R.B.
+  TITLE     Structure and function of hot spots providing signals for
+            site-directed specific recombination and gene expression in Tn21
+            transposons
+  JOURNAL   Mol. Microbiol. 3(11):1545-1555(1989).
+   PUBMED   2559298
+REFERENCE   11  (bases 7540 to 9257)
+  AUTHORS   Stokes H.W., Hall R.M.
+  TITLE     A novel family of potentially mobile DNA elements encoding
+            site-specific gene-integration functions: integrons
+  JOURNAL   Mol. Microbiol. 3(12):1669-1683(1989).
+   PUBMED   2560119
+REFERENCE   12  (bases 6301 to 6333)
+  AUTHORS   Guerineau F., Brooks L., Mullineaux P.
+  TITLE     Expression of the sulfonamide resistance gene from plasmid R46
+  JOURNAL   Plasmid 23(1):35-41(1990).
+   PUBMED   2190244
+REFERENCE   13  (bases 4106 to 5438)
+  AUTHORS   Mercier J., Lachapelle J., Couture F., Lafond M., Vezina G.,
+            Boissinot M., Levesque R.C.
+  TITLE     Structural and functional characterization of tnpI, a recombinase
+            locus in Tn21 and related beta-lactamase transposons
+  JOURNAL   J. Bacteriol. 172(7):3745-3757(1990).
+   PUBMED   2163386
+REFERENCE   14  (bases 14967 to 15674)
+  AUTHORS   Allmeier H., Cresnar B., Greck M., Schmitt R.
+  TITLE     Complete nucleotide sequence of Tn1721: gene organization and a
+            novel gene product with features of a chemotaxis protein
+  JOURNAL   Gene 111(1):11-20(1992).
+   PUBMED   1312499
+REFERENCE   15  (bases 19146 to 19199)
+  AUTHORS   Summers A.O.
+  TITLE     Untwist and shout: a heavy metal-responsive transcriptional
+            regulator
+  JOURNAL   J. Bacteriol. 174(10):3097-3101(1992).
+   PUBMED   1577681
+REFERENCE   16  (bases 5134 to 5281)
+  AUTHORS   Levesque C., Brassard S., Lapointe J., Roy P.H.
+  TITLE     Diversity and relative strength of tandem promoters for the
+            antibiotic-resistance genes of several integrons
+  JOURNAL   Gene 142(1):49-54(1994).
+   PUBMED   8181756
+REFERENCE   17
+  AUTHORS   Radstrom P., Skold O., Swedberg G., Flensburg J., Roy P.H.,
+            Sundstrom L.
+  TITLE     Transposon Tn5090 of plasmid R751, which carries an integron, is
+            related to Tn7, Mu, and the retroelements
+  JOURNAL   J. Bacteriol. 176(11):3257-3268(1994).
+   PUBMED   8195081
+REFERENCE   18  (bases 4492 to 8992)
+  AUTHORS   Recchia G.D., Stokes H.W., Hall R.M.
+  TITLE     Characterisation of specific and secondary recombination sites
+            recognised by the integron DNA integrase
+  JOURNAL   Nucleic Acids Res. 22(11):2071-2078(1994).
+   PUBMED   8029014
+REFERENCE   19  (bases 7540 to 9981)
+  AUTHORS   Hall R.M., Brown H.J., Brookes D.E., Stokes H.W.
+  TITLE     Integrons found in different locations have identical 5' ends but
+            variable 3' ends
+  JOURNAL   J. Bacteriol. 176(20):6286-6294(1994).
+   PUBMED   7929000
+REFERENCE   20  (bases 4492 to 8992)
+  AUTHORS   Recchia G.D., Hall R.M.
+  TITLE     Gene cassettes: a new class of mobile element
+  JOURNAL   Microbiology (Reading, Engl.) 141(PT 12):3015-3027(1995).
+   PUBMED   8574395
+REFERENCE   21  (bases 9951 to 14934)
+  AUTHORS   Brown H.J., Stokes H.W., Hall R.M.
+  TITLE     The integrons In0, In2, and In5 are defective transposon derivatives
+  JOURNAL   J. Bacteriol. 178(15):4429-4437(1996).
+   PUBMED   8755869
+REFERENCE   22  (bases 5343 to 6256)
+  AUTHORS   Collis C.M., Kim M.J., Stokes H.W., Hall R.M.
+  TITLE     Binding of the purified integron DNA integrase Intl1 to integron-
+            and cassette-associated recombination sites
+  JOURNAL   Mol. Microbiol. 29(2):477-490(1998).
+   PUBMED   9720866
+REFERENCE   23  (bases 5343 to 5404)
+  AUTHORS   Gravel A., Fournier B., Roy P.H.
+  TITLE     DNA complexes obtained with the integron integrase IntI1 at the
+            attI1 site
+  JOURNAL   Nucleic Acids Res. 26(19):4347-4355(1998).
+   PUBMED   9742234
+REFERENCE   24  (bases 1 to 19672)
+  AUTHORS   Liebert C.A., Hall R.M., Summers A.O.
+  TITLE     Transposon Tn21, flagship of the floating genome
+  JOURNAL   Microbiol. Mol. Biol. Rev. 63(3):507-522(1999).
+   PUBMED   10477306
+REFERENCE   25  (bases 7540 to 14934)
+  AUTHORS   Partridge S.R., Hall R.M.
+  TITLE     In34, a complex In5 family class 1 integron containing orf513 and
+            dfrA10
+  JOURNAL   Antimicrob. Agents Chemother. 47(1):342-349(2003).
+   PUBMED   12499211
+REFERENCE   26
+  AUTHORS   Kholodii G., Mindlin S., Petrova M., Minakhina S.
+  TITLE     Tn5060 from the Siberian permafrost is most closely related to the
+            ancestor of Tn21 prior to integron acquisition
+  JOURNAL   FEMS Microbiol. Lett. 226(2):251-255(2003).
+   PUBMED   14553919
+REFERENCE   27  (bases 4106 to 7539)
+  AUTHORS   Sundstroem L.
+  TITLE     ;
+  JOURNAL   Submitted (27-NOV-1989) to the INSDC. Department of Pharmaceutical
+            Microbiology, Uppsala University, Sweden
+REFERENCE   28  (bases 7540 to 14934)
+  AUTHORS   Hall R.M.
+  TITLE     ;
+  JOURNAL   Submitted (05-DEC-1995) to the INSDC. DIvision of
+            BiomolecularEngineering, CSIRO, PO Box 184, North Ryde, NSW 2113,
+            Australia
+REFERENCE   29  (bases 1 to 19672)
+  AUTHORS   Liebert C.A., Watson A.L., Summers A.O.
+  TITLE     ;
+  JOURNAL   Submitted (11-JUN-1998) to the INSDC. Microbiology, University of
+            Georgia, 527 Biological Sciences, Athens, GA 30602-2605, USA
+REFERENCE   30  (bases 1 to 19672)
+  AUTHORS   Partridge S.R., Hall R.M.
+  TITLE     ;
+  JOURNAL   Submitted (03-JUN-2002) to the INSDC. CSIRO Molecular Science, PO
+            Box 184, North Ryde, NSW 1670, Australia
+COMMENT     On Oct 21, 2003 this sequence version replaced gi:21930298.
+            The transposon Tn21 and many Tn21-like transposons carry within
+            them a potentially mobile DNA element called the integron which
+            encodes a RecA-independent, site-specific integration system
+            responsible for the acquisition of multiple antibiotic resistance
+            genes. Tn21 also carries the genes involved in its own
+            transposition (tnp) and a mercury resistance (mer) operon.
+            Recently the last section of the Tn21 transposon was sequenced and
+            the entire sequence (19,671 bp) is available in five overlapping
+            GenBank sequences (GenBank: X04891, M10791, X12870, U42226, and
+            J01730). We have assembled these sequences and updated the
+            annotation of the assembled sequence. Due to the recent interest in
+            integrons, we elected to present the Tn21 sequence with the
+            transposition genes on the left and the mer genes on the right
+            since this allows viewing the majority of the integron components
+            in the orientation favored by those studying the integron itself.
+            Data entry by Alice L. Watson.
+FEATURES             Location/Qualifiers
+     source          1..19672
+                     /organism="Escherichia coli"
+                     /mol_type="genomic DNA"
+                     /note="Tn21 originally isolated from Shigella flexneri"
+                     /db_xref="taxon:562"
+     repeat_region   1..19672
+                     /standard_name="Tn21"
+     misc_feature    complement(1..3056)
+                     /note="sequenced from E. coli Tn21, partial sequence of
+                     GenBank Accession Number X04891"
+                     /citation=[8]
+     repeat_region   1..38
+                     /rpt_type=INVERTED
+                     /note="38 bp terminal imperfect IR of transposonTn21"
+     gene            complement(34..3012)
+                     /gene="tnpA"
+     CDS             complement(34..3000)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="tnpA"
+                     /product="TnpA transposase"
+                     /db_xref="GOA:Q7BT65"
+                     /db_xref="InterPro:IPR002513"
+                     /db_xref="InterPro:IPR025296"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT65"
+                     /protein_id="AAC33926.2"
+                     /translation="MPRRSILSAAERESLLALPDSKDDLIRHYTFNDTDLSIIRQRRGP
+                     ANRLGFAVQLCYLRFPGVILGVDELPFPPLLKLVADQLKVGVESWNEYGQREQTRREHL
+                     SELQTVFGFRPFTMSHYRQAVQMLTELAMQTDKGIVLASALIGHLRRQSVILPALNAVE
+                     RASAEAITRANRRIYDALAEPLADAHRRRLDDLLKRRDNGKTTWLAWLRQSPAKPNSRH
+                     MLEHIERLKAWQALDLPTGIERLVHQNRLLKIAREGGQMTPADLAKFEPQRRYATLVAL
+                     ATEGMATVTDEIIDLHDRILGKLFNAAKNKHQQQFQASGKAINAKVRLYGRIGQALIDA
+                     KQSGRDAFAAIEAVMSWDSFAESVTEAQKLAQPDDFDFLHRIGESYATLRRYAPEFLAV
+                     LKLRAAPAAKNVLDAIEVLRGMNTDNARKLPADAPTGFIKPRWQKLVMTDAGIDRRYYE
+                     LCALSELKNSLRSGDIWVQGSRQFKDFEDYLVPPEKFTSLKQSSELPLAVATDCEQYLH
+                     ERLTLLEAQLATVNRMAAANDLPDAIITESGLKITPLDAAVPDTAQALIDQTAMVLPHV
+                     KITELLLEVDEWTGFTRHFTHLKSGDLAKDKNLLLTTILADAINLGLTKMAESCPGTTY
+                     AKLAWLQAWHTRDETYSTALAELVNAQFRHPFAGHWGDGTTSSSDGQNFRTASKAKSTG
+                     HINPKYGSSPGRTFYTHISDQYAPFHTKVVNVGLRDSTYVLDGLLYHESDLRIEEHYTD
+                     TAGFTDHVFALMHLLGFRFAPRIRDLGDTKLYIPKGDAAYDALKPMIGGTLNIKHVRAH
+                     WDEILRLATSIKQGTVTASLMLRKLGSYPRQNGLAVALRELGRIERTLFILDWLQSVEL
+                     RRRVHAGLNKGEARNALARAVFFNRLGEIRDRSFEQQRYRASGLNLVTAAIVLWNTVYL
+                     ERAAHALRGNGHAVDDSLLQYLSPLGWEHINLTGDYLWRSSAKIGAGKFRPLRPLQPA"
+     gene            complement(3003..3563)
+                     /gene="tnpR"
+     CDS             complement(3003..3563)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="tnpR"
+                     /product="TnpR resolvase"
+                     /db_xref="GOA:Q7BT64"
+                     /db_xref="InterPro:IPR006118"
+                     /db_xref="InterPro:IPR006119"
+                     /db_xref="InterPro:IPR006120"
+                     /db_xref="InterPro:IPR009057"
+                     /db_xref="InterPro:IPR036162"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT64"
+                     /protein_id="AAC33925.1"
+                     /translation="MTGQRIGYIRVSTFDQNPERQLEGVKVDRAFSDKASGKDVKRPQL
+                     EALISFARTGDTVVVHSMDRLARNLDDLRRIVQTLTQRGVHIEFVKEHLSFTGEDSPMA
+                     NLMLSVMGAFAEFERALIRERQREGIALAKQRGAYRGRKKSLSSERIAELRQRVEAGEQ
+                     KTKLAREFGISRETLYQYLRTDQ"
+     regulatory      complement(3010..3012)
+                     /gene="tnpA"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    3057..4105
+                     /note="sequenced from clones pDRH(108,114,404), partial
+                     sequence of GenBank Accession Number M10791; this portion
+                     of the sequence was selected to avoid an apparent
+                     sequencing error (two additional G's)"
+                     /citation=[6]
+     regulatory      complement(3063..3068)
+                     /gene="tnpA"
+                     /note="putative"
+                     /regulatory_class="minus_10_signal"
+     regulatory      complement(3086..3091)
+                     /gene="tnpA"
+                     /note="putative"
+                     /regulatory_class="minus_35_signal"
+     regulatory      complement(3569..3573)
+                     /gene="tnpR"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    complement(3576..3685)
+                     /note="area associated with res sites and recombination
+                     cross-over point"
+                     /citation=[1]
+                     /citation=[5]
+     protein_bind    complement(3576..3605)
+                     /bound_moiety="resolvase"
+                     /note="putative resolvase binding site III"
+     regulatory      complement(3591..3596)
+                     /gene="tnpR"
+                     /note="putative"
+                     /regulatory_class="minus_10_signal"
+     protein_bind    complement(3610..3652)
+                     /bound_moiety="resolvase"
+                     /note="putative resolvase binding site II"
+     regulatory      complement(3614..3618)
+                     /gene="tnpR"
+                     /note="putative"
+                     /regulatory_class="minus_35_signal"
+     protein_bind    complement(3668..3704)
+                     /bound_moiety="resolvase"
+                     /note="putative resolvase binding site I"
+     misc_feature    complement(3684..3685)
+                     /note="recombination cross-over point"
+     misc_feature    complement(join(3689..4039,15045..15680))
+                     /note="hypothetical ORF, urf2M, interrupted by insertion of
+                     In2; corresponds to urf-2X plus urf-2Y in pKLH2 (GenBank
+                     AF213017), pKLH272 (GenBank Y08992), pMER610 (GenBank
+                     Y08993), pKLH210 (GenBank Y10102), Tn5036 (GenBank Y09025)
+                     and Tn3926 (GenBank X78059); orf2 in Tn501 (GenBank
+                     Z00027); and urf-2 in Tn5041 (GenBank X98999) and Tn5060
+                     (AJ551280)"
+     gene            complement(3689..4039)
+                     /gene="tnpM"
+                     /note="putative"
+     CDS             complement(3689..4039)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="tnpM"
+                     /product="TnpM, putative"
+                     /note="putative; reported to enhance Tn21 transposition and
+                     suppress resolution of cointegrate replicons in vivo.
+                     similar to last 117 amino acids of orf2 of Tn501 (GenBank
+                     Accession Number Z00027)"
+                     /db_xref="InterPro:IPR001633"
+                     /db_xref="InterPro:IPR021767"
+                     /db_xref="InterPro:IPR035919"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT63"
+                     /protein_id="AAC33910.1"
+                     /translation="MEVVAEGVETPDCLAWLRQAGCDTVQGFLFARPMPAAAFVGFVNQ
+                     WRNTTMNANEPSTSCCVCCKEIPLDAAFTPEGAEYVEHFCGLECYQRFQARASTATETS
+                     VKPDACDSPPSG"
+     misc_feature    complement(3689..3915)
+                     /note="conserved region found in eight additional mer
+                     operons in gram negative bacteria; similar to: urf-2Y in
+                     pKLH2 (GenBank AF213017), pKLH272 (GenBank Y08992), pMER610
+                     (GenBank Y08993), pKLH210 (GenBank Y10102),Tn5036 (GenBank
+                     Y09025) and Tn3926 (GenBank X78059); orf2 in Tn501 (GenBank
+                     Z00027); and urf-2 in Tn5041 (GenBank X98999)"
+     misc_feature    complement(join(3935..4039,15045..15680))
+                     /note="similarity to hypothetical proteins which belong to
+                     the YEGE/YHDA/YHJK/YJCC family: Yntc_Azoca (SwissProt
+                     Q04855) in Azorhizobium caulinodans, Y07i_Mycu (SwissProt
+                     Q11024) in Mycobacterium tuberculosis, Ycir_Ecoli
+                     (SwissProt P77334) in E. coli, and Yi95_Syny3 (SwissProt
+                     P74101) in Synechocystis PCC6803"
+     repeat_region   4035..4039
+                     /rpt_type=DIRECT
+                     /note="5 bp duplicated upon insertion of In2"
+     mobile_element  4040..15039
+                     /mobile_element_type="transposon:Integron In2"
+                     /note="boundaries of In2; a class 1, sul1-associated
+                     integron"
+     misc_feature    4040..5394
+                     /note="5' conserved segment of In2"
+     repeat_region   4040..4064
+                     /rpt_type=INVERTED
+                     /note="25 bp terminal imperfect IRi of Integron In2; 5'
+                     end"
+     regulatory      complement(4046..4050)
+                     /gene="tnpM"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    4048..4066
+                     /note="i1; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     misc_feature    4071..4089
+                     /note="i2; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     misc_feature    complement(4086..4091)
+                     /note="one of two possible -10 promoter regions in this
+                     region; however, neither -10 promoter region conforms to
+                     the consensus sequence for sigma 70 RNA polymerase"
+     misc_feature    complement(4094..4099)
+                     /note="one of two possible -10 promoter regions in this
+                     region; however, neither -10 promoter region conforms to
+                     the consensus sequence for sigma 70 RNA polymerase"
+     misc_feature    complement(4106..7539)
+                     /note="sequenced from plasmid R6-5, partial sequence of
+                     GenBank X12870"
+                     /citation=[9]
+     misc_feature    complement(4109..4114)
+                     /note="one of two possible -35 promoter regions in this
+                     region; however, neither -35 promoter region conforms to
+                     the consensus sequence for sigma 70 RNA polymerase"
+     misc_feature    4113..4131
+                     /note="i3; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     misc_feature    complement(4115..4120)
+                     /note="one of two possible -35 promoter regions in this
+                     region; however, neither -35 promoter region conforms to
+                     the consensus sequence for sigma 70 RNA polymerase"
+     misc_feature    4141..4159
+                     /note="i4; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     gene            complement(4242..5313)
+                     /gene="intI1"
+                     /note="previously know as e2 or tnpI"
+     CDS             complement(4242..5255)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="intI1"
+                     /product="IntI1 DNA integrase"
+                     /db_xref="GOA:Q79JW0"
+                     /db_xref="InterPro:IPR002104"
+                     /db_xref="InterPro:IPR004107"
+                     /db_xref="InterPro:IPR010998"
+                     /db_xref="InterPro:IPR011010"
+                     /db_xref="InterPro:IPR011946"
+                     /db_xref="InterPro:IPR013762"
+                     /db_xref="UniProtKB/TrEMBL:Q79JW0"
+                     /protein_id="AAC33911.1"
+                     /translation="MKTATAPLPPLRSVKVLDQLRERIRYLHYSLRTEQAYVHWVRAFI
+                     RFHGVRHPATLGSSEVEAFLSWLANERKVSVSTHRQALAALLFFYGKVLCTDLPWLQEI
+                     GRPRPSRRLPVVLTPDEVVRILGFLEGEHRLFAQLLYGTGMRISEGLQLRVKDLDFDHG
+                     TIIVREGKGSKDRALMLPESLAPSLREQLSRARAWWLKDQAEGRSGVALPDALERKYPR
+                     AGHSWPWFWVFAQHTHSTDPRSGVVRRHHMYDQTFQRAFKRAVEQAGITKPATPHTLRH
+                     SFATALLRSGYDIRTVQDLLGHSDVSTTMIYTHVLKVGGAGVRSPLDALPPLTSER"
+     regulatory      5140..5145
+                     /note="gene cassette promoter; Pc promoter region (also
+                     known as P1 or Pant)"
+                     /citation=[16]
+                     /regulatory_class="minus_35_signal"
+     regulatory      5163..5168
+                     /note="gene cassette promoter; Pc promoter region (also
+                     known as P1 or Pant)"
+                     /citation=[16]
+                     /regulatory_class="minus_10_signal"
+     regulatory      complement(5258..5262)
+                     /gene="intI1"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      5259..5264
+                     /note="gene cassette promoter; P2 promoter region"
+                     /citation=[16]
+                     /regulatory_class="minus_35_signal"
+     regulatory      complement(5268..5272)
+                     /gene="intI1"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    5278..5280
+                     /note="3G insertion that creates P2, not present in most
+                     Class 1 integrons"
+     regulatory      5282..5287
+                     /note="gene cassette promoter; P2 promoter region"
+                     /citation=[16]
+                     /regulatory_class="minus_10_signal"
+     regulatory      complement(5285..5290)
+                     /gene="intI1"
+                     /note="putative"
+                     /citation=[13]
+                     /regulatory_class="minus_10_signal"
+     regulatory      complement(5308..5313)
+                     /gene="intI1"
+                     /note="putative"
+                     /citation=[13]
+                     /regulatory_class="minus_35_signal"
+     misc_feature    5343..5349
+                     /note="DR1; integrase binding site in attI1"
+                     /citation=[22]
+                     /citation=[23]
+     misc_feature    5362..5400
+                     /note="attI1 site; recombination crossover region; minimum
+                     bp required for gene cassette insertion"
+                     /citation=[18]
+     misc_feature    5362..5368
+                     /note="DR2; integrase binding site in attI1"
+                     /citation=[22]
+                     /citation=[23]
+     repeat_region   5362..5368
+                     /rpt_type=INVERTED
+                     /note="imperfect; potential secondary core site GTTRRRY"
+     repeat_region   5372..5376
+                     /rpt_type=INVERTED
+                     /note="short central repeat within attI1 site"
+     misc_feature    5377..5404
+                     /note="simple site in attI1; integrase binding site"
+                     /citation=[22]
+                     /citation=[23]
+     repeat_region   5381..5385
+                     /rpt_type=INVERTED
+                     /note="short central repeat within attI1 site"
+     misc_feature    5384..5397
+                     /note="recombination crossover region previously described
+                     as hot spot 2 (hs2); GenBank X13729"
+                     /citation=[10]
+     gene            5392..6195
+                     /gene="aadA1"
+     regulatory      5392..5394
+                     /gene="aadA1"
+                     /note="alternative RBS"
+                     /regulatory_class="ribosome_binding_site"
+     repeat_region   5394..5400
+                     /rpt_type=INVERTED
+                     /note="imperfect; core site, GTTRRRY"
+     misc_feature    5394..5395
+                     /note="integron-associated recombination crossover point
+                     for potential insertion of gene cassette(s)"
+     misc_feature    5395..6250
+                     /note="aadA1 gene cassette; contains the coding region for
+                     the aadA1 gene and the 59-base element; also known as attC"
+                     /citation=[20]
+     misc_feature    5395..5400
+                     /note="5' portion of the 59-base element"
+     misc_feature    5404
+                     /gene="aadA1"
+                     /note="alternative translational start site"
+     regulatory      5406..5409
+                     /gene="aadA1"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     CDS             5416..6195
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="aadA1"
+                     /product="AadA1 streptomycin adenylyltransferase"
+                     /function="confers resistance to streptomycin and
+                     spectinomycin"
+                     /db_xref="GOA:O85667"
+                     /db_xref="InterPro:IPR002934"
+                     /db_xref="InterPro:IPR024172"
+                     /db_xref="InterPro:IPR025184"
+                     /db_xref="UniProtKB/TrEMBL:O85667"
+                     /protein_id="AAC33912.1"
+                     /translation="MIAEVSTQLSEVVGVIERHLEPTLLAVHLYGSAVDGGLKPHSDID
+                     LLVTVTVRLDETTRRALINDLLETSASPGESEILRAVEVTIVVHDDIIPWRYPAKRELQ
+                     FGEWQRNDILAGIFEPATIDIDLAILLTKAREHSVALVGPAAEELFDPVPEQDLFEALN
+                     ETLTLWNSPPDWAGDERNVVLTLSRIWYSAVTGKIAPKDVAADWAMERLPAQYQPVILE
+                     ARQAYLGQEEDRLASRADQLEEFVHYVKGEITKVVGK"
+     misc_feature    5491..5508
+                     /note="similar to Tn21 merO operator; GenBank K03089"
+     misc_feature    6197..6250
+                     /note="3' portion of the 59-base element"
+     misc_feature    6197..6215
+                     /note="5O simple site in 59-base element"
+                     /citation=[22]
+     repeat_region   6197..6203
+                     /rpt_type=INVERTED
+                     /note="IR, imperfect; inverse core site, RYYYAAC"
+     misc_feature    6199..6253
+                     /note="recombination crossover region previously described
+                     as hot spot 1 (hs1); GenBank X13727"
+                     /citation=[10]
+     repeat_region   6209..6225
+                     /rpt_type=INVERTED
+                     /note="central imperfect repeat within 59-base element"
+     repeat_region   6229..6243
+                     /rpt_type=INVERTED
+                     /note="central imperfect repeat within 59-base element"
+     misc_feature    6237..6256
+                     /note="3O simple site in 59-base element"
+                     /citation=[22]
+     repeat_region   6250..6256
+                     /rpt_type=INVERTED
+                     /note="imperfect; core site, GTTRRRY"
+     misc_feature    6250..6251
+                     /note="integron-associated recombination crossover point
+                     for potential insertion of gene cassette(s)"
+     misc_feature    6251..8275
+                     /note="3' conserved segment of integron"
+     gene            6301..7539
+                     /gene="sul1"
+     regulatory      6301..6333
+                     /gene="sul1"
+                     /citation=[12]
+                     /regulatory_class="promoter"
+     gene            6348..6706
+                     /gene="qacEdelta1"
+     regulatory      6348..6351
+                     /gene="qacEdelta1"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     CDS             6359..6706
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="qacEdelta1"
+                     /product="QacEdelta1 multidrug exporter"
+                     /function="confers resistance to antisceptics and
+                     disinfectants such as ethidium bromide and quaternary
+                     ammonium"
+                     /db_xref="GOA:Q48338"
+                     /db_xref="InterPro:IPR000390"
+                     /db_xref="UniProtKB/TrEMBL:Q48338"
+                     /protein_id="AAC33913.1"
+                     /translation="MKGWLFLVIAIVGEVIATSALKSSEGFTKLAPSAVVIIGYGIAFY
+                     FLSLVLKSIPVGVAYAVWSGLGVVIITAIAWLLHGQKLDAWGFVGMGLIIAAFLLARSP
+                     SWKSLRRPTPW"
+     misc_feature    6650..6651
+                     /note="sequence diverges from qacE sequence, see GenBank
+                     X72585 and GenBank U67194"
+     regulatory      6687..6691
+                     /gene="sul1"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     CDS             6700..7539
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="sul1"
+                     /product="Sul1 dihydropteroate synthase"
+                     /function="confers type 1 sulphonamide resistance"
+                     /db_xref="GOA:P0C002"
+                     /db_xref="InterPro:IPR000489"
+                     /db_xref="InterPro:IPR006390"
+                     /db_xref="InterPro:IPR011005"
+                     /db_xref="UniProtKB/Swiss-Prot:P0C002"
+                     /protein_id="AAC33914.1"
+                     /translation="MVTVFGILNLTEDSFFDESRRLDPAGAVTAAIEMLRVGSDVVDVG
+                     PAASHPDARPVSPADEIRRIAPLLDALSDQMHRVSIDSFQPETQRYALKRGVGYLNDIQ
+                     GFPDPALYPDIAEADCRLVVMHSAQRDGIATRTGHLRPEDALDEIVRFFEARVSALRRS
+                     GVAADRLILDPGMGFFLSPAPETSLHVLSNLQKLKSALGLPLLVSVSRKSFLGATVGLP
+                     VKDLGPASLAAELHAIGNGADYVRTHAPGDLRSAITFSETLAKFRSRDARDRGLDHA"
+     misc_feature    7534..7567
+                     /note="3' end of a possible 59-base element"
+     misc_feature    7540..14934
+                     /note="sequenced from plasmid R100 also known as NR1 from
+                     Shigella flexneri, GenBank U42226"
+                     /citation=[21]
+                     /citation=[19]
+                     /citation=[30]
+                     /citation=[11]
+     gene            7657..8167
+                     /gene="orf5"
+     regulatory      7657..7661
+                     /gene="orf5"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     CDS             7667..8167
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="orf5"
+                     /product="unknown"
+                     /note="similar to puromycin N-acetyltransferase protein in
+                     Streptomyces anulatus ATCC 12461, GenBank Accession Number
+                     M25346"
+                     /db_xref="GOA:Q60219"
+                     /db_xref="InterPro:IPR000182"
+                     /db_xref="InterPro:IPR016181"
+                     /db_xref="UniProtKB/TrEMBL:Q60219"
+                     /protein_id="AAC33915.1"
+                     /translation="MDSEEPPNVRVACSGDIDEVVRLMHDAAAWMSAKGTPAWDVARID
+                     RTFAETFVLRSELLVASCSDGIVGCCTLSAEDPEFWPDALKGEAAYLHKLAVRRTHAGR
+                     GVSSALIEACRHAARTQGCAKLRLDCHPNLRGLYERLGFTHVDTFNPGWDPTFIAERLE
+                     LEI"
+     misc_feature    8275..8276
+                     /note="sequence diverges from those of integrons In1, In3,
+                     In4, and In5"
+     mobile_element  complement(join(8276..10719,12334..12361))
+                     /mobile_element_type="insertion sequence:IS326"
+                     /note="member of the IS21 family; IS1326 is found in
+                     integrons In0 and In5; GenBank U38187"
+     repeat_region   8276..8301
+                     /rpt_type=INVERTED
+                     /note="terminal IR of IS1326"
+     gene            complement(8343..9138)
+                     /gene="istB"
+     CDS             complement(8343..9128)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="istB"
+                     /product="IstB"
+                     /note="contains NTP domain motifs"
+                     /db_xref="GOA:Q7BT58"
+                     /db_xref="InterPro:IPR002611"
+                     /db_xref="InterPro:IPR003593"
+                     /db_xref="InterPro:IPR027417"
+                     /db_xref="InterPro:IPR028350"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT58"
+                     /protein_id="AAC33916.1"
+                     /translation="MMQHEGHVRILKSLKLFGMAHAIEELGNQNSPAFNQALPMLDSLI
+                     KAEVAEREVRSVNYQLRVAKFPVYRDLVGFDFSQSLVNEATVKQLHRCDFMEQAQNVVL
+                     IGGPGTGKTHLATAIGTQAVMHLNRRVRFFSTVDLVNALEQEKSSGRQGQIANRLLYAD
+                     LVILDELGYLPFSQTGGALLFHLLSKLYEKTSVILTTNLSFSEWSRVFGDEKMTTALLD
+                     RLTHHCHILETGNESYRFKHSSTQNKQEEKQTRKLKIET"
+     gene            complement(9115..10652)
+                     /gene="istA"
+     CDS             complement(9115..10638)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="istA"
+                     /product="IstA, contains a helix-turn helix motif and a
+                     DD(45)E motif; possible transposase of IS1326"
+                     /note="contains a helix-turn helix motif and a DD(45)E
+                     motif"
+                     /db_xref="GOA:Q7BT57"
+                     /db_xref="InterPro:IPR001584"
+                     /db_xref="InterPro:IPR017894"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT57"
+                     /protein_id="AAC33917.1"
+                     /translation="MINVAILSAIRRWHFRDGASIREIARRSGLSRNTVRKYLQSKVVE
+                     PQYPARDSVGKLSPFEPKLRQWLSTEHKKTKKLRRNLRSMYRDLVALGFTGSYDRVCAF
+                     ARQWKDSEQFKAQTSGKGCFIPLRFACGEAFQFDWSEDFARIAGKQVKLQIAQFKLAHS
+                     RAFVLRAYYQQKHEMLFDAHWHAFQIFGGIPKRGIYDNMKTAVDSVGRGKERRVNQRFT
+                     AMVSHYLFDAQFCNPASGWEKGQIEKNVQDSRQRLWQGAPDFQSLADLNVWLEHRCKAL
+                     WSELRHPELDQTVQEAFADEQGELMALPNAFDAFVEQTKRVTSTCLVHHEGNRYSVPAS
+                     YANRAISLRIYADKLVMAAEGQHIAEHPRLFGSGHARRGHTQYDWHHYLSVLQKKPGAL
+                     RNGAPFAELPPAFKKLQSILLQRPGGDRDMVEILALVLHHDEGAVLSAVELALECGKPS
+                     KEHVLNLLGRLTEEPPPKPIPIPKGLRLTLEPQANVNRYDSLRRAHDAA"
+     regulatory      complement(9134..9138)
+                     /gene="istB"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    complement(10629)
+                     /gene="istA"
+                     /note="alternative translational start site"
+     regulatory      complement(10638..10642)
+                     /gene="istA"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      complement(10649..10652)
+                     /gene="istA"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      complement(10711..10716)
+                     /note="istA and istB; putative"
+                     /regulatory_class="minus_10_signal"
+     mobile_element  10720..12333
+                     /mobile_element_type="insertion sequence:IS1353"
+                     /note="member of IS3 family; see GenBank U40482"
+     repeat_region   10720..10731
+                     /rpt_type=INVERTED
+                     /note="terminal IR of IS1353"
+     regulatory      10738..10743
+                     /note="orfAB; putative"
+                     /regulatory_class="minus_35_signal"
+     gene            10751..12305
+                     /gene="orfAB"
+     regulatory      10751..10754
+                     /gene="orfAB"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    10761
+                     /gene="orfAB"
+                     /note="alternate translational start site"
+     regulatory      10762..10767
+                     /note="orfAB; putative"
+                     /regulatory_class="minus_10_signal"
+     regulatory      10786..10788
+                     /gene="orfAB"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     CDS             10791..12305
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="orfAB"
+                     /product="unknown"
+                     /db_xref="GOA:O85668"
+                     /db_xref="InterPro:IPR001584"
+                     /db_xref="InterPro:IPR002514"
+                     /db_xref="InterPro:IPR009057"
+                     /db_xref="InterPro:IPR012337"
+                     /db_xref="InterPro:IPR025948"
+                     /db_xref="InterPro:IPR036397"
+                     /db_xref="UniProtKB/TrEMBL:O85668"
+                     /protein_id="AAC33918.2"
+                     /translation="MRLYLKLGRRMSATLRQLGYPTKNSLKAWLAEFERNQDLRRGYQR
+                     IKRQYTDEQKQRAVDHYIEQGYCLSHTIRSLGYPSREALRAWIRDLRPEFARTVVGSSA
+                     PTVARSRLEKQQAVIALNLRVGSAKDVADTVGVSRPTLYNWQHRLLGKVPLKPMTKKKG
+                     DTSLEQRHEALLRELAELESQNQRLRMENAILEKASELIKKDMGINPLELTSREKTKVV
+                     DALRVTFPLANLLCGLKLARSTYFYQRLRQTRPDKYTQVREVIRTIFEDNYRCYGYRRI
+                     DSALRLGGMRVSEKVVRRLMAQERLVVRTPRRRRFSAYAGDPTPAVPNLLNRDFHASAP
+                     NTKWLTDLTEIHIPAGKVYVSPIVDCFDGLVVAWNIGTSPDANLVNTMLDHAVRTLRPG
+                     EHPVIHSDRGSHYRWPAWIRRTENAQLTRSMSKKGCSPDNAACEGFFGRLKTELIYPRN
+                     WQHVTLKDLMTRIDAYIHWYNERRIKVSLGGRSPIEYRHAVGLMSV"
+     stem_loop       11408..11463
+                     /note="putative"
+     repeat_region   12321..12333
+                     /rpt_type=INVERTED
+                     /note="terminal IR of IS1353"
+     misc_feature    12336..15039
+                     /note="similar to tniBdelta1 and tniA in Pseudomonas
+                     aeruginosa plasmid pVS1 (GenBank U49101), and plasmid
+                     pSCH884 (GenBank U38230)"
+     repeat_region   12336..12361
+                     /rpt_type=INVERTED
+                     /note="terminal IR of IS1326"
+     regulatory      complement(12349..12354)
+                     /note="istA and istB; putative"
+                     /regulatory_class="minus_35_signal"
+     gene            complement(12356..13216)
+                     /gene="tniBdelta1"
+     CDS             complement(12356..13216)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="tniBdelta1"
+                     /product="TniBDelta1"
+                     /db_xref="InterPro:IPR008868"
+                     /db_xref="InterPro:IPR027417"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT56"
+                     /protein_id="AAC33920.1"
+                     /translation="MDEYPIIDLSHLLPAAQGLARLPADERIQRLRADRWIGYPRAVEA
+                     LNRLEALYAWPNKQRMPNLLLVGPTNNGKSMIVEKFRRTHPASSDADQEHIPVLVVQMP
+                     SEPSVIRFYVALLAAMGAPLRPRPRLPEMEQLALALLRKVGVRMLVIDELHNVLAGNSV
+                     NRREFLNLLRFLGNELRIPLVGVGTRDAYLAIRSDDQLENRFEPMMLPVWEANDDCCSL
+                     LASFAASLPLRRPSPIATLDMARYLLTRSEGTIGELAHLLMAAAIVAVESGEEAINHRT
+                     LSMAC"
+     misc_feature    12362..15039
+                     /note="Tni module; similar to Tn402(Tn5090) from plasmid
+                     R751 (GenBank U67194), and Tn5053 from RP1W17A (GenBank
+                     L40585) encoding tniA, tniB, tniQ and tniR genes
+                     responsible for transposition of integron"
+     gene            complement(13219..14947)
+                     /gene="tniA"
+     CDS             complement(13219..14934)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="tniA"
+                     /product="TniA putative transposase"
+                     /db_xref="GOA:Q7BT55"
+                     /db_xref="InterPro:IPR001584"
+                     /db_xref="InterPro:IPR012337"
+                     /db_xref="InterPro:IPR015378"
+                     /db_xref="InterPro:IPR036397"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT55"
+                     /protein_id="AAC33921.1"
+                     /translation="MLNTRVHQSEVSMATDTPRIPEQGVATLPDEAWERARRRAEIISP
+                     LAQSETVGHEAADMAAQALGLSRRQVYVLIRRARQGSGLVTDLVPGQSGGGKGKGRLPE
+                     PVERVIHELLQKRFLTKQKRSLAAFHREVTQVCKAQKLRVPARNTVALRIASLDPRKVI
+                     RRREGQDAARDLQGVGGEPPAVTAPLEQVQIDHTVIDLIVVDDRDRQPIGRPYLTLAID
+                     VFTRCVLGMVVTLEAPSAVSVGLCLVHVACDKRPWLEGLNVEMDWQMSGKPLLLYLDNA
+                     AEFKSEALRRGCEQHGIRLDYRPLGQPHYGGIVERIIGTAMQMIHDELPGTTFSNPDQR
+                     GDYDSENKAALTLRELERWLTLAVGTYHGSVHNGLLQPPAARWAEAVARVGVPAVVTRA
+                     TSFLVDFLPILRRTLTRTGFVIDHIHYYADALKPWIARRERWPSFLIRRDPRDISRIWV
+                     LEPEGQHYLEIPYRTLSHPAVTLWEQRQALAKLRQQGREQVDESALFRMIGQMREIVTS
+                     AQKATRKARRDADRRQHLKTSARPDKPVPPDTDIADPQADNLPPAKPFDQIEEW"
+     regulatory      complement(13225..13229)
+                     /note="putative; tniB"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    complement(14898)
+                     /gene="tniA"
+                     /note="alternative translational start site"
+     regulatory      14904..14907
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      complement(14923..14928)
+                     /gene="tniA"
+                     /note="tniA and tniBdelta1; putative"
+                     /regulatory_class="minus_10_signal"
+     misc_feature    complement(14935..19672)
+                     /note="sequenced from clone pSM, pDU1003 in plasmid R100;
+                     GenBank J01730; and sequenced from plasmid NR1 (IncFII)
+                     clone pDB7 GenBank K03089"
+                     /citation=[4]
+                     /citation=[7]
+                     /citation=[3]
+                     /citation=[2]
+     regulatory      complement(14943..14947)
+                     /gene="tniA"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     misc_feature    14945..14963
+                     /note="t3; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     regulatory      complement(14946..14951)
+                     /note="tniA and tniBdelta1; putative"
+                     /regulatory_class="minus_35_signal"
+     regulatory      complement(14964..14969)
+                     /note="tniA and tniBdelta1; putative"
+                     /regulatory_class="minus_10_signal"
+     gene            complement(14973..15688)
+                     /gene="urf2"
+                     /note="putative"
+     CDS             complement(14973..15680)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="urf2"
+                     /product="unknown"
+                     /db_xref="GOA:O85669"
+                     /db_xref="InterPro:IPR001633"
+                     /db_xref="InterPro:IPR035919"
+                     /db_xref="UniProtKB/TrEMBL:O85669"
+                     /protein_id="AAC33923.2"
+                     /translation="MTSSQPAGWTAAELAQAAARGQLDLHYQPLVDLRDHRIAGAEALM
+                     RWRHPRLGLLPPGQFLPLAESFGLMPEIGAWVLGEACRQMHKWQGPAWQPFRLAINVSA
+                     SQVGPTFDDEVKRVLADMALPAELLEIELTESVAFGNPALFASFDALRAIGVRFAADDF
+                     GTGYSCLQHLKCCPITTLKIDQSFVARLPDDARDQTIVRAVIQLAHGLGMDVIFRRRLH
+                     QLIGRNGCCAASS"
+     misc_feature    14973..14991
+                     /note="t2; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     regulatory      complement(14986..14991)
+                     /note="tniA and tniBdelta1, putative"
+                     /regulatory_class="minus_35_signal"
+     misc_feature    15013..15031
+                     /note="t1; putative Tni transposase binding site; similar
+                     to Tn402 repeats"
+                     /citation=[17]
+     repeat_region   15015..15039
+                     /rpt_type=INVERTED
+                     /note="25 bp terminal imperfect IRt of In2"
+     repeat_region   15040..15044
+                     /note="5 bp duplicated on insertion of In2"
+     misc_feature    complement(15248..15680)
+                     /note="similar to orf2 in pDU1358 (GenBank M15049)"
+     misc_feature    complement(15659..15680)
+                     /note="similar to start of conserved ORF found in eight
+                     additional mer operons in gram negative bacteria: urf-2X in
+                     pKLH2 (GenBank AF213017), pKLH272 (GenBank Y08992), pMER610
+                     (GenBank Y08993), pKLH210 (GenBank Y10102),Tn5036 (GenBank
+                     Y09025) and Tn3926 (GenBank X78059); orf2 in Tn501 (GenBank
+                     Z00027); and urf-2 in Tn5041 (GenBank X98999)"
+     gene            complement(15677..15926)
+                     /gene="merE"
+     CDS             complement(15677..15913)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merE"
+                     /product="unknown"
+                     /note="similar to urf-1 in pKLH2 (GenBank AF213017),
+                     pKLH272 (Genbank Y08992), pMER610 (GenBank Y08993), pKLH210
+                     (GenBank Y10102), Tn5036 (Genbank Y09025); orf1 in Tn501
+                     (GenBank Z00027); and urf-1 in Tn5041 (GenBank X98999)"
+                     /db_xref="GOA:Q57069"
+                     /db_xref="InterPro:IPR007746"
+                     /db_xref="UniProtKB/TrEMBL:Q57069"
+                     /protein_id="AAC33924.1"
+                     /translation="MNAPDKLPPETRQPVSGYLWGALAVLTCPCHLPILAAVLAGTTAG
+                     AFLGEHWGVAALALTGLFVLAVTRLLRAFRGGS"
+     regulatory      complement(15683..15688)
+                     /gene="urf2"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            complement(15910..16284)
+                     /gene="merD"
+     CDS             complement(15910..16272)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merD"
+                     /product="MerD, putative secondary regulatory protein"
+                     /db_xref="GOA:Q7BT53"
+                     /db_xref="InterPro:IPR000551"
+                     /db_xref="InterPro:IPR009061"
+                     /db_xref="InterPro:IPR011797"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT53"
+                     /protein_id="AAC33906.2"
+                     /translation="MSAYTVSQLAHNAGVSVHIVRDYLVRGLLRPVACTTGGYGVFDDA
+                     ALQRLCFVRAAFEAGIGLDALARLCRALDAADGAQAAAQLAVLRQLVERRRAALAHLDA
+                     QLASMPAERAHEEALP"
+     regulatory      complement(15921..15926)
+                     /gene="merE"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      complement(16279..16284)
+                     /gene="merD"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            complement(16290..17996)
+                     /gene="merA"
+     CDS             complement(16290..17984)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merA"
+                     /product="MerA, mercuric ion reductase"
+                     /db_xref="GOA:Q93UN8"
+                     /db_xref="InterPro:IPR001100"
+                     /db_xref="InterPro:IPR004099"
+                     /db_xref="InterPro:IPR006121"
+                     /db_xref="InterPro:IPR012999"
+                     /db_xref="InterPro:IPR016156"
+                     /db_xref="InterPro:IPR017969"
+                     /db_xref="InterPro:IPR021179"
+                     /db_xref="InterPro:IPR023753"
+                     /db_xref="InterPro:IPR036163"
+                     /db_xref="InterPro:IPR036188"
+                     /db_xref="UniProtKB/TrEMBL:Q93UN8"
+                     /protein_id="AAC33905.2"
+                     /translation="MSTLKITGMTCDSCAVHVKDALEKVPGVQSADVSYAKGSAKLAIE
+                     VGTSPDALTAAVAGLGYRATLADAPSVSTPGGLLDKMRDLLGRNDKTGSSGALHIAVIG
+                     SGGAAMAAALKAVEQGARVTLIERGTIGGTCVNVGCVPSKIMIRAAHIAHLRRESPFDG
+                     GIAATTPTIQRTALLAQQQARVDELRHAKYEGILEGNPAITVLHGSARFKDNRNLIVQL
+                     NDGGERVVAFDRCLIATGASPAVPPIPGLKDTPYWTSTEALVSETIPKRLAVIGSSVVA
+                     LELAQAFARLGAKVTILARSTLFFREDPAIGEAVTAAFRMEGIEVREHTQASQVAYING
+                     EGDGEFVLTTAHGELRADKLLVATGRAPNTRKLALDATGVTLTPQGAIVIDPGMRTSVE
+                     HIYAAGDCTDQPQFVYVAAAAGTRAAINMTGGDAALNLTAMPAVVFTDPQVATVGYSEA
+                     EAHHDGIKTDSRTLTLDNVPRALANFDTRGFIKLVVEEGSGRLIGVQAVAPEAGELIQT
+                     AALAIRNRMTVQELADQLFPYLTMVEGLKLAAQTFNKDVKQLSCCAG"
+     misc_feature    complement(16596..17673)
+                     /note="similar to E.coli glutathione reductase; GenBank
+                     A24409"
+     misc_feature    17041
+                     /note="sequence correction; should be an A according to
+                     GenBank K03089 rather than G in GenBank J01730"
+     misc_feature    complement(17745..17977)
+                     /note="similar to Tn21 merP"
+     regulatory      complement(17993..17996)
+                     /gene="merA"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            complement(18036..18468)
+                     /gene="merC"
+     CDS             complement(18036..18458)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merC"
+                     /product="MerC, transmembrane protein"
+                     /db_xref="GOA:Q7BT52"
+                     /db_xref="InterPro:IPR004891"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT52"
+                     /protein_id="AAC33908.1"
+                     /translation="MGLMTRIADKTGALGSVVSAMGCAACFPALASFGAAIGLGFLSQY
+                     EGLFISRLLPLFAALAFLANALGWFSHRQWLRSLLGMIGPAIVFAATVWLLGNWWTANL
+                     MYVGLALMIGVSIWDFVSPAHRRCGPDGCELPAKRL"
+     regulatory      complement(18466..18468)
+                     /gene="merC"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            complement(18494..18780)
+                     /gene="merP"
+     CDS             complement(18494..18769)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merP"
+                     /product="MerP, periplasmic mercuric ion binding protein"
+                     /db_xref="GOA:Q7BT51"
+                     /db_xref="InterPro:IPR001802"
+                     /db_xref="InterPro:IPR006121"
+                     /db_xref="InterPro:IPR011795"
+                     /db_xref="InterPro:IPR017969"
+                     /db_xref="InterPro:IPR036163"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT51"
+                     /protein_id="AAC33909.1"
+                     /translation="MKKLFASLALAAAVAPVWAATQTVTLAVPGMTCAACPITVKKALS
+                     KVEGVSKVDVGFEKREAVVTFDDTKASVQKLTKATADAGYPSSVKQ"
+     misc_feature    18617..18618
+                     /note="sequence correction; should read GC according to
+                     GenBank K03089 rather than CG according to GenBank J01730"
+     regulatory      complement(18776..18780)
+                     /gene="merP"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            complement(18783..19144)
+                     /gene="merT"
+     CDS             complement(18783..19133)
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merT"
+                     /product="MerT, mercuric ion transport protein"
+                     /db_xref="GOA:Q7BT50"
+                     /db_xref="InterPro:IPR003457"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT50"
+                     /protein_id="AAC33907.1"
+                     /translation="MSEPQNGRGALFAGGLAAILASTCCLGPLVLVALGFSGAWIGNLT
+                     VLEPYRPLFIGAALVALFFAWKRIYRPVQACKPGEVCAIPQVRATYKLIFWIVAVLVLV
+                     ALGFPYVVPFFY"
+     regulatory      complement(19142..19144)
+                     /gene="merT"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     gene            19146..19639
+                     /gene="merR"
+     regulatory      19146..19151
+                     /gene="merR"
+                     /regulatory_class="minus_35_signal"
+     regulatory      19167..19172
+                     /gene="merR"
+                     /regulatory_class="minus_10_signal"
+     regulatory      complement(19169..19174)
+                     /note="merTPCAD"
+                     /regulatory_class="minus_10_signal"
+     misc_feature    19177..19194
+                     /note="merO; mer operon operator"
+                     /citation=[15]
+     regulatory      19192..19195
+                     /gene="merR"
+                     /note="putative"
+                     /regulatory_class="ribosome_binding_site"
+     regulatory      complement(19194..19199)
+                     /note="merTPCAD"
+                     /regulatory_class="minus_35_signal"
+     CDS             19205..19639
+                     /codon_start=1
+                     /transl_table=11
+                     /gene="merR"
+                     /product="activator/repressor of mer operon"
+                     /note="MerR"
+                     /db_xref="GOA:Q7BT49"
+                     /db_xref="InterPro:IPR000551"
+                     /db_xref="InterPro:IPR009061"
+                     /db_xref="InterPro:IPR011794"
+                     /db_xref="InterPro:IPR015358"
+                     /db_xref="UniProtKB/TrEMBL:Q7BT49"
+                     /protein_id="AAC33922.1"
+                     /translation="MENNLENLTIGVFAKAAGVNVETIRFYQRKGLLREPDKPYGSIRR
+                     YGEADVVRVKFVKSAQRLGFSLDEIAELLRLDDGTHCEEASSLAEHKLKDVREKMADLA
+                     RMETVLSELVCACHARKGNVSCPLIASLQGEAGLARSAMP"
+     repeat_region   19635..19672
+                     /rpt_type=INVERTED
+                     /note="38 bp terminal imperfect IR of transposon Tn21"
+ORIGIN
+        1 ggggtcgtct cagaaaacgg aaaataaagc acgctaagcc ggttgcagag gccgtagcgg
+       61 cctgaacttc cccgcgccga tcttggcgct gctgcgccat aggtaatcac cggtcaggtt
+      121 gatgtgctcc cagccgagtg gcgacaggta ctgcaatagc gagtcatcga cggcatgacc
+      181 attgccgcgc aacgcatgcg ccgcacgctc caggtagacc gtgttccaca gcacgatggc
+      241 cgccgtcacc aggttgaggc cgctggcccg gtagcgctgc tgctcgaaac tgcggtcacg
+      301 gatttcacca aggcggttga agaacacggc acgggccagc gcattgcgcg cctcgccctt
+      361 gttcagcccg gcatgcacgc ggcggcgtag ctcgacgctt tgcagccagt cgaggatgaa
+      421 cagcgtgcgc tcgatgcggc ccaactcgcg cagcgcgacg gccaagccgt tctggcgcgg
+      481 gtagctgccg agtttcctga gcatcagcga ggccgtcacc gtgccctgct tgatcgaggt
+      541 ggccagccgc aggatttcgt cccaatgggc gcggacgtgc ttgatgttga gcgtgccgcc
+      601 gatcatcggc ttgagcgcgt cataggcggc atcgcccttc gggatgtaga gcttggtgtc
+      661 gcccaggtcg cggatgcgcg gcgcgaagcg gaagcccaag aggtgcatca gggcgaagac
+      721 gtgatcggtg aagcccgccg tgtcggtgta gtgctcctcg atccgcaggt cggattcgtg
+      781 gtacagcagg ccgtcgagca cgtaggttga gtcgcgcagg ccgacattga ccaccttggt
+      841 gtggaatggc gcgtattggt cggagatgtg ggtgtagaaa gtccgtcctg ggctgctgcc
+      901 atattttggg ttgatgtgcc ccgtgctctt tgccttgcta gcggttcgga aattctgtcc
+      961 gtccgatgat gatgtggtgc catcgcccca gtgcccggca aagggatgcc gaaactgagc
+     1021 gttgaccagt tcagccaacg ctgtcgagta cgtttcgtcg cgggtatgcc aggcttgcag
+     1081 ccaagcgagc ttcgcgtagg tcgtgccggg gcaggactcg gccatcttgg tcaggcccag
+     1141 gttgatcgcg tcggccagga tcgtggtcaa caacaggttc ttgtccttgg ccagatcgcc
+     1201 cgatttcaag tgcgtgaagt gccgggtgaa gcccgtccac tcatcgactt cgagcagcag
+     1261 ttcggtgatc ttgacgtgcg gcaggaccat ggctgtctgg tctatcagcg cctgcgcggt
+     1321 gtcgggcacc gccgcatcca gcggcgtgat cttcaagccc gactcggtga tgatggcatc
+     1381 cggcaggtcg ttggctgccg ccatgcggtt gacggtggca agttgtgctt ccagcagcgt
+     1441 cagccgctca tgcagatatt gttcgcagtc ggtggccacg gccagcggca attcgctgga
+     1501 ctgcttgagg ctggtgaact tctcgggcgg taccaggtag tcctcgaagt ccttgaactg
+     1561 gcgtgaaccc tgcacccaga tgtcgcccga gcgcagggag ttcttcaact cggacagcgc
+     1621 gcacagttcg tagtagcgcc ggtcgatgcc ggcgtcggtc atcaccagtt tctgccagcg
+     1681 cggcttgatg aagccggtcg gtgcatcggc tggcagcttg cgggcgttgt cggtgttcat
+     1741 gccgcgcagc acctcaatgg catcaagcac gtttttggcg gcgggcgcgg cccgcagctt
+     1801 gagcacggca aggaattccg gtgcatagcg gcgcagggtg gcgtagctct cgccgatgcg
+     1861 atgcaggaaa tcgaagtcat cgggttgcgc gagcttctgc gcctcggtga cgctctcggc
+     1921 aaaggaatcc caggacatga cggcctcgat ggcggcaaac gcatcgcggc ctgattgctt
+     1981 ggcgtcgatc agcgcctgac cgatgcgccc gtacagacgt accttggcgt tgatggcctt
+     2041 gcctgacgcc tggaactgct gctgatgctt attcttggca gcgttaaaca gcttacccag
+     2101 gatgcggtcg tgcaggtcga tgatttcgtc ggtgacggtg gccatgccct cggtggccag
+     2161 cgccacgaga gtggcgtagc gccgttgcgg ctcgaatttg gccaggtcgg cgggtgtcat
+     2221 ctggccgccc tcgcgggcaa tcttgagcag gcggttctgg tgaaccagcc gctcgatgcc
+     2281 ggtaggcaga tcgagtgcct gccatgcctt gaggcgttcg atgtgttcca gcatatgccg
+     2341 cgaatttggc ttggccggag actggcgcaa ccaagccaac caggtcgtct tgccgttgtc
+     2401 ccggcgcttg agcagatcgt cgaggcggcg gcgatgcgcg tccgccagtg gttcggccaa
+     2461 ggcgtcgtag atgcgccggt tagcacgggt gatcgcctcg gcactcgccc gctcgacggc
+     2521 gttgagggcg ggcagaatga ccgactgccg ccgcaggtgc ccgatcaagg cgctggccag
+     2581 cacgatgcct ttgtcggttt gcatcgccag ctcggtcagc atctggacgg cctgccggta
+     2641 atggctcatg gtgaagggcc ggaaaccgaa cacggtttgc agctcgctca ggtgctcgcg
+     2701 ccgggtctgc tcccgctggc cgtactcgtt ccagctttcg acgccgacct tgagctggtc
+     2761 ggcgaccagc ttcaacaagg gcgggaacgg tagttcatcg acgcccagga tgacgccggg
+     2821 aaagcgcagg taacagagct gcaccgcgaa gcccagccga ttggctggcc cgcgccgctg
+     2881 tcggatgatc gagaggtcgg tatcgttgaa tgtgtaatgt cggatcaggt cgtccttgga
+     2941 gtccggcaac gccagcaggc tttcccgctc ggcggcggac aggatggaac gacgtggcat
+     3001 atttactgat ccgttctcaa gtattgatac agggtttcgc gactgattcc gaattcacga
+     3061 gcaagcttgg tcttttgctc gccagcctcg acacgttggc gcagttcggc aatacgctca
+     3121 gacgacaggg atttcttcct gccacggtaa gccccgcgtt gcttggcgag cgcaataccc
+     3181 tcgcgctgac gctcgcggat cagggcgcgc tcgaactcgg cgaacgcgcc catcaccgag
+     3241 agcatcaggt tcgccatcgg agagtcttcg ccagtaaaac tgaggtgttc cttgacgaat
+     3301 tcgatatgca cgccgcgttg tgtcagcgtt tgcacgatcc ggcgcaaatc atcgagattg
+     3361 cgcgccaggc gatccatgct atgcaccacc acggtgtcgc cggtgcgggc gaagcttatc
+     3421 agcgcttcca gttgcggacg cttgacatcc ttgccggatg ccttgtcgct aaaagcgcga
+     3481 tcaaccttga cgccttccag ttgccgttcc gggttctggt cgaaggtgct gaccctgata
+     3541 tacccaatgc gctgtccagt catggaattc cctgcaaaat gtcagggaag actctatgac
+     3601 cttcaacgag atatgtcaat aaattcaaaa ttcaatccta tcctgacgca atttacacat
+     3661 ggcatctgac atcaggttag ggtatgcctc aacctgacgg cggcgaatca caagcgtccg
+     3721 gtttgacgct ggtttcggtc gcagtgctgg cccgcgcctg gaagcgctga tagcactcca
+     3781 gcccgcagaa atgctccacg tactcggccc cttccggcgt gaaggcggca tcgagcggga
+     3841 tttccttgca gcacacgcag caactggtgc tcggttcatt ggcgttcatg gtggtgttcc
+     3901 tccattggtt gacgaagccg acgaaggccg ccgccggcat cggcctggcg aacaggaaac
+     3961 cctgcaccgt gtcgcaaccc gcctgccgca accacgcaag gcagtcgggt gtttccacac
+     4021 cctcggctac cacctccatt gtcgttttca gaagacggct gcactgaacg tcagaagccg
+     4081 actgcactat agcagcggag gggttggatc catcaggcaa cgacgggctg ctgccggcca
+     4141 tcagcggacg cagggaggac tttccgcaac cggccgttcg atgcggcacc gatggccttc
+     4201 gcgcaggggt agtgaatccg ccaggattga cttgcgctgc cctacctctc actagtgagg
+     4261 ggcggcagcg catcaagcgg tgagcgcact ccggcaccgc caactttcag cacatgcgtg
+     4321 taaatcatcg tcgtagagac gtcggaatgg ccgagcagat cctgcacggt tcgaatgtcg
+     4381 taaccgctgc ggagcaaggc cgtcgcgaac gagtggcgga gggtgtgcgg tgtggcgggc
+     4441 ttcgtgatgc ctgcttgttc tacggcacgt ttgaaggcgc gctgaaaggt ctggtcatac
+     4501 atgtgatggc gacgcacgac accgctccgt ggatcggtcg aatgcgtgtg ctgcgcaaaa
+     4561 acccagaacc acggccagga atgcccggcg cgcggatact tccgctcaag ggcgtcggga
+     4621 agcgcaacgc cgctgcggcc ctcggcctgg tccttcagcc accatgcccg tgcacgcgac
+     4681 agctgctcgc gcaggctggg tgccaagctc tcgggtaaca tcaaggcccg atccttggag
+     4741 cccttgccct cccgcacgat gatcgtgccg tgatcgaaat ccagatcctt gacccgcagt
+     4801 tgcaaaccct cactgatccg catgcccgtt ccatacagaa gctgggcgaa caaacgatgc
+     4861 tcgccttcca gaaaaccgag gatgcgaacc acttcatccg gggtcagcac caccggcaag
+     4921 cgccgcgacg gccgaggtct tccgatctcc tgaagccagg gcagatccgt gcacagcacc
+     4981 ttgccgtaga agaacagcaa ggccgccaat gcctgacgat gcgtggagac cgaaaccttg
+     5041 cgctcgttcg ccagccagga cagaaatgcc tcgacttcgc tgctgcccaa ggttgccggg
+     5101 tgacgcacac cgtggaaacg gatgaaggca cgaacccagt ggacataagc ctgttcggtt
+     5161 cgtaagctgt aatgcaagta gcgtatgcgc tcacgcaact ggtccagaac cttgaccgaa
+     5221 cgcagcggtg gtaacggcgc agtggcggtt ttcatggctt gttatgactg tttttttggg
+     5281 gtacagtcta tgcctcgggc atccaagcag caagcgcgtt acgccgtggg tcgatgtttg
+     5341 atgttatgga gcagcaacga tgttacgcag cagggcagtc gccctaaaac aaagttaaac
+     5401 atcatgaggg aagcggtgat cgccgaagta tcgactcaac tatcagaggt agttggcgtc
+     5461 atcgagcgcc atctcgaacc gacgttgctg gccgtacatt tgtacggctc cgcagtggat
+     5521 ggcggcctga agccacacag tgatattgat ttgctggtta cggtgaccgt aaggcttgat
+     5581 gaaacaacgc ggcgagcttt gatcaacgac cttttggaaa cttcggcttc ccctggagag
+     5641 agcgagattc tccgcgctgt agaagtcacc attgttgtgc acgacgacat cattccgtgg
+     5701 cgttatccag ctaagcgcga actgcaattt ggagaatggc agcgcaatga cattcttgca
+     5761 ggtatcttcg agccagccac gatcgacatt gatctggcta tcttgctgac aaaagcaaga
+     5821 gaacatagcg ttgccttggt aggtccagcg gcggaggaac tctttgatcc ggttcctgaa
+     5881 caggatctat ttgaggcgct aaatgaaacc ttaacgctat ggaactcgcc gcccgactgg
+     5941 gctggcgatg agcgaaatgt agtgcttacg ttgtcccgca tttggtacag cgcagtaacc
+     6001 ggcaaaatcg cgccgaagga tgtcgctgcc gactgggcaa tggagcgcct gccggcccag
+     6061 tatcagcccg tcatacttga agctagacag gcttatcttg gacaagaaga agatcgcttg
+     6121 gcctcgcgcg cagatcagtt ggaagaattt gtccactacg tgaaaggcga gatcaccaag
+     6181 gtagtcggca aataatgtct aacaattcgt tcaagccgac gccgcttcgc ggcgcggctt
+     6241 aactcaagcg ttagatgcac taagcacata attgctcaca gccaaactat caggtcaagt
+     6301 ctgcttttat tatttttaag cgtgcataat aagccctaca caaattggga gatatatcat
+     6361 gaaaggctgg ctttttcttg ttatcgcaat agttggcgaa gtaatcgcaa catccgcatt
+     6421 aaaatctagc gagggcttta ctaagcttgc cccttccgcc gttgtcataa tcggttatgg
+     6481 catcgcattt tattttcttt ctctggttct gaaatccatc cctgtcggtg ttgcttatgc
+     6541 agtctggtcg ggactcggcg tcgtcataat tacagccatt gcctggttgc ttcatgggca
+     6601 aaagcttgat gcgtggggct ttgtaggtat ggggctcata attgctgcct ttttgctcgc
+     6661 ccgatcccca tcgtggaagt cgctgcggag gccgacgcca tggtgacggt gttcggcatt
+     6721 ctgaatctca ccgaggactc cttcttcgat gagagccggc ggctagaccc cgccggcgct
+     6781 gtcaccgcgg cgatcgaaat gctgcgagtc ggatcagacg tcgtggatgt cggaccggcc
+     6841 gccagccatc cggacgcgag gcctgtatcg ccggccgatg agatcagacg tattgcgccg
+     6901 ctcttagacg ccctgtccga tcagatgcac cgtgtttcaa tcgacagctt ccaaccggaa
+     6961 acccagcgct atgcgctcaa gcgcggcgtg ggctacctga acgatatcca aggatttcct
+     7021 gaccctgcgc tctatcccga tattgctgag gcggactgca ggctggtggt tatgcactca
+     7081 gcgcagcggg atggcatcgc cacccgcacc ggtcaccttc gacccgaaga cgcgctcgac
+     7141 gagattgtgc ggttcttcga ggcgcgggtt tccgccttgc gacggagcgg ggtcgctgcc
+     7201 gaccggctca tcctcgatcc ggggatggga tttttcttga gccccgcacc ggaaacatcg
+     7261 ctgcacgtgc tgtcgaacct tcaaaagctg aagtcggcgt tggggcttcc gctattggtc
+     7321 tcggtgtcgc ggaaatcctt cttgggcgcc accgttggcc ttcctgtaaa ggatctgggt
+     7381 ccagcgagcc ttgcggcgga acttcacgcg atcggcaatg gcgctgacta cgtccgcacc
+     7441 cacgcgcctg gagatctgcg aagcgcaatc accttctcgg aaaccctcgc gaaatttcgc
+     7501 agtcgcgacg ccagagaccg agggttagat catgcctagc attcaccttc cggccgcccg
+     7561 ctagcggacc ctggtcaggt tccgcgaagg tgggcgcaga catgctgggc tcgtcaggat
+     7621 caaactgcac tatgaggcgg cggttcatac cgcgccaggg gagcgaatgg acagcgagga
+     7681 gcctccgaac gttcgggtcg cctgctcggg tgatatcgac gaggttgtgc ggctgatgca
+     7741 cgacgctgcg gcgtggatgt ccgccaaggg aacgcccgcc tgggacgtcg cgcggatcga
+     7801 ccggacattc gcggagacct tcgtcctgag atccgagctc ctagtcgcga gttgcagcga
+     7861 cggcatcgtc ggctgttgca ccttgtcggc cgaggatccc gagttctggc ccgacgccct
+     7921 caagggggag gccgcatatc tgcacaagct cgcggtgcga cggacacatg cgggccgggg
+     7981 tgtcagctcc gcgctgatcg aggcttgccg ccatgccgcg cgaacgcagg ggtgcgccaa
+     8041 gctgcggctc gactgccacc cgaacctgcg tggcctatac gagcggctcg gattcaccca
+     8101 cgtcgacact ttcaatcccg gctgggatcc aaccttcatc gcagaacgcc tagaactcga
+     8161 aatctaacgt ccgttcgggc atcgaggtcc atgtcggggt gggacgggcc cgtggcttca
+     8221 agatcacttg cagtccgacc gcgatgtctt ggttgcgcga gaggttgtcg atatctgttg
+     8281 atttgcaccc aaatttgacc cgggatttgc attgaatttt gacccacccc ttgttgtcag
+     8341 aattatgtct cgattttcag tttgcgggtc tgtttttcct cctgcttatt ctgagttgaa
+     8401 ctgtgtttga agcggtaact ttcattgccg gtttccagga tgtggcagtg gtgggttagt
+     8461 cggtccaaca acgctgttgt catcttttca tcgccaaaca ctcggctcca ttccgagaag
+     8521 ctcaagttgg tggtcagtat cacgctggtt ttttcgtaca gctttgagag caggtgaaac
+     8581 agcagtgccc caccggtttg gctaaaaggc aaatatccca gctcatccag aatcaccaaa
+     8641 tcggcataca acagacggtt tgcgatttgt ccctgacgcc cagatgattt ctcttgctcc
+     8701 agtgcattga ccaaatccac ggtggagaag aaacgcaccc gtcggttcaa gtgcatcact
+     8761 gcttgtgtac caatggctgt ggccaggtga gtcttgcctg tgcctggccc accaatcagc
+     8821 accacgttct gggcttgttc catgaagtcg caccggtgca attgtttgac cgtggcctca
+     8881 ttaaccaggc tttgactgaa gtcaaagccc accaagtccc gatacacggg gaacttggcc
+     8941 acccgcaatt gatagttcac cgaacgtact tcacgctctg ccacttcagc tttaatcaag
+     9001 ctgtccagca tgggcaaggc ttgattaaat gctggtgaat tctgattgcc caactcctca
+     9061 atggcgtgtg ccatgccaaa gagtttcaag gatttgagga ttctcacatg gccttcatgc
+     9121 tgcatcatgg gctctcctta aactgtcata gcggttcacg ttggcctgtg gttccaatgt
+     9181 cagccttaac cccttgggaa ttggaatcgg tttgggtgga ggttcttcgg tcaaacgtcc
+     9241 caacagatta agcacatgct ccttcgatgg cttgccacac tccaatgcca attccacagc
+     9301 actgagtacc gcaccttcat cgtggtgcaa tacaagggcc agaatttcca ccatgtcacg
+     9361 gtcaccgccg gggcgttgca gcaagatgga ttgaagcttc ttgaacgcgg gtggcaattc
+     9421 agcaaatggc gcaccattgc gcaacgcccc aggtttcttc tgaagcacag acaagtaatg
+     9481 gtgccagtcg tattgtgtgt ggccacgccg agcgtggcca ctgccaaaca atcttggatg
+     9541 ctcggcaatg tgttggcctt cggcagccat caccagcttg tctgcataaa tccgaaggct
+     9601 gatggccctg ttggcgtaac tggcaggaac gctgtagcga ttgccctcgt ggtgaacaag
+     9661 gcaggttgaa gtgactcgct tggtttgctc cacgaatgca tcaaaggcat tgggtagcgc
+     9721 catcaactcg ccttgttcat cggcaaaggc ctcttgcacg gtttggtcca attcggggtg
+     9781 gcgcagctca gaccacagcg ctttgcagcg atgctcaagc cacacattca aatcagcaag
+     9841 gctttgaaag tctggtgccc cttgccacag gcgttggcgg gaatcctgca cgttcttctc
+     9901 aatctggcct ttctcccaac ccgatgctgg attacagaac tgcgcatcaa acaggtagtg
+     9961 gctgaccatg gcagtgaacc gctgattgac cctgcgctct ttgccacgcc ccaccgaatc
+    10021 cacagcggtc ttcatgttgt cgtagatgcc gcgcttggga atgccaccga agatttgaaa
+    10081 ggcatgccag tgggcatcaa acagcatttc atgtttttgc tggtagtaag cccgaagcac
+    10141 aaaggcccgg ctgtgggcca acttaaactg ggcaatctga agtttgacct gtttgcccgc
+    10201 tatgcgggca aagtcctcac tccaatcgaa ttggaaggct tcgccacaag caaagcgcaa
+    10261 ggggatgaaa caacccttgc ccgaggtttg cgccttgaac tgttcggaat ctttccactg
+    10321 tcgggcaaag gcacacactc ggtcataaga cccggtaaag cccaaagcga ccaaatcccg
+    10381 gtacatgctg cgcaggtttc tgcgcagctt ctttgtcttt ttgtgctcgg tggagagcca
+    10441 ctgccttaac ttgggctcaa aaggacttaa cttgccaacg ctgtctcgcg ctgggtactg
+    10501 cggttcaacc accttgcttt gcaaatactt gcgaacggtg ttcctggaca ggccgcttcg
+    10561 tcgggctatt tcccgaatcg acgcaccatc gcgaaaatgc cagcgtcgaa ttgcgctcaa
+    10621 tatcgccacg tttatcactc cttgatttct cccgccatat ccagacggga aacagtgtca
+    10681 tacgtgggtc aaatttcgac gcaaatcttt accctaagtt ggggtgcgga caaaatcttg
+    10741 gactacttta ggagtagttc atgtattcgt atgaagatcg ccttcgagcc gtgaggttgt
+    10801 acctgaagct tgggcgccgg atgagcgcca cactacggca gctgggatac cccaccaaga
+    10861 actcgctgaa ggcctggttg gcagaattcg aacggaatca ggatcttcgc cgaggctatc
+    10921 aacggataaa acggcagtac accgatgagc aaaagcaacg ggcagtagat cactatatcg
+    10981 aacaaggcta ctgcctgagt cacacaatcc gaagcctggg ctacccaagc cgcgaggcct
+    11041 tgcgtgcctg gatccgtgat ttacgccctg aattcgctag gacggtcgtc ggcagcagcg
+    11101 ctcccacagt cgcccgctct cgcctcgaga agcagcaagc cgtcattgca ctgaacctgc
+    11161 gcgtaggttc ggcaaaggat gtggccgaca ctgtcggtgt atcgcgacca acgttgtata
+    11221 actggcagca tcgattactt ggcaaagtgc ccctaaaacc catgacaaag aagaaaggtg
+    11281 acacctcgct cgagcagcgg catgaggcac tactcaggga actggccgaa ctggagagcc
+    11341 agaaccagcg gcttcgcatg gagaatgcaa ttctggagaa ggcgagtgaa ttgataaaaa
+    11401 aagacatggg catcaacccc ctcgaactga caagccgaga aaaaacgaag gtggttgatg
+    11461 ccctcagagt cacgtttcca ttagccaatc tgttgtgcgg cctgaagctg gcgcgcagca
+    11521 catacttcta tcaacgcctg cggcagacgc ggcccgacaa gtacacgcag gtgcgtgagg
+    11581 tcattcggac tatcttcgag gacaactacc gctgctatgg ctatcgacgc attgatagtg
+    11641 ccttgcgcct tggtggcatg cgtgtgtccg agaaggtcgt gcgtcgcttg atggcgcaag
+    11701 agcgtctggt cgtgagaaca ccgcgccgcc ggcgcttctc ggcgtatgct ggcgacccga
+    11761 caccagcggt cccgaatctg ctgaatcgcg actttcacgc gtcggcgccg aatacgaaat
+    11821 ggttgaccga tctgacggaa atacacattc cggcagggaa ggtctacgtc tcgccgatcg
+    11881 tcgattgctt cgatgggctg gtggtggcct ggaatatcgg caccagcccg gatgcgaacc
+    11941 tggtcaatac catgctggat cacgcggtac ggacactgcg acccggtgag catccggtta
+    12001 tccattcgga caggggctcg cattatcgct ggcctgcgtg gatccgccgc actgaaaatg
+    12061 cccaattaac gcggtcgatg tccaaaaagg gctgctcgcc agacaatgct gcatgcgagg
+    12121 gctttttcgg acgattgaag accgaactaa tctacccgag gaattggcag cacgtgacgc
+    12181 tgaaagacct catgacgcga atcgatgcct atatccactg gtacaacgag cgccgcatca
+    12241 aagtgtcgct tggcgggcgt agtcccatcg agtatcgtca tgcggtcgga ttgatgtccg
+    12301 tataaaccgt ccaagaaatc gtccgcaccc ccagtgggtc aattttagat gcaactcaac
+    12361 aggccatgct gagtgtgcga tggttgatcg cttcctcgcc gctctccacg gcgacgatgg
+    12421 ccgccgccat cagcaagtgc gccagttccc ctatggtgcc ctcgctgcgt gtgagcaggt
+    12481 agcgagccat gtccagcgtg gcaattgggg aaggccggcg cagcgggagc gaagcggcga
+    12541 agctggccag cagtgagcag caatcgtcgt tggcctccca taccggcagc atcatcggct
+    12601 cgaagcgatt ttccaactgg tcatcggagc ggatggctag gtaggcgtcg cgcgtgccta
+    12661 ccccaaccaa cgggatgcgc agttcgttgc cgaggaagcg cagcaggttg aggaattccc
+    12721 ggcggttgac gctgttgccg gccagcacgt tgtgcagctc gtcgatcacc agcatgcgca
+    12781 cgccgacctt gcgcagcagt gccagagcca gttgctccat ttccggcaac cgtgggcgtg
+    12841 ggcgcagcgg cgcgcccatc gcggcgagca gcgcgacgta gaagcggatc acggacggct
+    12901 cggacggcat ctgcacgacc aacaccggga tgtgctcctg gtcggcgtcg gagctggccg
+    12961 ggtgggtgcg gcggaacttc tcgacgatca tcgacttgcc attgttggtc gggccaacca
+    13021 gcagcaggtt gggcatgcgt tgcttgtttg gccacgcata aagggcttcc agccggttca
+    13081 gcgcctcgac tgcgcgcgga tagccgatcc agcggtcggc gcgaaggcgc tggatgcgct
+    13141 cgtccgccgg aagacgggcc aagccctggg ccgccggcag caggtgggac aggtcgatga
+    13201 tgggatattc gtccacggct accactcctc aatctggtcg aacggtttgg cgggtggcaa
+    13261 gttgtctgcc tgcgggtcgg caatatccgt atccggcgga acgggcttgt ccggccgagc
+    13321 tgatgtcttg aggtgctggc ggcgatccgc gtcacgccgc gccttgcgtg tggccttctg
+    13381 cgcgctggtc acaatctcac gcatctggcc gatcatgcgg aacagcgccg actcatccac
+    13441 ctgttcgcgc ccttgctgcc gcagtttcgc cagcgcctgc cgttgttccc agagggtgac
+    13501 agccggatgc gacaaggtac ggtagggaat ttccaggtaa tgctgtccct ccggttccag
+    13561 gacccagata cggctgatgt cgcgcggatc gcgccggatc agaaaggacg gccagcgttc
+    13621 acgccgcgca atccacggct tgagcgcatc ggcgtagtag tggatgtggt cgatgacaaa
+    13681 gccggtgcgg gtcagcgtgc gccggaggat cggcagaaaa tcgaccagga acgaagtagc
+    13741 gcgtgtgacg acggccggta cgccgacacg cgccacggcc tcggcccagc gcgcggccgg
+    13801 cggttggagc aggccgttgt gcaccgaacc gtggtaggtg ccgaccgcca atgtgagcca
+    13861 gcgctctagc tcgcgcagcg tcagggcggc cttgttttcg gaatcgtagt cgccgcgctg
+    13921 gtcagggttg gagaaggtcg ttcccggcag ttcgtcgtga atcatctgca tcgccgtgcc
+    13981 gatgatccgt tccacgatgc cgccatagtg cggctgtccc agcgggcgat agtccagccg
+    14041 gatgccatgc tgctcgcaac cccggcgcag ggcctcgctc ttgaactcgg ccgcgttgtc
+    14101 taggtagagc agcaagggct tgccgctcat ctgccaatcc atttccacgt tcagtccttc
+    14161 cagccaaggg cgcttgtcgc aggcgacatg cacgaggcac aggccaaccg aaacggcaga
+    14221 cggcgcttcc agcgtgacga ccatgccgag cacgcagcgg gtgaacacgt cgatggcgag
+    14281 ggtcaggtac gggcggccaa taggttgccg gtcgcggtca tcgaccacga tcaggtcgat
+    14341 gaccgtatgg tctatctgca cctgctccag cggcgcggtc acggcaggag gctcgccgcc
+    14401 cacaccttgt aggtcacgag cggcatcctg gccttcccgc cggcggatga ccttgcgcgg
+    14461 gtcaaggcta gcgatccgta aggccacggt attgcgcgcc ggcactcgca gtttttgagc
+    14521 cttgcacacc tgagtgactt cgcggtgaaa ggccgctagg ctgcgcttct gcttggtcag
+    14581 gaaccgcttt tgcagtagct cgtggatgac gcgctcgacc ggttccggca agcgcccctt
+    14641 acctttacct ccaccggact ggccgggcac cagatccgtc acgaggccgc tgccttgccg
+    14701 ggcacgccgg atcagaacgt atacctggcg ccgagacaag cccagcgcct gagccgccat
+    14761 atcggccgct tcgtgcccga ccgtctccga ctgcgccaac ggactgatga tctccgcacg
+    14821 acggcgcgca cgctcccaag cctcatcagg cagagtggcc acgccttgtt ctggaatccg
+    14881 tggggtgtcc gtcgccatgc tcacctcgct ttggtgcaca cgagtattga gcatagtcga
+    14941 gattggtgca gatcacttct gatattgaac tgtcaggagc tggctgcaca acagccatta
+    15001 cgcccaatca actggtgcag tcgtcttctg aaaatgacat ccatgcccag cccgtgcgcg
+    15061 agctggatca ccgcccgcac gatagtttgg tcacgggcat catccgggag cctggcgaca
+    15121 aaggattggt cgattttcaa tgtggtgatg gggcagcatt tcagatgttg caggcaggaa
+    15181 tagccggtgc cgaagtcgtc ggcggcgaag cgcacgccga tggcgcgcaa ggcgtcgaaa
+    15241 ctggcgaaca gggctggatt gccgaatgcg accgattcgg tcagttcgat ctccagaagc
+    15301 tcggcgggca gggccatatc ggccagcacc cgctttacct cgtcgtcgaa cgttggccca
+    15361 acctggctgg cggacacatt gatggcaaga cggaacggtt gccatgccgg tccttgccac
+    15421 ttgtgcatct ggcgacaggc ctcgcccagc acccacgcgc ctatttccgg catcaggccg
+    15481 aacgactcgg ccagcggcag gaactggccg ggcggcaaca ggccaagcct cggatgccgc
+    15541 cagcgcatca acgcttccgc gccagcgatc cggtgatcgc gcagatcgac cagcggctgg
+    15601 taatgcaggt caagctgtcc gcgcgccgcc gcctgcgcca actcggccgc cgtccatccg
+    15661 gcgggctgcg aactcgtcat gatccgcccc ggaaggcgcg cagcagccgc gttacggcca
+    15721 gaacgaacaa gccggtcagc gcgagcgcgg caacacccca atgctcgcca aggaaggcac
+    15781 cggcggtcgt cccggccagc acggcggcga gaatcggcag atggcagggg caggtcaaca
+    15841 cggccagcgc accccacagg tagccggaaa cgggttggcg cgtctcgggc ggcagtttgt
+    15901 caggggcgtt cacggcaatg cctcctcgtg cgcccgctcg gctggcatgg aggccagttg
+    15961 cgcgtccaga tgggccaacg ccgcgcgccg ccgctcgacc aactggcgca gcacggcaag
+    16021 ctgcgctgcg gcttgtgcgc cgtccgctgc gtcgagcgca cggcacagcc gcgccagggc
+    16081 atccaggccg atacccgcct cgaaggccgc gcgcacgaag cacagccgtt gcaaggccgc
+    16141 atcgtcgaac acgccgtagc cgcccgtggt gcaggccacc ggccgtaaca agccgcgcac
+    16201 caggtagtcg cgcacgatat gtacgctcac cccagcgtta tgggccagtt gcgataccgt
+    16261 gtaggcgctc atcgcacacc tccttgtcct cacccggcgc agcaggaaag ctgcttcaca
+    16321 tccttgttga aggtctgcgc cgcgagcttc aacccttcga ccatcgtcag gtaggggaac
+    16381 aactggtcgg ccagttcctg caccgtcatc cggttgcgaa tcgccagtgc ggccgtctgg
+    16441 atcagttcgc ccgcttccgg ggccactgcc tgcacgccga tcagtcgtcc gctgccttct
+    16501 tcaaccacca gtttgatgaa gccgcgcgtg tcgaagttgg cgagcgcgcg cggcacgttg
+    16561 tccagcgtta gcgtgcgact atcagttttg atgccgtcat ggtgcgcttc cgcctcgctg
+    16621 tagcctacgg tcgccacttg cgggtcggtg aacaccacgg ccggcatcgc ggtcaggttc
+    16681 agggccgcgt caccgccggt catgttgatc gcggcgcgag tgccggccgc tgccgccaca
+    16741 tagacgaact gcggctggtc ggtgcagtcg cctgcggcgt agatgtgttc cacgcttgta
+    16801 cgcatgccgg ggtcgatgac gatagcgcct tgcggggtga gcgtgacgcc cgtcgcatcc
+    16861 agtgccagct tgcgtgtgtt gggcgcgcgg ccggtggcga ccagcagctt gtcggcgcgc
+    16921 agttcgccgt gcgccgtggt gagcacgaat tcgccgtccc cttcaccatt gatatacgcg
+    16981 acctggctgg cctgggtgtg ttccctcacc tcgatgccct ccatgcggaa tgcggccgtg
+    17041 acggcttcgc ctatagctgg gtcttcgcgg aagaacagcg tgctgcgagc caggatcgtc
+    17101 accttcgctc cgagtcgggc gaacgcctgc gccagctcca gcgccaccac tgatgagcca
+    17161 atcacggcca ggcgcttagg aatcgtctcg ctgaccagcg cttcagtgga agtccagtac
+    17221 ggagtgtctt tcaggccggg aatcggcggc acggccgggc tcgcgccggt ggcgatcagg
+    17281 cagcggtcga atgccaccac gcgctcgccg ccgtcgttga gttgcacgat caggttgcga
+    17341 ttgtccttaa agcgggcgga gccgtgcagc acagtgatcg ccggattgcc ctccaagatg
+    17401 ccttcgtact tggcgtggcg cagttcatcg acgcgggcct gctgctgggc cagcagcgcc
+    17461 gtgcgctgga tggtcggcgt ggtagcggcg atgccgccat cgaacgggct ttcccggcgc
+    17521 agatgggcga tatgggcggc gcggatcatg atcttggacg gcacacaacc gacattgacg
+    17581 caggtgccgc cgatggtgcc gcgctcgatc agcgtgacac gtgcgccttg ctcgacggcc
+    17641 ttcagcgccg ctgccatcgc ggccccgccg ctgccgatga cggcgatatg caatgcgccg
+    17701 ctgctacccg tcttgtcgtt tctgcccagc agatcgcgca tcttgtcgag caatccgccc
+    17761 ggcgtcgaaa ctgagggggc atcggccagc gtggcccgat aaccgagtcc agctacagcg
+    17821 gccgtcagcg cgtcgggtga cgtgccgacc tcaatggcga gcttggcgct gcccttggcg
+    17881 taggagacat ccgctgattg cacgccgggc actttctcca gggcgtcctt gacatgcact
+    17941 gcgcacgagt cgcaagtcat gccggtgatt ttgagagtgc tcataccatc gttccttatt
+    18001 cgtgtgggcc gccgtgtcgc acggtcagcc gtctttcaca agcgcttggc ggggagttcg
+    18061 cagccgtccg gtccgcaacg gcgatgcgcc ggcgacacga agtcccagat cgacacccca
+    18121 atcatcaagg ccaggccgac gtacatcagg ttcgccgtcc accagttgcc gagcagccag
+    18181 accgtggccg caaacacgat ggccgggccg atcatgccga gcagactgcg cagccattgc
+    18241 cgatgactga accaacccag cgcgttcgcc aggaaggcca gcgcggcaaa cagcggcagc
+    18301 aggcggctga tgaacagtcc ctcgtactgg ctcaagaagc ccagcccgat ggccgcgccg
+    18361 aagctggcga gggctggaaa gcaggcggcg cagcccatcg cggaaacgac gctgccgagc
+    18421 gcgccggttt tatcggcaat gcgtgtcatc agtcccatga agcggctctc gctgttgtcg
+    18481 ttggcttgct ggctcactgc ttgacgctgg acggatagcc ggcgtctgcg gtggccttgg
+    18541 tcagcttctg tacgctggcc ttggtgtcgt caaaagtgac gacggcctcg cgcttctcga
+    18601 agcccacatc gaccttgctc acgccttcga ccttggagag cgctttcttg actgtgatcg
+    18661 ggcaggcggc gcaagtcatg ccgggaaccg ctagcgtgac ggtctgggta gcggcccaca
+    18721 ccggggcaac agcggcggcg agggcaaggg aggcaaacag tttcttcatg atgaactcct
+    18781 ggttaataga aaaatggaac gacataggga aatccaagcg cgaccaggac cagcacggcc
+    18841 acgatccaga aaatcagctt gtaggtggcg cgcacctgcg gaatcgcgca gacctcacct
+    18901 ggcttgcatg cctgcacggg ccggtaaatc cgcttccagg cgaagaacag cgccactagc
+    18961 gccgcgccga tgaacaacgg tcgatagggt tccagcaccg tcaggttgcc gatccaagca
+    19021 ccggagaagc ccagggcgac cagtactagc ggccccaggc agcaggtcga tgcaagaatg
+    19081 gcggccagcc cgccggcgaa gagcgcaccg cgcccgtttt gtggttcaga catacgttgg
+    19141 cccttttgaa tttggattgg atagcgtaac cttacttccg tactcatgta cggagtcaag
+    19201 cgatatggaa aataatttgg aaaacctgac cattggcgtt tttgccaagg cggccggggt
+    19261 caacgtggag acaatccgct tctatcagcg caagggcctg ttgcgggaac cggacaagcc
+    19321 ttacggcagc atccgccgct atggggaggc ggacgtggtt cgggtgaaat tcgtgaaatc
+    19381 ggcacagcgg ctggggttca gtctggacga gattgccgag ctgttgcggc tcgacgatgg
+    19441 cacccactgc gaggaggcca gcagcctggc cgaacacaag ctcaaggacg tgcgcgagaa
+    19501 gatggccgac ttggcgcgca tggaaaccgt gctgtctgaa ctcgtgtgcg cctgccatgc
+    19561 acgaaagggg aatgtttcct gcccgttgat cgcgtcacta cagggcgaag caggcctggc
+    19621 aaggtcagct atgccttagc gtgctttatt ttccgttttc tgaggtgccc cc
+//
