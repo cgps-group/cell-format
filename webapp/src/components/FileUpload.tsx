@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useRef, useEffect } from 'react'
 
 interface FileUploadProps {
   files: File[]
@@ -18,11 +18,16 @@ export function FileUpload({
   hint,
 }: FileUploadProps) {
   const inputId = useId()
+  const input = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if (!files.length && input.current) input.current.value = ''
+  }, [files])
 
   return (
     <div className="file-upload">
       <label className="file-upload-label" htmlFor={inputId}>{label}</label>
       <input
+        ref={input}
         id={inputId}
         className="file-upload-input"
         type="file"

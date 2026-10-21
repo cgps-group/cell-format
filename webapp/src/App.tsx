@@ -32,9 +32,14 @@ export default function App() {
     selectedFeatureIds,
     onSelectedIdsChange,
     importFile,
+    clearRecord,
     uploadError,
   } = useVisualiser();
-  const exports = useDocumentExports(text, svgOutput);
+  const { resetCopyFeedback, ...exports } = useDocumentExports(text, svgOutput);
+  const handleClear = () => {
+    clearRecord();
+    resetCopyFeedback();
+  };
   return (
     <div className="app">
       <header className="app-header">
@@ -122,6 +127,7 @@ export default function App() {
           parsed={parsed}
           svgOutput={svgOutput}
           onTextChange={handleTextChange}
+          onClear={handleClear}
           {...exports}
         />
 
@@ -132,7 +138,12 @@ export default function App() {
             <InteractiveBuilder onUpdate={handleBuilderUpdate} input={builderInput} />
           </div>
 
-          <DiagramPreview svg={svgOutput} view={diagramView} onViewChange={setDiagramView} />
+          <DiagramPreview
+            svg={svgOutput}
+            view={diagramView}
+            onViewChange={setDiagramView}
+            empty={!text.trim()}
+          />
         </div>
       </main>
 

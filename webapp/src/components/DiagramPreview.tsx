@@ -2,11 +2,12 @@ import type { DiagramView } from "../editor/diagram";
 
 interface Props {
   svg: string | null;
+  empty?: boolean;
   view: DiagramView;
   onViewChange: (view: DiagramView) => void;
 }
 
-export function DiagramPreview({ svg, view, onViewChange }: Props) {
+export function DiagramPreview({ svg, view, onViewChange, empty = false }: Props) {
   return (
     <div className="panel">
       <div className="diagram-panel-header">
@@ -35,7 +36,9 @@ export function DiagramPreview({ svg, view, onViewChange }: Props) {
           <div dangerouslySetInnerHTML={{ __html: svg }} />
         ) : (
           <span style={{ color: "var(--cellgen-text-muted)", fontSize: "0.9rem" }}>
-            Fix the format error to see the diagram
+            {empty
+              ? "Add an entity or enter a CellGen string to see the diagram"
+              : "Fix the format error to see the diagram"}
           </span>
         )}
       </div>

@@ -54,5 +54,12 @@ export function useDocumentExports(text: string, svgOutput: string | null) {
     });
   };
 
-  return { copied, downloadSVG, downloadPNG, downloadCellGen, copyFormat };
+  return {
+    copied,
+    downloadSVG,
+    downloadPNG,
+    downloadCellGen,
+    copyFormat,
+    resetCopyFeedback: () => setCopied(false),
+  };
 }
