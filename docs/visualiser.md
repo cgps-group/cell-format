@@ -8,6 +8,8 @@ Choose an example, paste a record into the CellGen string field, or use the inte
 
 The string and diagram update as you edit. Invalid syntax produces an error with its line and column. Switch between **Circular** and **Containment** to view the same record in either representation.
 
+Use **Clear** beside the download buttons to start again. It clears the record, diagram, selected file, import options and import messages, then returns focus to the CellGen string field. Your theme and diagram view stay selected.
+
 ## Import annotations
 
 Expand **Import GenBank / GFF**, choose an annotated file and click **Import selected file**. You can retain all genes outside annotated mobile elements, or select specific genes by annotation ID, gene name or locus tag.

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { parseCellGen } from "../cellgen/parser";
 import { parseGenBank, parseGFF, detectFileType } from "../cellgen/genbank";
 import type { CellSet } from "../cellgen/types";
@@ -7,6 +7,9 @@ import type { DiagramView } from "./diagram";
 import { EXAMPLES } from "./examples";
 
 export function useVisualiser() {
+  const activeReader = useRef<FileReader | null>(null);
+  useEffect(() => () => activeReader.current?.abort(), []);
+
   const [text, setText] = useState(EXAMPLES[0].value);
   const [uploadFiles, setUploadFiles] = useState<File[]>([]);
   const [uploadError, setUploadError] = useState("");
@@ -46,12 +49,28 @@ export function useVisualiser() {
     setUploadError("");
   }, []);
 
+  const clearRecord = () => {
+    const reader = activeReader.current;
+    activeReader.current = null;
+    reader?.abort();
+    setText("");
+    setBuilderInput({ cells: [{ replicons: [] }] });
+    setUploadFiles([]);
+    setUploadError("");
+    setImportSummary("");
+    setRetainUncontainedGenes(false);
+    setSelectedFeatureIds("");
+  };
+
   const importFile = useCallback(() => {
     const file = uploadFiles[0];
     if (!file) return;
     setUploadError("");
     const reader = new FileReader();
+    activeReader.current = reader;
     reader.onload = (e) => {
+      if (activeReader.current !== reader) return;
+      activeReader.current = null;
       const content = e.target?.result as string;
       const type = detectFileType(file.name, content);
       if (type === "unknown") {
@@ -85,7 +104,11 @@ export function useVisualiser() {
         );
       }
     };
-    reader.onerror = () => setUploadError("Could not read this file. Try choosing it again.");
+    reader.onerror = () => {
+      if (activeReader.current !== reader) return;
+      activeReader.current = null;
+      setUploadError("Could not read this file. Try choosing it again.");
+    };
     reader.readAsText(file);
   }, [uploadFiles, retainUncontainedGenes, selectedFeatureIds]);
 
@@ -106,6 +129,7 @@ export function useVisualiser() {
     loadExample,
     handleFilesChange,
     importFile,
+    clearRecord,
     diagramView,
     setDiagramView,
     onRetainGenesChange: (value: boolean) => {

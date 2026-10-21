@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import type { parseCellGen } from "../cellgen/parser";
 
 interface Props {
@@ -5,6 +7,7 @@ interface Props {
   parsed: ReturnType<typeof parseCellGen>;
   svgOutput: string | null;
   onTextChange: (text: string) => void;
+  onClear: () => void;
   copied: boolean;
   downloadCellGen: () => void;
   downloadSVG: () => void;
@@ -17,17 +20,31 @@ export function FormatEditor({
   parsed,
   svgOutput,
   onTextChange,
+  onClear,
   copied,
   downloadCellGen,
   downloadSVG,
   downloadPNG,
   copyFormat,
 }: Props) {
+  const editor = useRef<HTMLTextAreaElement>(null);
+  const hasError = !parsed.ok && !!text.trim();
+
   return (
     <div className="format-bar panel">
       <div className="format-bar-header">
         <div className="format-preview-label">CellGen string</div>
         <div className="format-bar-actions">
+          <button
+            className="button button-secondary"
+            type="button"
+            onClick={() => {
+              onClear();
+              editor.current?.focus();
+            }}
+          >
+            Clear
+          </button>
           <button className="button button-secondary" onClick={downloadCellGen} disabled={!text}>
             Download .txt
           </button>
@@ -40,7 +57,8 @@ export function FormatEditor({
         </div>
       </div>
       <textarea
-        className={`cellgen-editor format-preview-textarea${!parsed.ok ? " error" : ""}`}
+        ref={editor}
+        className={`cellgen-editor format-preview-textarea${hasError ? " error" : ""}`}
         value={text}
         onChange={(event) => onTextChange(event.target.value)}
         spellCheck={false}
@@ -48,7 +66,7 @@ export function FormatEditor({
         rows={2}
       />
       <div className="format-bar-below">
-        {!parsed.ok ? (
+        {!parsed.ok && hasError ? (
           <div className="validation-error">
             <div>
               <strong>{parsed.error.code}</strong>: {parsed.error.message}
