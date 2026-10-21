@@ -24,3 +24,7 @@ Imported `accession`, sequence length when known, topology when supplied, coordi
 [Reference-record validation](https://github.com/cgps-group/cell-format/blob/main/analysis/prokka-validation/README.md) covers an E. coli K-12 chromosome, pBR322, pACYC184, phage phiX174, pKpQIL and Tn21. Both importers passed 77 configurations using deposited annotations and fresh Prokka 1.14.6 outputs. Small real-output fixtures are available under `tests/fixtures/prokka/`.
 
 Ordinary Prokka outputs contain genes/CDS but may lack mobile-element boundaries and chromosome/plasmid metadata. Use all-gene retention or exact gene selection to display genes when no structural parent is annotated. A default import can therefore show only the sequence record. Prokka's `--plasmid` option supplies plasmid metadata to GenBank but did not add it to the tested GFF output. CellGen imports what is annotated; it does not identify a replicon from its accession or discover nested MGEs from sequence.
+
+## Tested PlasAnn inputs
+
+PlasAnn GenBank output is supported: its custom `MGE` feature type maps to `mobile_element`, and source `/mol_type="plasmid DNA"` supplies explicit plasmid classification. Origin, replicon-marker and noncoding-RNA annotations are not imported. Tests using real pBR322 and pKpQIL outputs cover default/all-gene retention and exact selection. See the [PlasAnn validation report](https://github.com/cgps-group/cell-format/blob/main/analysis/plasann-validation/README.md), including a disagreement between an upstream allele label and the deposited reference annotation.

@@ -159,6 +159,20 @@ test.describe('interactive builder', () => {
 })
 
 test.describe('import section', () => {
+  test('imports actual PlasAnn output with mobile elements and their genes', async ({ page }) => {
+    await page.goto('/')
+    await page.getByRole('button', { name: '+ Import GenBank / GFF' }).click()
+    await page.getByLabel('Choose file').setInputFiles(
+      new URL('../../tests/fixtures/plasann/pbr322.gbk', import.meta.url).pathname,
+    )
+    await page.getByRole('button', { name: 'Import selected file' }).click()
+    await expect(page.getByRole('status')).toContainText('retained 5 features and omitted 3 uncontained genes')
+    await expect(page.locator('.cellgen-editor')).toHaveValue(/type="plasmid"/)
+    await expect(page.locator('.cellgen-editor')).toHaveValue(/Tn6308/)
+    await expect(page.locator('.cellgen-editor')).toHaveValue(/tet\(C\)/)
+    await expect(page.locator('.svg-viewer svg')).toBeVisible()
+    await expect(page.locator('.validation-error')).not.toBeVisible()
+  })
   for (const extension of ['gbk', 'gff']) {
     test(`imports actual Prokka ${extension} and renders a selected locus`, async ({ page }) => {
       await page.goto('/')

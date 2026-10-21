@@ -1,0 +1,18 @@
+[
+  {
+    "sample": "pbr322",
+    "before_type": "unknown",
+    "before_retained": 0,
+    "after_type": "plasmid",
+    "after_retained": 5,
+    "sequence_unchanged": true
+  },
+  {
+    "sample": "pkpqil",
+    "before_type": "unknown",
+    "before_retained": 0,
+    "after_type": "plasmid",
+    "after_retained": 24,
+    "sequence_unchanged": true
+  }
+]

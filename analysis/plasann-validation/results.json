@@ -1,0 +1,114 @@
+{
+  "service": "https://plasann.rochester.edu/analysis",
+  "date": "2026-10-21",
+  "service_version": "not exposed by hosted output",
+  "enhanced_uniprot": false,
+  "sources": [
+    {
+      "sample": "pbr322",
+      "reference_accession": "J01749.1",
+      "file": "pbr322.gbk",
+      "sha256": "c7067a6bfd19e5a9113503a6ff07feb24787372367d8f8ed98c6df118d365a8c",
+      "sequence_sha256": "536042a7485bdabdf49c4d21a306213a098d77d19bdba57a1c6adc76ce2b8372",
+      "length": 4361,
+      "cds": 6,
+      "mge": 2
+    },
+    {
+      "sample": "pkpqil",
+      "reference_accession": "GU595196.1",
+      "file": "pkpqil.gbk",
+      "sha256": "c94f31fb471635203313ce0dac7568d5929890a897512f9d20bad464474d8cbd",
+      "sequence_sha256": "c8eaf047c27a70586e520a35f9446d3da3c41b65bd7235e3c2b2af3169d544ef",
+      "length": 113637,
+      "cds": 141,
+      "mge": 6
+    }
+  ],
+  "cases": [
+    {
+      "sample": "pbr322",
+      "source": "plasann-web",
+      "mode": "default",
+      "file": "pbr322.gbk",
+      "selected_ids": [],
+      "retained": 5,
+      "type": "plasmid",
+      "length": "4361"
+    },
+    {
+      "sample": "pbr322",
+      "source": "plasann-web",
+      "mode": "all-genes",
+      "file": "pbr322.gbk",
+      "selected_ids": [],
+      "retained": 8,
+      "type": "plasmid",
+      "length": "4361"
+    },
+    {
+      "sample": "pbr322",
+      "source": "plasann-web",
+      "mode": "selected-gene",
+      "file": "pbr322.gbk",
+      "selected_ids": [
+        "roM"
+      ],
+      "retained": 6,
+      "type": "plasmid",
+      "length": "4361"
+    },
+    {
+      "sample": "pbr322",
+      "source": "plasann-web",
+      "mode": "no-metadata",
+      "file": "pbr322-no-metadata.gbk",
+      "selected_ids": [],
+      "retained": 5,
+      "type": "unknown",
+      "length": "4361"
+    },
+    {
+      "sample": "pkpqil",
+      "source": "plasann-web",
+      "mode": "default",
+      "file": "pkpqil.gbk",
+      "selected_ids": [],
+      "retained": 24,
+      "type": "plasmid",
+      "length": "113637"
+    },
+    {
+      "sample": "pkpqil",
+      "source": "plasann-web",
+      "mode": "all-genes",
+      "file": "pkpqil.gbk",
+      "selected_ids": [],
+      "retained": 147,
+      "type": "plasmid",
+      "length": "113637"
+    },
+    {
+      "sample": "pkpqil",
+      "source": "plasann-web",
+      "mode": "selected-gene",
+      "file": "pkpqil.gbk",
+      "selected_ids": [
+        "yihA"
+      ],
+      "retained": 25,
+      "type": "plasmid",
+      "length": "113637"
+    },
+    {
+      "sample": "pkpqil",
+      "source": "plasann-web",
+      "mode": "no-metadata",
+      "file": "pkpqil-no-metadata.gbk",
+      "selected_ids": [],
+      "retained": 24,
+      "type": "unknown",
+      "length": "113637"
+    }
+  ]
+}
