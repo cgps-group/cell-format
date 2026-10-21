@@ -99,12 +99,12 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
     if (rawType === 'source') {
       for (let j = i + 1; j < lines.length; j++) {
         if (/^\s{5}\w+\s+/.test(lines[j]) || lines[j].startsWith('ORIGIN') || lines[j].startsWith('//')) break
-        if (lines[j].includes('/plasmid=')) current.type = 'plasmid'
+        if (lines[j].includes('/plasmid=') || /\/mol_type="plasmid DNA"/i.test(lines[j])) current.type = 'plasmid'
         if (lines[j].includes('/chromosome=')) current.type = 'chromosome'
       }
       continue
     }
-    if (!['mobile_element', 'transposon', 'integron', 'insertion_sequence', 'misc_feature', 'cds', 'gene'].includes(rawType)) continue
+    if (!['mobile_element', 'mge', 'transposon', 'integron', 'insertion_sequence', 'misc_feature', 'cds', 'gene'].includes(rawType)) continue
     let location = match[2]
     let qualifierText = ''
     for (let j = i + 1; j < lines.length; j++) {
@@ -122,7 +122,7 @@ export function parseGenBank(text: string, options: ImportOptions = {}): ImportR
     for (const qualifier of qualifierText.matchAll(/\/(\w+)="([^"]*)"/g)) qualifiers[qualifier[1]] = qualifier[2]
     if (rawType === 'misc_feature'
       && !/^(?:class\s+\d+\s+)?integron(?:\s+in[\w.-]+)?(?:[.;:]|$)/i.test(qualifiers.note?.trim() ?? '')) continue
-    let type = rawType === 'cds' ? 'gene' : rawType
+    let type = rawType === 'cds' ? 'gene' : rawType === 'mge' ? 'mobile_element' : rawType
     if (rawType === 'misc_feature') type = 'integron'
     const mobile = qualifiers.mobile_element_type?.toLowerCase() ?? ''
     if (mobile.includes('insertion sequence')) type = 'insertion_sequence'

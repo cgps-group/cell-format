@@ -7,6 +7,37 @@ from cellgen.types import ChromosomeNode, EntityNode
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
+def test_real_plasann_outputs_preserve_mobile_elements_and_classify_plasmids():
+    for sample, mobile_count, gene_count in [("pbr322", 2, 6), ("pkpqil", 6, 141)]:
+        path = FIXTURES / "plasann" / f"{sample}.gbk"
+        default = from_genbank_file(path).cells[0].replicons[0]
+        assert default.attributes["type"] == "plasmid"
+        assert len(default.children) == mobile_count
+        assert all(node.attributes["type"] == "mobile_element" for node in default.children)
+        complete = from_genbank_file(path, retain_uncontained_genes=True)
+        def count_genes(node):
+            return (node.attributes.get("type") == "gene") + sum(count_genes(child) for child in node.children)
+        assert count_genes(complete.cells[0].replicons[0]) == gene_count
+        from cellgen.parser import parse
+        assert to_cellgen(parse(to_cellgen(complete))) == to_cellgen(complete)
+        if sample == "pkpqil":
+            tn4401 = default.children[0]
+            assert tn4401.label == "Tn4401a"
+            # Preserve the tool's label, including its disagreement with the
+            # deposited reference's KPC-3 annotation at these coordinates.
+            assert any(child.label == "blaKPC-2" for child in tn4401.children)
+
+
+def test_plasann_selection_and_mge_presence_do_not_imply_plasmid_identity(tmp_path):
+    source = (FIXTURES / "plasann" / "pbr322.gbk").read_text()
+    path = tmp_path / "no-plasmid-metadata.gbk"
+    path.write_text(source.replace('/mol_type="plasmid DNA"', '/mol_type="genomic DNA"'))
+    result = from_genbank_file(path, selected_feature_ids={"roM"})
+    root = result.cells[0].replicons[0]
+    assert root.attributes["type"] == "unknown"
+    assert [child.label for child in root.children] == ["Tn6308", "roM", "Tn5393.7"]
+
+
 def test_real_prokka_genbank_gene_cds_pairs_are_single_selectable_loci():
     source = FIXTURES / "prokka" / "pbr322.gbk"
     root = from_genbank_file(source, retain_uncontained_genes=True).cells[0].replicons[0]

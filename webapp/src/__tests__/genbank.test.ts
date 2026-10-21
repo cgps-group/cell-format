@@ -15,6 +15,32 @@ function parse(input: string) {
 }
 
 describe('GenBank conversion', () => {
+  it.each([['pbr322', 2, 6], ['pkpqil', 6, 141]] as const)(
+    'imports actual PlasAnn %s features and explicit plasmid metadata', (sample, mobileCount, geneCount) => {
+      const source = fixture(`plasann/${sample}.gbk`)
+      const result = parseGenBank(source)
+      const root = parse(result.cellgen).cells[0].replicons[0]
+      expect(root.attributes.type).toBe('plasmid')
+      expect(root.children).toHaveLength(mobileCount)
+      expect(root.children.every(child => child.attributes.type === 'mobile_element')).toBe(true)
+      const complete = parseGenBank(source, { retainUncontainedGenes: true })
+      expect(complete.retainedFeatures).toBe(mobileCount + geneCount)
+      expect(complete.omittedGenes).toBe(0)
+      expect(parse(complete.cellgen).cells).toHaveLength(1)
+      if (sample === 'pkpqil') {
+        expect(root.children[0].label).toBe('Tn4401a')
+        expect(root.children[0].children.some(child => child.label === 'blaKPC-2')).toBe(true)
+      }
+    },
+  )
+  it('selects PlasAnn gene names without inferring plasmid identity from mobile elements', () => {
+    const source = fixture('plasann/pbr322.gbk').replace('/mol_type="plasmid DNA"', '/mol_type="genomic DNA"')
+    const result = parseGenBank(source, { selectedFeatureIds: ['roM'] })
+    const root = parse(result.cellgen).cells[0].replicons[0]
+    expect(root.attributes.type).toBe('unknown')
+    expect(root.children.map(child => child.label)).toEqual(['Tn6308', 'roM', 'Tn5393.7'])
+    expect(result.unmatchedSelectedIds).toEqual([])
+  })
   it('does not turn Tn21 notes about integron components into whole integrons', () => {
     const root = parse(parseGenBank(fixture('prokka/tn21-reference.gbk')).cellgen).cells[0].replicons[0]
     const integrons = (node: typeof root): string[] => [

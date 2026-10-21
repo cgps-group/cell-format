@@ -96,7 +96,8 @@ def _classify_gb_record(record) -> str:  # type: ignore[no-untyped-def]
     # Check source feature
     for feat in record.features:
         if feat.type == "source":
-            if "plasmid" in feat.qualifiers:
+            molecule_types = {value.strip().lower() for value in feat.qualifiers.get("mol_type", [])}
+            if "plasmid" in feat.qualifiers or "plasmid dna" in molecule_types:
                 return "plasmid"
             if "chromosome" in feat.qualifiers:
                 return "chromosome"
@@ -105,7 +106,7 @@ def _classify_gb_record(record) -> str:  # type: ignore[no-untyped-def]
 
 def _feature_type(feat) -> str | None:  # type: ignore[no-untyped-def]
     raw = feat.type.lower()
-    if raw in {"mobile_element", "transposon", "insertion_sequence", "integron"}:
+    if raw in {"mobile_element", "mge", "transposon", "insertion_sequence", "integron"}:
         qualifier = feat.qualifiers.get("mobile_element_type", [raw])[0].lower()
         if "insertion sequence" in qualifier or raw == "insertion_sequence":
             return "insertion_sequence"

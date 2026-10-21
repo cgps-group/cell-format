@@ -13,7 +13,7 @@ const tree = node => ({ label: node.label, attributes: node.attributes, children
 for (const entry of cases) {
   const options = { retainUncontainedGenes: entry.mode === 'all-genes' }
   if (entry.mode.startsWith('selected')) {
-    options.selectedFeatureIds = [entry.mode === 'selected-gene' ? 'TEST_00002_gene' : 'TEST_00002']
+    options.selectedFeatureIds = entry.selected_ids ?? [entry.mode === 'selected-gene' ? 'TEST_00002_gene' : 'TEST_00002']
   }
   const convert = entry.file.endsWith('.gbk') ? parseGenBank : parseGFF
   const converted = convert(fs.readFileSync(path.join(workdir, entry.file), 'utf8'), options)
