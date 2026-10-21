@@ -7,6 +7,49 @@ from cellgen.types import ChromosomeNode, EntityNode
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
+def test_real_prokka_genbank_gene_cds_pairs_are_single_selectable_loci():
+    source = FIXTURES / "prokka" / "pbr322.gbk"
+    root = from_genbank_file(source, retain_uncontained_genes=True).cells[0].replicons[0]
+    assert root.attributes["type"] == "plasmid"
+    assert root.attributes["length"] == "4361"
+    assert len(root.children) == 5
+    selected = from_genbank_file(source, selected_feature_ids={"TEST_00002"})
+    assert [child.label for child in selected.cells[0].replicons[0].children] == ["TEST_00002"]
+    assert len(from_genbank_file(source).cells[0].replicons[0].children) == 0
+
+
+def test_real_prokka_gff_preserves_length_and_both_gene_and_cds_ids(tmp_path):
+    source = FIXTURES / "prokka" / "pbr322.gff"
+    root = from_gff_file(source, retain_uncontained_genes=True).cells[0].replicons[0]
+    assert root.attributes["type"] == "unknown"  # Prokka does not write plasmid metadata to GFF.
+    assert root.attributes["length"] == "4361"
+    assert len(root.children) == 5
+    for identifier in ["TEST_00002", "TEST_00002_gene"]:
+        selected = from_gff_file(source, selected_feature_ids={identifier})
+        assert [child.label for child in selected.cells[0].replicons[0].children] == ["TEST_00002"]
+    without_sequence = tmp_path / "prokka.gff"
+    without_sequence.write_text(source.read_text().split("##FASTA")[0])
+    assert to_cellgen(from_gff_file(without_sequence, retain_uncontained_genes=True)) == to_cellgen(
+        from_gff_file(source, retain_uncontained_genes=True))
+
+
+def test_genbank_equal_span_distinct_genes_are_not_collapsed(tmp_path):
+    from Bio import SeqIO
+    record = SeqIO.read(FIXTURES / "prokka" / "pbr322.gbk", "genbank")
+    record.features[1].qualifiers = {"gene": ["different_gene"], "locus_tag": ["different_locus"]}
+    path = tmp_path / "distinct.gbk"
+    SeqIO.write(record, path, "genbank")
+    assert len(from_genbank_file(path, retain_uncontained_genes=True).cells[0].replicons[0].children) == 6
+
+
+def test_reference_tn21_does_not_promote_integron_mentions_to_whole_integrons():
+    root = from_genbank_file(FIXTURES / "prokka" / "tn21-reference.gbk").cells[0].replicons[0]
+    def structures(node):
+        return ([node.label] if node.attributes.get("type") == "integron" else []) + [
+            label for child in node.children for label in structures(child)]
+    assert structures(root) == ["Integron In2"]
+
+
 def test_multi_record_assembly_preserves_replicons_and_nesting():
     result = from_genbank_file(FIXTURES / "assembly.gbk")
     replicons = result.cells[0].replicons

@@ -28,6 +28,10 @@ export function AnnotationImport({
         Choose an annotated GenBank (.gb, .gbk, .genbank) or GFF3 (.gff, .gff3) file. GFF3 may
         include embedded FASTA; sequence is optional when coordinates are supplied.
       </p>
+      <p className="import-description">
+        Only annotated mobile elements and their contained genes are shown by default.
+        Use the options below to include other genes.
+      </p>
       <FileUpload
         files={uploadFiles}
         onFilesChange={onFilesChange}

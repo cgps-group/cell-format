@@ -117,8 +117,10 @@ def _feature_type(feat) -> str | None:  # type: ignore[no-untyped-def]
     if raw in {"cds", "gene"}:
         return "gene"
     if raw == "misc_feature":
-        note = " ".join(feat.qualifiers.get("note", [])).lower()
-        if "integron" in note:
+        note = " ".join(feat.qualifiers.get("note", [])).strip().lower()
+        # A note mentioning an integron can instead describe a crossover site,
+        # conserved segment or nearby insertion. Require an explicit entity name.
+        if re.match(r"^(?:class\s+\d+\s+)?integron(?:\s+in[\w.-]+)?(?:[.;:]|$)", note):
             return "integron"
     return None
 
@@ -136,9 +138,33 @@ def _feature_label(feat, entity_type: str) -> str:  # type: ignore[no-untyped-de
 
 def _extract_gb_hierarchy(record, *, retain_uncontained_genes: bool = False,
                           selected_feature_ids: set[str] | None = None) -> list[EntityNode]:  # type: ignore[no-untyped-def]
-    entries: list[tuple[int, int, str, EntityNode]] = []
+    entries: list[tuple[int, int, str, EntityNode, set[str]]] = []
     selected_feature_ids = selected_feature_ids or set()
+    # GenBank often describes one locus with both a gene and a CDS. Match
+    # explicit identifiers as well as coordinates and strand, so overlapping
+    # genes with different identities are not collapsed.
+    coding_features = {}
     for feat in record.features:
+        if feat.type.lower() == "cds" and feat.location is not None:
+            for key in ("gene", "locus_tag", "label"):
+                for identifier in feat.qualifiers.get(key, []):
+                    coding_features[(int(feat.location.start), int(feat.location.end), feat.location.strand, identifier)] = feat
+    paired_identifiers = {}
+    duplicate_genes = set()
+    for feat in record.features:
+        if feat.type.lower() != "gene" or feat.location is None:
+            continue
+        identifiers = {str(value) for key in ("gene", "locus_tag", "label")
+                       for value in feat.qualifiers.get(key, [])}
+        for identifier in identifiers:
+            coding = coding_features.get((int(feat.location.start), int(feat.location.end), feat.location.strand, identifier))
+            if coding is not None:
+                duplicate_genes.add(id(feat))
+                paired_identifiers.setdefault(id(coding), set()).update(identifiers)
+                break
+    for feat in record.features:
+        if id(feat) in duplicate_genes:
+            continue
         entity_type = _feature_type(feat)
         if entity_type is None or feat.location is None:
             continue
@@ -159,6 +185,7 @@ def _extract_gb_hierarchy(record, *, retain_uncontained_genes: bool = False,
         )
         identifiers = {str(value) for key in ("gene", "locus_tag", "label")
                        for value in feat.qualifiers.get(key, [])}
+        identifiers.update(paired_identifiers.get(id(feat), set()))
         entries.append((start, end, entity_type, node, identifiers))
 
     # A gene can be a child but never a coordinate-derived parent. Each node is
@@ -260,7 +287,7 @@ def from_gff_file(path: str | Path, *, retain_uncontained_genes: bool = False,
                                           "start": str(start), "end": str(end), "strand": strand})
             identifiers = {unquote(attributes[key]) for key in ("ID", "Name", "gene", "locus_tag") if key in attributes}
             info["features"].append((start, end, "gene" if kind in {"gene", "cds"} else kind,
-                                     node, identifiers, attributes.get("ID"), attributes.get("Parent")))
+                                     node, identifiers, attributes.get("ID"), attributes.get("Parent"), kind))
 
     if not seq_info:
         raise ValueError(f"No GFF3 sequence records found in {path}")
@@ -269,12 +296,19 @@ def from_gff_file(path: str | Path, *, retain_uncontained_genes: bool = False,
         entries = info["features"]
         # GFF3 commonly gives a gene and its CDS the same span. The CDS Parent
         # explicitly identifies the gene; represent that biological locus once.
-        gene_ids = {(entry[0], entry[1], entry[5]) for entry in entries
-                    if entry[2] == "gene" and entry[5]}
-        entries = [entry for entry in entries if not (entry[2] == "gene" and entry[6]
-                   and (entry[0], entry[1], entry[6]) in gene_ids)]
+        genes = {(entry[0], entry[1], entry[3].attributes["strand"], entry[5]): entry
+                 for entry in entries if entry[7] == "gene" and entry[5]}
+        duplicate_genes = set()
+        for entry in entries:
+            if entry[7] != "cds" or not entry[6]:
+                continue
+            gene = genes.get((entry[0], entry[1], entry[3].attributes["strand"], entry[6]))
+            if gene is not None:
+                entry[4].update(gene[4])
+                duplicate_genes.add(id(gene[3]))
+        entries = [entry for entry in entries if id(entry[3]) not in duplicate_genes]
         roots: list[EntityNode] = []
-        for start, end, kind, node, identifiers, _, _ in entries:
+        for start, end, kind, node, identifiers, _, _, _ in entries:
             parents = [entry for entry in entries if entry[2] != "gene"
                        and entry[0] <= start and end <= entry[1]
                        and (entry[0], entry[1]) != (start, end)]

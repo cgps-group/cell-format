@@ -1,0 +1,142 @@
+[
+  {
+    "file": "prokka/ecoli-k12/ecoli-k12.gbk",
+    "sha256": "f35e036d6fc5a8f60397a0721f2733fc66d9ef66356e04eb3d1e9d21148a964a"
+  },
+  {
+    "file": "prokka/ecoli-k12/ecoli-k12.gff",
+    "sha256": "08d51e79e6a382fe07a86657bac293f74f3cec44ddfec6655cd11d41b9c9a84b"
+  },
+  {
+    "file": "prokka/ecoli-k12/ecoli-k12.log",
+    "sha256": "d492fbfa34c793376820408a2433f11578f9b76384be3b4efc59083650d4d4a7"
+  },
+  {
+    "file": "prokka/ecoli-k12/ecoli-k12.no-fasta.gff",
+    "sha256": "10e0a357711e40fd8635ce2571126619ee24faa50e87840c32028f47bd98153f"
+  },
+  {
+    "file": "prokka/ecoli-k12/ecoli-k12.txt",
+    "sha256": "3a39aa1eb83a45d89fd9b3d6958e05e010ced76a400ce8168a31399729179864"
+  },
+  {
+    "file": "prokka/pacyc184/pacyc184.gbk",
+    "sha256": "b54529e600692d6107a7cdf6ef636096ed391f859f2312adf187f21ba16c76fa"
+  },
+  {
+    "file": "prokka/pacyc184/pacyc184.gff",
+    "sha256": "8bb70c1bdb295127f2d3374c374cf90c94c3ffd843b28f7597760da96a03d4cf"
+  },
+  {
+    "file": "prokka/pacyc184/pacyc184.log",
+    "sha256": "5d2f5b196496e4f929251ff00448c2488facc74cddcbe047f03d0a1035d413d4"
+  },
+  {
+    "file": "prokka/pacyc184/pacyc184.no-fasta.gff",
+    "sha256": "2ec1239b0c94e53e5e0e258cd4f2e544e368c41b533f7f9b51b90bc847523954"
+  },
+  {
+    "file": "prokka/pacyc184/pacyc184.txt",
+    "sha256": "9cf40f95c39b701b4ae73466c37cbc7e370232422d752b44f635e67c2a88dd52"
+  },
+  {
+    "file": "prokka/pbr322/pbr322.gbk",
+    "sha256": "19c0d1fa8e53a80bc328667f7b681640a0a05603abd768509d50ff8162e8fcb5"
+  },
+  {
+    "file": "prokka/pbr322/pbr322.gff",
+    "sha256": "be1fb400998ec73aa548f7340091987c54f1a1400ec6c71a69bd57355af2b098"
+  },
+  {
+    "file": "prokka/pbr322/pbr322.log",
+    "sha256": "1ae139859716434314623829a00596d9d24b4a30df04a1d59eb06c98dde76f14"
+  },
+  {
+    "file": "prokka/pbr322/pbr322.no-fasta.gff",
+    "sha256": "ac0771a6372ee6735b30cdb46afdf35c6b8610a2c8901f53efcd90281232b9d6"
+  },
+  {
+    "file": "prokka/pbr322/pbr322.txt",
+    "sha256": "5d6e00dabf5f150a72d5a08ac29ed1959de6113c2858dc3bdc3162b249709820"
+  },
+  {
+    "file": "prokka/pbr322-metadata/pbr322-metadata.gbk",
+    "sha256": "c9160013babddc2ac6f1110169c0d61cd700275f70033a279e613f8bc8c6372b"
+  },
+  {
+    "file": "prokka/pbr322-metadata/pbr322-metadata.gff",
+    "sha256": "6a0dae6e99571336acc99cbc1882767b1678726db14e02ef3f91e2b83edbf598"
+  },
+  {
+    "file": "prokka/pbr322-metadata/pbr322-metadata.log",
+    "sha256": "d02460b96607d3854a2d410fab6b01b7f8c0aaa8a7379d81b8f7c972b48cdfb9"
+  },
+  {
+    "file": "prokka/pbr322-metadata/pbr322-metadata.no-fasta.gff",
+    "sha256": "b50f30cca5b5b7b4918410a1676556464b395bad367155b47fdf57fe19b23c4d"
+  },
+  {
+    "file": "prokka/pbr322-metadata/pbr322-metadata.txt",
+    "sha256": "d8e36b7a212f81af6fd6822bbae90443160de9168b994de28090f763569505d7"
+  },
+  {
+    "file": "prokka/phix174/phix174.gbk",
+    "sha256": "057f6200aeb28316f5270f8c8757602edd22c0c4deb7d1b6973c8098f4ad0e55"
+  },
+  {
+    "file": "prokka/phix174/phix174.gff",
+    "sha256": "766d36984a3d0d6bab9830c13584fc8015d7ff33e78c8d53b69a25abd3b6fc1d"
+  },
+  {
+    "file": "prokka/phix174/phix174.log",
+    "sha256": "6bbcd8d27d2816ce30c819c21e588d32766a0dabe1f0620873d557385c7dfbd3"
+  },
+  {
+    "file": "prokka/phix174/phix174.no-fasta.gff",
+    "sha256": "3d96daa43ca487338be124f4e74ecf6737ba882551c3f1505c9a4cc4dac39150"
+  },
+  {
+    "file": "prokka/phix174/phix174.txt",
+    "sha256": "5031199c5d9d74c64d7328965a0411b057e40a561f9f200be6857b70de0e2b91"
+  },
+  {
+    "file": "prokka/pkpqil/pkpqil.gbk",
+    "sha256": "c5c888db0600724b104c08e5d2c280abcdf1cf85575eb975dd842cf3689c042c"
+  },
+  {
+    "file": "prokka/pkpqil/pkpqil.gff",
+    "sha256": "2beaf55477a17b9e340ccc6a97fd33cd11471afa775556c81753f4e20f9f29a1"
+  },
+  {
+    "file": "prokka/pkpqil/pkpqil.log",
+    "sha256": "58298a5810b87595383a778eebf6e2092b2acd2b4ca19e1bfc7ff21fdad307bd"
+  },
+  {
+    "file": "prokka/pkpqil/pkpqil.no-fasta.gff",
+    "sha256": "938286458721fef7b2f4da998d224ac31a3092ea3d2765c1ab59dc17f4e4ce30"
+  },
+  {
+    "file": "prokka/pkpqil/pkpqil.txt",
+    "sha256": "9af3a603a4bf54a586f646a7f6f18d60697fd5ba8fe4640f6db8112ebb3550c3"
+  },
+  {
+    "file": "prokka/tn21/tn21.gbk",
+    "sha256": "73b82095dbf37361917b4c8600fc8531dc56d97163764a487e87522fdf7911f6"
+  },
+  {
+    "file": "prokka/tn21/tn21.gff",
+    "sha256": "d67a161547f99678042068a25aa87c3b00f21b2efa201da17040f0c0431cfde7"
+  },
+  {
+    "file": "prokka/tn21/tn21.log",
+    "sha256": "5e93215b610561e02dfe8010fcf4579f976f9507d658facccc8e12d987da9f86"
+  },
+  {
+    "file": "prokka/tn21/tn21.no-fasta.gff",
+    "sha256": "fb71abc67547c483d88bb98d451406362607a2e4e27a080481f6d90ba0f4637e"
+  },
+  {
+    "file": "prokka/tn21/tn21.txt",
+    "sha256": "41dace6cc3d383037ee001fd6ee9663a29de418fabbd195a1ddf21dfd860d76b"
+  }
+]
